@@ -129,13 +129,14 @@ namespace FinalProject.model
 
                 while (sdr.Read())
                 {
+                    cmd.Parameters.AddWithValue("@id", id);
                     booking bo = new booking();
                     
                     bo.id = (int)sdr["employeeID"];
                     bo.firstName = (string)sdr["firstName"];
                     bo.lastName = (string)sdr["lastName"];                   
                     bo.weddingDate = (string)sdr["DOB"];
-                    cmd.Parameters.AddWithValue("@id", id);
+                    
 
                     Bclass.Add(bo);
                 }

@@ -136,3 +136,5 @@ C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalPro
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.csproj.CopyComplete
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.employee_page.resources
+C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.Material.resources

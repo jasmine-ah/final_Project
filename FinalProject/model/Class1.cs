@@ -29,7 +29,7 @@ namespace FinalProject.model
         public void save()
         {
             class1.Add(this);
-            string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -73,7 +73,7 @@ namespace FinalProject.model
             List<Class1> temp = new List<Class1>();
             try
             {
-                string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+                string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
@@ -130,7 +130,7 @@ namespace FinalProject.model
             List<Class1> temp = new List<Class1>();
             try
             {
-                string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+                string connectionString = @"Data Source=TINELLA\\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 MessageBox.Show("connection successful!!!");

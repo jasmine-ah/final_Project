@@ -167,3 +167,6 @@ C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.signInfo.resources
+C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.employee_page.resources
+C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.Material.resources
+C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.signInfo.resources

@@ -96,5 +96,15 @@ namespace FinalProject
         {
 
         }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+         openChildForm(new MainPage());
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            openChildForm(new signInfo());
+        }
     }
 }

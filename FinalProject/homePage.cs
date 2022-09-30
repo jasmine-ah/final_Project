@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FinalProject
 {
@@ -21,14 +22,7 @@ namespace FinalProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-            { 
-
-                MainPage screen = new MainPage();
-                screen.Show();
-                this.Hide();
-            }
+            var product = Class1.findOne(textBox1.Text,textBox2.Text);
         }
 
 
@@ -90,6 +84,11 @@ namespace FinalProject
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void homePage_Load(object sender, EventArgs e)
         {
 
         }

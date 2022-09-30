@@ -14,14 +14,14 @@ namespace FinalProject.model
 
 
         static private List<Class1> class1 = new List<Class1>();
-
+        public int id { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string confirmPassword { get; set; }
         public string weddingDate { get; set; }
-        public int contactInfo { get; set; }
+        public string contactInfo { get; set; }
 
 
 
@@ -67,7 +67,7 @@ namespace FinalProject.model
 
         }
 
-        /*
+        
         public static Class1 findOne(string email,string password)
         {
             List<Class1> temp = new List<Class1>();
@@ -98,8 +98,9 @@ namespace FinalProject.model
                     if (em==email && pwd == password)
                     {
 
-                        MainPage screen = new MainPage();
+                        signInfo screen = new signInfo();
                         screen.Show();
+                        
                         //this.Hide();
                     }
                     else
@@ -144,11 +145,13 @@ namespace FinalProject.model
 
                 {
                     Class1 c = new Class1();
-
-                    c.Name = (string)sdr[0];
-                    c.Email = (string)sdr[1];
-                    c.phone = (int)sdr[2];
-                    c.Password = (string)sdr[3];
+                    c.id=(int)sdr["id"];
+                    c.firstName = (string)sdr["firstName"];
+                    c.lastName = (string)sdr["lastName"];
+                    c.Email = (string)sdr["email"];
+                    c.contactInfo = (string)sdr["contactInfo"];
+                    c.Password = (string)sdr["password"];
+                    c.weddingDate = (string)sdr["weddingDate"];
 
 
 
@@ -166,8 +169,48 @@ namespace FinalProject.model
             };
             return temp;
         }
+        public static void update(string fn, string ln, string email, string cont, string pass, string date)
+        {
+            string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+            SqlConnection connection = new SqlConnection(connectionString);
 
-        */
+            try
+            {
+                connection.Open();
+                MessageBox.Show("connection successful!!!");
+                string Query = "exec UPDATEsign_up @fname,@lname,@email,@contactInfo,@pass,@wd;";
+
+                SqlCommand cmd = new SqlCommand(Query, connection);
+                cmd.Parameters.AddWithValue("@fname", fn);
+                cmd.Parameters.AddWithValue("@lname", ln);
+                cmd.Parameters.AddWithValue("@contactInfo", cont);
+                cmd.Parameters.AddWithValue("@wd", date);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@pass", pass);
+                //cmd.Parameters.AddWithValue("@id", id);
+
+                var result = cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Successfully Updated!!!");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
+            };
+
+
+
+        }
+
+
     }
 }
 

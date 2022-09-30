@@ -116,9 +116,20 @@ namespace FinalProject
                 dateTimePicker1.Value = DateTime.Parse(product.DateOfBirth);
                 textBox7.Text = product.Email;
                 textBox8.Text = product.Occupation;
-            }
+               /* if (product.Gender.ToString() == "female")
+                {
+                    radioButton1.Checked = true;
+                }
+                else
+                {
+                    radioButton2.Checked = true;
 
+                }*/
+
+            }
         }
+
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -127,7 +138,7 @@ namespace FinalProject
                 gen = radioButton1.Text;
             else
                 gen = radioButton2.Text;
-            AdminClass.update(label9.Text, textBox2.Text, textBox3.Text, textBox4.Text,dateTimePicker1.Text, textBox7.Text, textBox8.Text,gen);
+            AdminClass.update(label9.Text, textBox2.Text, textBox3.Text, textBox4.Text,dateTimePicker1.Value.ToString(), textBox7.Text, textBox8.Text,gen);
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = AdminClass.GetAllProducts();
         }

@@ -89,7 +89,7 @@ namespace FinalProject
                         firstName = (txt_fn.Text),
                         lastName = (txt_ln.Text),
                         Email = (txt_email.Text),
-                        contactInfo = int.Parse(txt_phone.Text),
+                        contactInfo = (txt_phone.Text),
                         Password = (txt_password.Text),
                         weddingDate= dateTimePicker1.Value.ToString(),
 

@@ -40,5 +40,25 @@ namespace FinalProject
             }
 
         }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            booking.update(  dateTimePicker1.Text, textBox_ng.Text, comboBox1.Text);
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = booking.GetAllProducts();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            int i = int.Parse(label7.Text);
+            booking.delete(i);
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = booking.GetAllProducts();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

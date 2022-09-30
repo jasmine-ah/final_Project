@@ -130,11 +130,13 @@ namespace FinalProject.model
                 while (sdr.Read())
                 {
                     booking bo = new booking();
+                    
                     bo.id = (int)sdr["employeeID"];
                     bo.firstName = (string)sdr["firstName"];
                     bo.lastName = (string)sdr["lastName"];                   
                     bo.weddingDate = (string)sdr["DOB"];
                     cmd.Parameters.AddWithValue("@id", id);
+
                     Bclass.Add(bo);
                 }
             }
@@ -148,7 +150,7 @@ namespace FinalProject.model
             };
             return Bclass.Find(c => c.id == id);
         }
-        public static void update(string id, string fn, string ln, string cont, string date, string email, string occup, string gender)
+        public static void update( string date,string guests,string cb)
         {
             string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
@@ -157,17 +159,14 @@ namespace FinalProject.model
             {
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
-                string Query = "exec UPDATEEMP @fname,@lname,@contactInfo,@dob,@email,@occupation,@gender,@id;";
+                string Query = "exec UPDATEBOOK @wd,@guests,@payment,@id;";
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
-                cmd.Parameters.AddWithValue("@fname", fn);
-                cmd.Parameters.AddWithValue("@lname", ln);
-                cmd.Parameters.AddWithValue("@contactInfo", cont);
-                cmd.Parameters.AddWithValue("@dob", date);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@occupation", occup);
-                cmd.Parameters.AddWithValue("@gender", gender);
-                cmd.Parameters.AddWithValue("@id", id);
+                              
+                cmd.Parameters.AddWithValue("@wd", date);
+                cmd.Parameters.AddWithValue("@email", guests);
+                cmd.Parameters.AddWithValue("@occupation", cb);
+                
 
                 var result = cmd.ExecuteNonQuery();
 
@@ -190,7 +189,7 @@ namespace FinalProject.model
 
         }
 
-        public static void delete(string id)
+        public static void delete(int id)
         {
             string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
@@ -200,7 +199,7 @@ namespace FinalProject.model
 
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
-                string Query = "exec DELETEEMP @id;";
+                string Query = "exec DELETEBOOK @id;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 cmd.Parameters.AddWithValue("@id", id);

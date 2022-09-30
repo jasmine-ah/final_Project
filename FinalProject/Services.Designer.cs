@@ -56,7 +56,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.guna2Button3.ForeColor = System.Drawing.Color.Brown;
             this.guna2Button3.Location = new System.Drawing.Point(-1, 3);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(228, 94);
             this.guna2Button3.TabIndex = 12;
@@ -75,10 +75,10 @@
             this.guna2Button2.FillColor = System.Drawing.Color.MistyRose;
             this.guna2Button2.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.guna2Button2.ForeColor = System.Drawing.Color.Brown;
-            this.guna2Button2.Location = new System.Drawing.Point(-1, 395);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button2.Location = new System.Drawing.Point(-1, 414);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(228, 88);
+            this.guna2Button2.Size = new System.Drawing.Size(228, 90);
             this.guna2Button2.TabIndex = 14;
             this.guna2Button2.Text = "Dj and MC services";
             this.guna2Button2.UseTransparentBackground = true;
@@ -95,8 +95,8 @@
             this.guna2Button4.FillColor = System.Drawing.Color.MistyRose;
             this.guna2Button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.guna2Button4.ForeColor = System.Drawing.Color.Brown;
-            this.guna2Button4.Location = new System.Drawing.Point(-1, 316);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button4.Location = new System.Drawing.Point(-1, 332);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(228, 85);
             this.guna2Button4.TabIndex = 15;
@@ -116,7 +116,7 @@
             this.guna2Button5.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.guna2Button5.ForeColor = System.Drawing.Color.Brown;
             this.guna2Button5.Location = new System.Drawing.Point(-1, 85);
-            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(228, 89);
             this.guna2Button5.TabIndex = 16;
@@ -135,10 +135,10 @@
             this.guna2Button6.FillColor = System.Drawing.Color.MistyRose;
             this.guna2Button6.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.guna2Button6.ForeColor = System.Drawing.Color.Brown;
-            this.guna2Button6.Location = new System.Drawing.Point(-1, 238);
-            this.guna2Button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button6.Location = new System.Drawing.Point(-1, 244);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(228, 86);
+            this.guna2Button6.Size = new System.Drawing.Size(228, 94);
             this.guna2Button6.TabIndex = 17;
             this.guna2Button6.Text = "Beauty Services";
             this.guna2Button6.UseTransparentBackground = true;
@@ -156,7 +156,7 @@
             this.guna2Button7.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.guna2Button7.ForeColor = System.Drawing.Color.Brown;
             this.guna2Button7.Location = new System.Drawing.Point(-1, 165);
-            this.guna2Button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(228, 79);
             this.guna2Button7.TabIndex = 18;
@@ -175,10 +175,10 @@
             this.guna2Button1.FillColor = System.Drawing.Color.MistyRose;
             this.guna2Button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.guna2Button1.ForeColor = System.Drawing.Color.Brown;
-            this.guna2Button1.Location = new System.Drawing.Point(-1, 480);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button1.Location = new System.Drawing.Point(-1, 502);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(228, 78);
+            this.guna2Button1.Size = new System.Drawing.Size(228, 92);
             this.guna2Button1.TabIndex = 19;
             this.guna2Button1.Text = "Back";
             this.guna2Button1.UseTransparentBackground = true;
@@ -189,7 +189,7 @@
             this.panelForms.Controls.Add(this.label1);
             this.panelForms.Controls.Add(this.guna2CirclePictureBox1);
             this.panelForms.Location = new System.Drawing.Point(209, -1);
-            this.panelForms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelForms.Margin = new System.Windows.Forms.Padding(4);
             this.panelForms.Name = "panelForms";
             this.panelForms.Size = new System.Drawing.Size(1159, 610);
             this.panelForms.TabIndex = 20;
@@ -212,7 +212,7 @@
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(429, 149);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(276, 240);

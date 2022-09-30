@@ -67,7 +67,7 @@ namespace FinalProject.model
 
         }
 
-        /*
+        
         public static Class1 findOne(string email,string password)
         {
             List<Class1> temp = new List<Class1>();
@@ -124,13 +124,13 @@ namespace FinalProject.model
 
 
 
-        public static List<Class1> getAllProducts()
+        /*public static List<Class1> getAllProducts()
         {
 
             List<Class1> temp = new List<Class1>();
             try
             {
-                string connectionString = @"Data Source=TINELLA\\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+                string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
@@ -145,10 +145,12 @@ namespace FinalProject.model
                 {
                     Class1 c = new Class1();
 
-                    c.Name = (string)sdr[0];
-                    c.Email = (string)sdr[1];
-                    c.phone = (int)sdr[2];
-                    c.Password = (string)sdr[3];
+                    c.firstName = (string)sdr["firstName"];
+                    c.lastName = (string)sdr["lastName"];
+                    c.contactInfo = (int)sdr["ContactInfo"];
+                    c.weddingDate = (string)sdr["weddindDate"];
+                    c.Email = (string)sdr["email"];            
+                    c.Password = (string)sdr["Password"];
 
 
 
@@ -166,8 +168,8 @@ namespace FinalProject.model
             };
             return temp;
         }
-
-        */
+*/
+        
     }
 }
 

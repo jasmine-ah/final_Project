@@ -21,6 +21,38 @@ namespace FinalProject
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+
+       
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
             errorProvider1.Clear();
 
             Regex r = new Regex(@"^([^0-9]*)$");
@@ -73,12 +105,12 @@ namespace FinalProject
                 errorProvider1.SetError(txt_fn, "Last name should'nt contain numbers");
 
             }
-            /*
+            
             if (txt_password.Text != txt_cp.Text)
             {
                 MessageBox.Show("Please re-enter your password correctly!!!");
-            }*/
-            
+            }
+
 
             else
             {
@@ -91,7 +123,7 @@ namespace FinalProject
                         Email = (txt_email.Text),
                         contactInfo = int.Parse(txt_phone.Text),
                         Password = (txt_password.Text),
-                        weddingDate= dateTimePicker1.Value.ToString(),
+                        weddingDate = guna2DateTimePicker1.Value.ToString(),
 
 
 
@@ -110,29 +142,32 @@ namespace FinalProject
                 {
                     MessageBox.Show("Type mismatch");
                 };
-                       
+
             }
-           
+
         }
 
-
-       
-
-        private void button2_Click_1(object sender, EventArgs e)
+        private void label10_Click(object sender, EventArgs e)
         {
-            System.Environment.Exit(0);
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            homePage home = new homePage();
+            home.Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void txt_phone_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        private void txt_cp_TextChanged(object sender, EventArgs e)
         {
 
         }
     }
-    
 }
+    
+
 

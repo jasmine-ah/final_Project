@@ -23,12 +23,7 @@ namespace FinalProject
         {
 
 
-            { 
-
-                MainPage screen = new MainPage();
-                screen.Show();
-                this.Hide();
-            }
+            
         }
 
 
@@ -92,6 +87,37 @@ namespace FinalProject
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            signup sign = new signup();
+            sign.Show();
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+
+            {
+
+                MainPage screen = new MainPage();
+                screen.Show();
+                this.Hide();
+            }
         }
     }
 }

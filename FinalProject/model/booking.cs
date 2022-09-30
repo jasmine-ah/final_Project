@@ -148,6 +148,7 @@ namespace FinalProject.model
             {
                 connection.Close();
             };
+            
             return Bclass.Find(c => c.id == id);
         }
         public static void update( string date,string guests,string cb)

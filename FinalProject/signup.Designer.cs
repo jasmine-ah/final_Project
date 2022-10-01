@@ -33,16 +33,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pn_Reg = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.txt_phone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_cp = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txt_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_ln = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_fn = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_cp = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_phone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.pn_Reg.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(39, 260);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 19);
+            this.label8.Size = new System.Drawing.Size(86, 16);
             this.label8.TabIndex = 15;
             this.label8.Text = "Wedding Date";
             // 
@@ -90,50 +90,82 @@
             this.pn_Reg.Size = new System.Drawing.Size(571, 423);
             this.pn_Reg.TabIndex = 22;
             // 
-            // label9
+            // txt_phone
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(148, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(242, 36);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Create Account";
+            this.txt_phone.Animated = true;
+            this.txt_phone.AutoRoundedCorners = true;
+            this.txt_phone.BorderRadius = 17;
+            this.txt_phone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_phone.DefaultText = "";
+            this.txt_phone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_phone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_phone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_phone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_phone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txt_phone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_phone.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_phone.IconLeft = global::FinalProject.Properties.Resources.phone_504;
+            this.txt_phone.Location = new System.Drawing.Point(307, 137);
+            this.txt_phone.Name = "txt_phone";
+            this.txt_phone.PasswordChar = '●';
+            this.txt_phone.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txt_phone.PlaceholderText = " Phone";
+            this.txt_phone.SelectedText = "";
+            this.txt_phone.Size = new System.Drawing.Size(235, 36);
+            this.txt_phone.TabIndex = 26;
+            this.txt_phone.TextChanged += new System.EventHandler(this.txt_cp_TextChanged);
             // 
-            // label10
+            // txt_cp
             // 
-            this.label10.AutoSize = true;
-            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(500, 378);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 17);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "login";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.txt_cp.Animated = true;
+            this.txt_cp.AutoRoundedCorners = true;
+            this.txt_cp.BorderRadius = 17;
+            this.txt_cp.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_cp.DefaultText = "";
+            this.txt_cp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_cp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_cp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_cp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_cp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txt_cp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_cp.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_cp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_cp.IconLeft = global::FinalProject.Properties.Resources.login_password_119241;
+            this.txt_cp.Location = new System.Drawing.Point(307, 191);
+            this.txt_cp.Name = "txt_cp";
+            this.txt_cp.PasswordChar = '\0';
+            this.txt_cp.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txt_cp.PlaceholderText = "Confirm Password";
+            this.txt_cp.SelectedText = "";
+            this.txt_cp.Size = new System.Drawing.Size(235, 36);
+            this.txt_cp.TabIndex = 25;
+            this.txt_cp.TextChanged += new System.EventHandler(this.txt_phone_TextChanged);
             // 
-            // guna2GradientButton2
+            // txt_email
             // 
-            this.guna2GradientButton2.Animated = true;
-            this.guna2GradientButton2.AutoRoundedCorners = true;
-            this.guna2GradientButton2.BorderRadius = 21;
-            this.guna2GradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(135)))));
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(307, 318);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(235, 45);
-            this.guna2GradientButton2.TabIndex = 15;
-            this.guna2GradientButton2.Text = "Create Account";
-            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
+            this.txt_email.Animated = true;
+            this.txt_email.AutoRoundedCorners = true;
+            this.txt_email.BorderRadius = 17;
+            this.txt_email.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_email.DefaultText = "";
+            this.txt_email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_email.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txt_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_email.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_email.IconLeft = global::FinalProject.Properties.Resources.mail_2564;
+            this.txt_email.Location = new System.Drawing.Point(43, 137);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.PasswordChar = '\0';
+            this.txt_email.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txt_email.PlaceholderText = "Email";
+            this.txt_email.SelectedText = "";
+            this.txt_email.Size = new System.Drawing.Size(235, 36);
+            this.txt_email.TabIndex = 24;
             // 
             // guna2DateTimePicker1
             // 
@@ -230,89 +262,57 @@
             this.txt_fn.Size = new System.Drawing.Size(235, 36);
             this.txt_fn.TabIndex = 11;
             // 
-            // txt_email
+            // label9
             // 
-            this.txt_email.Animated = true;
-            this.txt_email.AutoRoundedCorners = true;
-            this.txt_email.BorderRadius = 17;
-            this.txt_email.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_email.DefaultText = "";
-            this.txt_email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_email.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txt_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_email.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_email.IconLeft = global::FinalProject.Properties.Resources.mail_2564;
-            this.txt_email.Location = new System.Drawing.Point(43, 137);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.PasswordChar = '\0';
-            this.txt_email.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txt_email.PlaceholderText = "Email";
-            this.txt_email.SelectedText = "";
-            this.txt_email.Size = new System.Drawing.Size(235, 36);
-            this.txt_email.TabIndex = 24;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label9.Location = new System.Drawing.Point(148, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(192, 27);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Create Account";
             // 
-            // txt_cp
+            // label10
             // 
-            this.txt_cp.Animated = true;
-            this.txt_cp.AutoRoundedCorners = true;
-            this.txt_cp.BorderRadius = 17;
-            this.txt_cp.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_cp.DefaultText = "";
-            this.txt_cp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_cp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_cp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_cp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_cp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txt_cp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_cp.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_cp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_cp.IconLeft = global::FinalProject.Properties.Resources.login_password_119241;
-            this.txt_cp.Location = new System.Drawing.Point(307, 191);
-            this.txt_cp.Name = "txt_cp";
-            this.txt_cp.PasswordChar = '\0';
-            this.txt_cp.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txt_cp.PlaceholderText = "Confirm Password";
-            this.txt_cp.SelectedText = "";
-            this.txt_cp.Size = new System.Drawing.Size(235, 36);
-            this.txt_cp.TabIndex = 25;
-            this.txt_cp.TextChanged += new System.EventHandler(this.txt_phone_TextChanged);
+            this.label10.AutoSize = true;
+            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(500, 378);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 15);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "login";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // txt_phone
+            // guna2GradientButton2
             // 
-            this.txt_phone.Animated = true;
-            this.txt_phone.AutoRoundedCorners = true;
-            this.txt_phone.BorderRadius = 17;
-            this.txt_phone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_phone.DefaultText = "";
-            this.txt_phone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_phone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_phone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_phone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_phone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txt_phone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_phone.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_phone.IconLeft = global::FinalProject.Properties.Resources.phone_504;
-            this.txt_phone.Location = new System.Drawing.Point(307, 137);
-            this.txt_phone.Name = "txt_phone";
-            this.txt_phone.PasswordChar = '●';
-            this.txt_phone.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txt_phone.PlaceholderText = " Phone";
-            this.txt_phone.SelectedText = "";
-            this.txt_phone.Size = new System.Drawing.Size(235, 36);
-            this.txt_phone.TabIndex = 26;
-            this.txt_phone.TextChanged += new System.EventHandler(this.txt_cp_TextChanged);
+            this.guna2GradientButton2.Animated = true;
+            this.guna2GradientButton2.AutoRoundedCorners = true;
+            this.guna2GradientButton2.BorderRadius = 21;
+            this.guna2GradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(135)))));
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.Location = new System.Drawing.Point(307, 318);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.Size = new System.Drawing.Size(235, 45);
+            this.guna2GradientButton2.TabIndex = 15;
+            this.guna2GradientButton2.Text = "Create Account";
+            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
             // signup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(900, 608);
+            this.ClientSize = new System.Drawing.Size(965, 608);
             this.Controls.Add(this.pn_Reg);
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -1893,7 +1893,7 @@
   </data>
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>The package includes:
-<<<<<<< HEAD
+ HEAD
 Hair and Makup
 Apppetizers and Meal service
 Wedding cake
@@ -1913,7 +1913,7 @@ Catering Service inludes wedding cake
 Photography service
 Decor services with Invitations
 Dj and MC services
-Price 600,000 ETB</value>
+Price 600,000 ETB
 >>>>>>> a16b5d87bc583264472af433c9cbd4660afec21b
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

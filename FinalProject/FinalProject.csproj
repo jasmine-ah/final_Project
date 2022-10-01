@@ -197,6 +197,15 @@
     <EmbeddedResource Include="serviceForms\beauty.resx">
       <DependentUpon>beauty.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="serviceForms\catering.resx">
+      <DependentUpon>catering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="serviceForms\dj.resx">
+      <DependentUpon>dj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="serviceForms\photography.resx">
+      <DependentUpon>photography.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="signInfo.resx">
       <DependentUpon>signInfo.cs</DependentUpon>
     </EmbeddedResource>

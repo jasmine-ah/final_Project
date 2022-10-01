@@ -59,13 +59,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(604, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(565, 1);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(841, 731);
+            this.dataGridView1.Size = new System.Drawing.Size(867, 731);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -282,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1371, 743);
+            this.ClientSize = new System.Drawing.Size(1434, 743);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button5);

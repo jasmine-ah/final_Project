@@ -119,6 +119,16 @@ namespace FinalProject
                 this.Hide();
             }
         }
+
+        private void pn_login_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2ControlBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -126,10 +126,10 @@ namespace FinalProject.model
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
-
+                cmd.Parameters.AddWithValue("@id", id);
                 while (sdr.Read())
                 {
-                    cmd.Parameters.AddWithValue("@id", id);
+                    
                     booking bo = new booking();
                     
                     bo.id = (int)sdr["employeeID"];

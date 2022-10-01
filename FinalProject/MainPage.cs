@@ -16,6 +16,7 @@ namespace FinalProject
     {
         public MainPage()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
         }
 
@@ -26,8 +27,7 @@ namespace FinalProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            venue v1 = new venue();
-            v1.Show();
+            
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,6 +67,12 @@ namespace FinalProject
         private void MainPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            venue v1 = new venue();
+            v1.Show();
         }
     }
 }

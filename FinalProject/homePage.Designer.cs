@@ -52,6 +52,7 @@
             this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -70,7 +71,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(977, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(977, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -78,28 +79,28 @@
             // aboutUsToolStripMenuItem
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
             // contactInfoToolStripMenuItem
             // 
             this.contactInfoToolStripMenuItem.Name = "contactInfoToolStripMenuItem";
-            this.contactInfoToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.contactInfoToolStripMenuItem.Size = new System.Drawing.Size(104, 26);
             this.contactInfoToolStripMenuItem.Text = "Contact info";
             this.contactInfoToolStripMenuItem.Click += new System.EventHandler(this.contactInfoToolStripMenuItem_Click);
             // 
             // adminLoginToolStripMenuItem
             // 
             this.adminLoginToolStripMenuItem.Name = "adminLoginToolStripMenuItem";
-            this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(105, 24);
+            this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(105, 26);
             this.adminLoginToolStripMenuItem.Text = "Admin login";
             this.adminLoginToolStripMenuItem.Click += new System.EventHandler(this.adminLoginToolStripMenuItem_Click);
             // 
             // servicesToolStripMenuItem
             // 
             this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
-            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(104, 26);
             this.servicesToolStripMenuItem.Text = "Our Services";
             this.servicesToolStripMenuItem.Click += new System.EventHandler(this.servicesToolStripMenuItem_Click);
             // 
@@ -197,10 +198,11 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Controls.Add(this.guna2ControlBox3);
             this.guna2Panel1.Controls.Add(this.guna2ControlBox2);
             this.guna2Panel1.Controls.Add(this.guna2ControlBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 28);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 30);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(977, 34);
             this.guna2Panel1.TabIndex = 19;
@@ -208,17 +210,20 @@
             // guna2ControlBox2
             // 
             this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.Animated = true;
             this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(885, 2);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(831, 3);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(37, 29);
             this.guna2ControlBox2.TabIndex = 21;
+            this.guna2ControlBox2.Click += new System.EventHandler(this.guna2ControlBox2_Click);
             // 
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.Animated = true;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
             this.guna2ControlBox1.Location = new System.Drawing.Point(928, 2);
@@ -228,6 +233,7 @@
             // 
             // pn_login
             // 
+            this.pn_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_login.BackColor = System.Drawing.Color.Transparent;
             this.pn_login.Controls.Add(this.guna2TextBox3);
             this.pn_login.Controls.Add(this.guna2TextBox4);
@@ -330,6 +336,18 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
+            // guna2ControlBox3
+            // 
+            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox3.Animated = true;
+            this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.guna2ControlBox3.FillColor = System.Drawing.Color.White;
+            this.guna2ControlBox3.IconColor = System.Drawing.Color.DimGray;
+            this.guna2ControlBox3.Location = new System.Drawing.Point(872, 3);
+            this.guna2ControlBox3.Name = "guna2ControlBox3";
+            this.guna2ControlBox3.Size = new System.Drawing.Size(48, 29);
+            this.guna2ControlBox3.TabIndex = 22;
+            // 
             // homePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -385,5 +403,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ShadowPanel pn_login;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
     }
 }

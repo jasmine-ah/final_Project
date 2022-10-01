@@ -33,16 +33,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pn_Reg = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.txt_phone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_cp = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_ln = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_fn = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_cp = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_phone = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.pn_Reg.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             // 
             // pn_Reg
             // 
+            this.pn_Reg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pn_Reg.BackColor = System.Drawing.Color.Transparent;
             this.pn_Reg.Controls.Add(this.txt_phone);
             this.pn_Reg.Controls.Add(this.txt_cp);
@@ -89,6 +90,25 @@
             this.pn_Reg.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.pn_Reg.Size = new System.Drawing.Size(571, 423);
             this.pn_Reg.TabIndex = 22;
+            // 
+            // guna2DateTimePicker1
+            // 
+            this.guna2DateTimePicker1.Animated = true;
+            this.guna2DateTimePicker1.AutoRoundedCorners = true;
+            this.guna2DateTimePicker1.BorderRadius = 17;
+            this.guna2DateTimePicker1.Checked = true;
+            this.guna2DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(135)))));
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(183, 243);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(231, 36);
+            this.guna2DateTimePicker1.TabIndex = 23;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2022, 9, 30, 20, 57, 2, 538);
             // 
             // label9
             // 
@@ -135,24 +155,82 @@
             this.guna2GradientButton2.Text = "Create Account";
             this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
-            // guna2DateTimePicker1
+            // txt_phone
             // 
-            this.guna2DateTimePicker1.Animated = true;
-            this.guna2DateTimePicker1.AutoRoundedCorners = true;
-            this.guna2DateTimePicker1.BorderRadius = 17;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(135)))));
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(183, 243);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(231, 36);
-            this.guna2DateTimePicker1.TabIndex = 23;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2022, 9, 30, 20, 57, 2, 538);
+            this.txt_phone.Animated = true;
+            this.txt_phone.AutoRoundedCorners = true;
+            this.txt_phone.BorderRadius = 17;
+            this.txt_phone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_phone.DefaultText = "";
+            this.txt_phone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_phone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_phone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_phone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_phone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txt_phone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_phone.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_phone.IconLeft = global::FinalProject.Properties.Resources.phone_504;
+            this.txt_phone.Location = new System.Drawing.Point(307, 137);
+            this.txt_phone.Name = "txt_phone";
+            this.txt_phone.PasswordChar = '●';
+            this.txt_phone.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txt_phone.PlaceholderText = " Phone";
+            this.txt_phone.SelectedText = "";
+            this.txt_phone.Size = new System.Drawing.Size(235, 36);
+            this.txt_phone.TabIndex = 26;
+            this.txt_phone.TextChanged += new System.EventHandler(this.txt_cp_TextChanged);
+            // 
+            // txt_cp
+            // 
+            this.txt_cp.Animated = true;
+            this.txt_cp.AutoRoundedCorners = true;
+            this.txt_cp.BorderRadius = 17;
+            this.txt_cp.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_cp.DefaultText = "";
+            this.txt_cp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_cp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_cp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_cp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_cp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txt_cp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_cp.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_cp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_cp.IconLeft = global::FinalProject.Properties.Resources.login_password_119241;
+            this.txt_cp.Location = new System.Drawing.Point(307, 191);
+            this.txt_cp.Name = "txt_cp";
+            this.txt_cp.PasswordChar = '\0';
+            this.txt_cp.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txt_cp.PlaceholderText = "Confirm Password";
+            this.txt_cp.SelectedText = "";
+            this.txt_cp.Size = new System.Drawing.Size(235, 36);
+            this.txt_cp.TabIndex = 25;
+            this.txt_cp.TextChanged += new System.EventHandler(this.txt_phone_TextChanged);
+            // 
+            // txt_email
+            // 
+            this.txt_email.Animated = true;
+            this.txt_email.AutoRoundedCorners = true;
+            this.txt_email.BorderRadius = 17;
+            this.txt_email.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_email.DefaultText = "";
+            this.txt_email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_email.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txt_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_email.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_email.IconLeft = global::FinalProject.Properties.Resources.mail_2564;
+            this.txt_email.Location = new System.Drawing.Point(43, 137);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.PasswordChar = '\0';
+            this.txt_email.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txt_email.PlaceholderText = "Email";
+            this.txt_email.SelectedText = "";
+            this.txt_email.Size = new System.Drawing.Size(235, 36);
+            this.txt_email.TabIndex = 24;
             // 
             // txt_password
             // 
@@ -229,83 +307,6 @@
             this.txt_fn.SelectedText = "";
             this.txt_fn.Size = new System.Drawing.Size(235, 36);
             this.txt_fn.TabIndex = 11;
-            // 
-            // txt_email
-            // 
-            this.txt_email.Animated = true;
-            this.txt_email.AutoRoundedCorners = true;
-            this.txt_email.BorderRadius = 17;
-            this.txt_email.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_email.DefaultText = "";
-            this.txt_email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_email.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txt_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_email.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_email.IconLeft = global::FinalProject.Properties.Resources.mail_2564;
-            this.txt_email.Location = new System.Drawing.Point(43, 137);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.PasswordChar = '\0';
-            this.txt_email.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txt_email.PlaceholderText = "Email";
-            this.txt_email.SelectedText = "";
-            this.txt_email.Size = new System.Drawing.Size(235, 36);
-            this.txt_email.TabIndex = 24;
-            // 
-            // txt_cp
-            // 
-            this.txt_cp.Animated = true;
-            this.txt_cp.AutoRoundedCorners = true;
-            this.txt_cp.BorderRadius = 17;
-            this.txt_cp.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_cp.DefaultText = "";
-            this.txt_cp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_cp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_cp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_cp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_cp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txt_cp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_cp.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_cp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_cp.IconLeft = global::FinalProject.Properties.Resources.login_password_119241;
-            this.txt_cp.Location = new System.Drawing.Point(307, 191);
-            this.txt_cp.Name = "txt_cp";
-            this.txt_cp.PasswordChar = '\0';
-            this.txt_cp.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txt_cp.PlaceholderText = "Confirm Password";
-            this.txt_cp.SelectedText = "";
-            this.txt_cp.Size = new System.Drawing.Size(235, 36);
-            this.txt_cp.TabIndex = 25;
-            this.txt_cp.TextChanged += new System.EventHandler(this.txt_phone_TextChanged);
-            // 
-            // txt_phone
-            // 
-            this.txt_phone.Animated = true;
-            this.txt_phone.AutoRoundedCorners = true;
-            this.txt_phone.BorderRadius = 17;
-            this.txt_phone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_phone.DefaultText = "";
-            this.txt_phone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_phone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_phone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_phone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_phone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txt_phone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_phone.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_phone.IconLeft = global::FinalProject.Properties.Resources.phone_504;
-            this.txt_phone.Location = new System.Drawing.Point(307, 137);
-            this.txt_phone.Name = "txt_phone";
-            this.txt_phone.PasswordChar = '●';
-            this.txt_phone.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txt_phone.PlaceholderText = " Phone";
-            this.txt_phone.SelectedText = "";
-            this.txt_phone.Size = new System.Drawing.Size(235, 36);
-            this.txt_phone.TabIndex = 26;
-            this.txt_phone.TextChanged += new System.EventHandler(this.txt_cp_TextChanged);
             // 
             // signup
             // 

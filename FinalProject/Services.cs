@@ -15,6 +15,7 @@ namespace FinalProject
     {
         public Services()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
         }
         private Form activeForm = null;

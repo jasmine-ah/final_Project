@@ -80,6 +80,12 @@
     <Compile Include="admin login.Designer.cs">
       <DependentUpon>admin login.cs</DependentUpon>
     </Compile>
+    <Compile Include="adminHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminHomePage.Designer.cs">
+      <DependentUpon>adminHomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin login.resx">
       <DependentUpon>admin login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminHomePage.resx">
+      <DependentUpon>adminHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_page.resx">
       <DependentUpon>Admin_page.cs</DependentUpon>

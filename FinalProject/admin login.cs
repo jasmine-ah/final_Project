@@ -21,7 +21,7 @@ namespace FinalProject
         {
             if (textBox1.Text=="" && textBox2.Text == "")
             {
-                admin_page screen = new admin_page();
+                adminHomePage screen = new adminHomePage();
                 screen.Show();
                 this.Hide();
             }

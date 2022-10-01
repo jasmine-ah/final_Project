@@ -119,6 +119,11 @@ namespace FinalProject
                 this.Hide();
             }
         }
+
+        private void pn_login_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

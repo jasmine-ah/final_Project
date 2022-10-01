@@ -46,5 +46,10 @@ namespace FinalProject
             admin_login ad = new admin_login();
             ad.Show();
         }
+
+        private void adminHomePage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

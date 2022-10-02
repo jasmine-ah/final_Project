@@ -14,6 +14,7 @@ namespace FinalProject.serviceForms
     {
         public dj()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
         }
 

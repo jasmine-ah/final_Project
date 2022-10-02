@@ -47,10 +47,9 @@ namespace FinalProject
             ad.Show();
         }
 
-        private void adminHomePage_Load(object sender, EventArgs e)
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
-       
     }
 }

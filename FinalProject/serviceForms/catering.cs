@@ -14,6 +14,7 @@ namespace FinalProject.serviceForms
     {
         public catering()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
         }
 
@@ -23,6 +24,11 @@ namespace FinalProject.serviceForms
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void catering_Load(object sender, EventArgs e)
         {
 
         }

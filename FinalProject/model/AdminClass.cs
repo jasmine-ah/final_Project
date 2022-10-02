@@ -24,12 +24,12 @@ namespace FinalProject.model
         public string Occupation { get; set; }
         public string Gender { get; set; }
 
-
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+        SqlConnection connection = new SqlConnection(connectionString);
         public void save()
         {
             Aclass.Add(this);
-            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
-            SqlConnection connection = new SqlConnection(connectionString);
+            
             try
             {
                

@@ -14,6 +14,7 @@ namespace FinalProject.serviceForms
     {
         public beauty()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
         }
 

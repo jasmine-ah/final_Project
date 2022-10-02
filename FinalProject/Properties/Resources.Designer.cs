@@ -63,6 +63,56 @@ namespace FinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap camera_6734 {
+            get {
+                object obj = ResourceManager.GetObject("camera-6734", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dryer_1593 {
+            get {
+                object obj = ResourceManager.GetObject("dryer-1593", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fork_and_knife_12959 {
+            get {
+                object obj = ResourceManager.GetObject("fork-and-knife-12959", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gift_box_and_hearts_11420 {
+            get {
+                object obj = ResourceManager.GetObject("gift-box-and-hearts-11420", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap location_2952 {
+            get {
+                object obj = ResourceManager.GetObject("location-2952", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login_password_11924 {
             get {
                 object obj = ResourceManager.GetObject("login-password-11924", resourceCulture);
@@ -86,6 +136,36 @@ namespace FinalProject.Properties {
         internal static System.Drawing.Bitmap mail_2564 {
             get {
                 object obj = ResourceManager.GetObject("mail-2564", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap musical_notes_10190 {
+            get {
+                object obj = ResourceManager.GetObject("musical-notes-10190", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap musical_notes_10190__1_ {
+            get {
+                object obj = ResourceManager.GetObject("musical-notes-10190 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap party_confetti_2994 {
+            get {
+                object obj = ResourceManager.GetObject("party-confetti-2994", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

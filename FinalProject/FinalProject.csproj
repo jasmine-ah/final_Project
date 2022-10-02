@@ -215,6 +215,9 @@
     <EmbeddedResource Include="serviceForms\photography.resx">
       <DependentUpon>photography.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="serviceForms\venue.resx">
+      <DependentUpon>venue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="signInfo.resx">
       <DependentUpon>signInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +295,14 @@
     <None Include="Resources\user-6769.png" />
     <None Include="Resources\login-password-11924.png" />
     <None Include="Resources\user-4254.png" />
+    <None Include="Resources\musical-notes-10190.png" />
+    <None Include="Resources\musical-notes-10190 %281%29.png" />
+    <None Include="Resources\location-2952.png" />
+    <None Include="Resources\fork-and-knife-12959.png" />
+    <None Include="Resources\dryer-1593.png" />
+    <None Include="Resources\camera-6734.png" />
+    <None Include="Resources\party-confetti-2994.png" />
+    <None Include="Resources\gift-box-and-hearts-11420.png" />
     <Content Include="Scripts\fontawesome\all.js" />
     <Content Include="Scripts\fontawesome\all.min.js" />
     <Content Include="Scripts\fontawesome\brands.js" />

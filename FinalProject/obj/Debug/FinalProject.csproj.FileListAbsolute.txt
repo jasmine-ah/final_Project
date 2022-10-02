@@ -179,3 +179,4 @@ C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalPro
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.serviceForms.catering.resources
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.serviceForms.dj.resources
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.serviceForms.photography.resources
+C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.serviceForms.venue.resources

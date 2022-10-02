@@ -14,6 +14,7 @@ namespace FinalProject.serviceForms
     {
         public photography()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
         }
 
@@ -43,6 +44,11 @@ namespace FinalProject.serviceForms
         }
 
         private void photography_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

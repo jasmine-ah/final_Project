@@ -21,7 +21,7 @@ namespace FinalProject
         {
             if (ActiveForm != null)
             {
-                ActiveMdiForm.Close();
+                ActiveForm.Close();
             }
             employee_page emp = new employee_page();
             emp.Show();

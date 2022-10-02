@@ -19,9 +19,9 @@ namespace FinalProject
 
         private void employeeManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ActiveMdiChild != null)
+            if (ActiveForm != null)
             {
-                ActiveMdiChild.Close();
+                ActiveMdiForm.Close();
             }
             employee_page emp = new employee_page();
             emp.Show();
@@ -29,9 +29,9 @@ namespace FinalProject
 
         private void bookingManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ActiveMdiChild != null)
+            if (ActiveForm != null)
             {
-                ActiveMdiChild.Close();
+                ActiveForm.Close();
             }
             Material mat = new Material();
             mat.Show();
@@ -39,9 +39,9 @@ namespace FinalProject
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ActiveMdiChild != null)
+            if (ActiveForm != null)
             {
-                ActiveMdiChild.Close();
+                ActiveForm.Close();
             }
             admin_login ad = new admin_login();
             ad.Show();

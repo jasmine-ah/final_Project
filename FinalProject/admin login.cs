@@ -47,7 +47,7 @@ namespace FinalProject
             {
                 adminHomePage screen=new adminHomePage();
                 screen.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {

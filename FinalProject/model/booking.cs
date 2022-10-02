@@ -35,12 +35,12 @@ namespace FinalProject.model
                 MessageBox.Show("connection successful!!!");
                 // string gen;
 
-                string Query = "exec ADDEMP @fname,@lname,@payement,@wd,@guests;";
+                string Query = "exec ADDEMP @fname,@lname,@payment,@wd,@guests;";
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
                 cmd.Parameters.AddWithValue("@fname", this.firstName);
                 cmd.Parameters.AddWithValue("@lname", this.lastName);
-                cmd.Parameters.AddWithValue("@payement", this.Payment);
+                cmd.Parameters.AddWithValue("@payment", this.Payment);
                 cmd.Parameters.AddWithValue("@wd", this.weddingDate);
                 cmd.Parameters.AddWithValue("@guests", this.guests);
 
@@ -74,7 +74,7 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "select * from employee;";
+                string Query = "select * from sign_up;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -166,8 +166,8 @@ namespace FinalProject.model
                 SqlCommand cmd = new SqlCommand(Query, connection);
                               
                 cmd.Parameters.AddWithValue("@wd", date);
-                cmd.Parameters.AddWithValue("@email", guests);
-                cmd.Parameters.AddWithValue("@occupation", cb);
+                cmd.Parameters.AddWithValue("@guests", guests);
+                cmd.Parameters.AddWithValue("@payment", cb);
                 
 
                 var result = cmd.ExecuteNonQuery();

@@ -143,5 +143,15 @@ namespace FinalProject
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (ActiveForm != null)
+            {
+                ActiveForm.Close();
+            }
+            adminHomePage form1 = new adminHomePage();
+            form1.Show();
+        }
     }
 }

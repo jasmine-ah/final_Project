@@ -60,5 +60,15 @@ namespace FinalProject
         {
 
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            if (ActiveForm != null)
+            {
+                ActiveForm.Close();
+            }
+            adminHomePage home = new adminHomePage();
+            home.Show();
+        }
     }
 }

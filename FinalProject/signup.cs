@@ -149,9 +149,9 @@ namespace FinalProject
 
         private void label10_Click(object sender, EventArgs e)
         {
-            if (ActiveMdiChild != null)
+            if (ActiveForm != null)
             {
-                ActiveMdiChild.Close();
+                ActiveForm.Close();
             }
             homePage home = new homePage();
             home.Show();

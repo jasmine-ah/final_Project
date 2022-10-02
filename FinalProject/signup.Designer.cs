@@ -56,7 +56,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(39, 260);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 16);
+            this.label8.Size = new System.Drawing.Size(105, 19);
             this.label8.TabIndex = 15;
             this.label8.Text = "Wedding Date";
             // 
@@ -269,7 +269,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(148, 24);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(192, 27);
+            this.label9.Size = new System.Drawing.Size(242, 36);
             this.label9.TabIndex = 18;
             this.label9.Text = "Create Account";
             // 
@@ -281,7 +281,7 @@
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(500, 378);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 15);
+            this.label10.Size = new System.Drawing.Size(42, 17);
             this.label10.TabIndex = 16;
             this.label10.Text = "login";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -300,7 +300,7 @@
             this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(135)))));
             this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(307, 318);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(307, 314);
             this.guna2GradientButton2.Name = "guna2GradientButton2";
             this.guna2GradientButton2.Size = new System.Drawing.Size(235, 45);
             this.guna2GradientButton2.TabIndex = 15;
@@ -309,7 +309,7 @@
             // 
             // signup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(965, 608);

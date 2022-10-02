@@ -170,4 +170,8 @@ C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.employee_page.resources
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.Material.resources
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.signInfo.resources
-C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.adminHomePage.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.employee_page.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.Material.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.serviceForms.photography.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.serviceForms.dj.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.serviceForms.catering.resources

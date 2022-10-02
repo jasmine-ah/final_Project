@@ -47,7 +47,7 @@ namespace FinalProject
 
         private void guna2Button7_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new catering());
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace FinalProject
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new photography());
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
@@ -81,13 +81,13 @@ namespace FinalProject
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new dj());
         }
 
         private void guna2Button1_Click_2(object sender, EventArgs e)
         {
-            homePage s = new homePage();
-            s.Show();
+           /* homePage s = new homePage();
+            s.Show();*/
             this.Close();
 
         }

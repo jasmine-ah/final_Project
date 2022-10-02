@@ -261,7 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Snow;
+            this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1064, 519);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label5);
@@ -282,6 +282,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.ForeColor = System.Drawing.Color.Brown;
             this.Name = "signInfo";
             this.Text = "signInfo";
             this.Load += new System.EventHandler(this.signInfo_Load);

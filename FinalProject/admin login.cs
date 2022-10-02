@@ -18,50 +18,43 @@ namespace FinalProject
             this.DoubleBuffered = true;
             InitializeComponent();
         }
-        
 
         private void button1_Click(object sender, EventArgs e)
         {
-        }
 
+        }
         private void button2_Click(object sender, EventArgs e)
         {
-            
+          //  System.Environment.Exit(0);
         }
-        //Drag Form
-        [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
-
-        [DllImport("user32.Dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd,int wMeg, int wParam,int lParam);
-
+        [DllImport("user.Dll",EntryPoint ="SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWind,int wMeg,int wParam,int lParam);
         private void admin_login_Load(object sender, EventArgs e)
         {
 
         }
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+
         }
-
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        private void guna2GradientButton1_Click(object sender,EventArgs e)
         {
-
-            if (guna2TextBox1.Text == "" && guna2TextBox2.Text == "")
+            if(guna2TextBox1.Text=="" && guna2TextBox2.Text == "")
             {
-                adminHomePage screen = new adminHomePage();
+                adminHomePage screen=new adminHomePage();
                 screen.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Incorrect information ");
+                MessageBox.Show("Incorrect infomation");
             }
         }
-
-        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        private void guna2GradientButton2_Click(object sender,EventArgs e)
         {
             System.Environment.Exit(0);
         }

@@ -16,5 +16,15 @@ namespace FinalProject.serviceForms
         {
             InitializeComponent();
         }
+
+        private void dj_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

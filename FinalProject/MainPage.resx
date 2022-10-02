@@ -1892,7 +1892,20 @@
 </value>
   </data>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>=======
+    <value>The package includes:
+ HEAD
+Hair and Makup
+Apppetizers and Meal service
+Wedding cake
+Bar service
+Champagne and Cider toast
+Invitations and Accessories
+Dj and MC service
+Chairs and Linens
+Centerpieces
+Photobooth
+price $52000</value>
+=======
 Venue Booking
 Pre-wedding Beauty services
 Wedding day beauty services
@@ -1901,8 +1914,7 @@ Photography service
 Decor services with Invitations
 Dj and MC services
 Price 600,000 ETB
-
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; a16b5d87bc583264472af433c9cbd4660afec21b</value>
+>>>>>>> a16b5d87bc583264472af433c9cbd4660afec21b
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

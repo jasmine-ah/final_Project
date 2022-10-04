@@ -53,9 +53,8 @@
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.Silver;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.LemonChiffon;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(351, 580);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(276, 471);
             this.guna2GradientPanel1.TabIndex = 12;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
@@ -63,12 +62,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(65, 91);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(49, 74);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(226, 20);
+            this.label9.Size = new System.Drawing.Size(194, 17);
             this.label9.TabIndex = 7;
             this.label9.Text = "THIS SERVICE INCLUDES :";
             // 
@@ -76,12 +74,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(33, 159);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(291, 40);
+            this.label2.Size = new System.Drawing.Size(253, 34);
             this.label2.TabIndex = 1;
             this.label2.Text = "* CLASSIC WEDDING RECEPTION(5\r\n        HOURS)";
             // 
@@ -89,12 +86,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(33, 215);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(3, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(284, 20);
+            this.label3.Size = new System.Drawing.Size(245, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "* PROFESSIONAL AND FUN DJ/MC";
             // 
@@ -102,12 +98,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(33, 267);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(3, 209);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(321, 40);
+            this.label6.Size = new System.Drawing.Size(278, 34);
             this.label6.TabIndex = 5;
             this.label6.Text = "*PROFFESIONAL SOUND EQUIPMENT \r\nAND WEDDING LIGTHING PACKAGE";
             // 
@@ -115,12 +110,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(33, 335);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(3, 257);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(231, 20);
+            this.label4.Size = new System.Drawing.Size(200, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "* SET UP FOR 2 LOCATIONS";
             // 
@@ -128,12 +122,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(542, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(410, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 30);
+            this.label1.Size = new System.Drawing.Size(334, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "GET THE PARTY STARTED!";
             // 
@@ -141,29 +134,27 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(567, 149);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(440, 125);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(397, 44);
+            this.label8.Size = new System.Drawing.Size(375, 36);
             this.label8.TabIndex = 11;
             this.label8.Text = "We will work with you to ensure you and your\r\nguests have one of the best time ou" +
     "t to remember.";
             // 
             // dj
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1103, 580);
+            this.ClientSize = new System.Drawing.Size(827, 471);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "dj";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "dj";

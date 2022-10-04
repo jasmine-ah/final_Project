@@ -127,5 +127,17 @@ namespace FinalProject
         {
            this.Close();
         }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Close();
+            custom c = new custom();
+            c.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ///save customer info on your database
+        }
     }
 }

@@ -71,7 +71,7 @@ namespace FinalProject
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            venue v1 = new venue();
+            custom v1 = new custom();
             v1.Show();
         }
     }

@@ -19,13 +19,13 @@ namespace FinalProject.model
         public string weddingDate { get; set; }
         public string Payment { get; set; }
         public int guests { get; set; }
-        
 
 
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
         public void save()
         {
             Aclass.Add(this);
-            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+           // string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -66,7 +66,7 @@ namespace FinalProject.model
         static public List<booking> GetAllProducts()
         {
             List<booking> Bclass = new List<booking>();
-            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+            
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -113,7 +113,7 @@ namespace FinalProject.model
         {
             List<booking> Bclass = new List<booking>();
             SqlConnection connection;
-            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+          //  string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             connection = new SqlConnection(connectionString);
             string Query = "exec bookDisplay @id;";
             try
@@ -154,7 +154,7 @@ namespace FinalProject.model
         }
         public static void update( string date,string guests,string cb)
         {
-            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+            //string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
 
             try

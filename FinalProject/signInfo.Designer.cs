@@ -47,6 +47,7 @@
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -240,6 +241,7 @@
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Customize your own package";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
             // 
             // label5
             // 
@@ -257,12 +259,24 @@
             this.numericUpDown1.Size = new System.Drawing.Size(82, 20);
             this.numericUpDown1.TabIndex = 59;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(909, 447);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 27);
+            this.button1.TabIndex = 60;
+            this.button1.Text = "Done Booking";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // signInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1064, 519);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.radioButton6);
@@ -313,5 +327,6 @@
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button1;
     }
 }

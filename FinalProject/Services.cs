@@ -41,11 +41,6 @@ namespace FinalProject
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2Button7_Click(object sender, EventArgs e)
         {
             openChildForm(new catering());
@@ -54,32 +49,17 @@ namespace FinalProject
         private void guna2Button6_Click(object sender, EventArgs e)
         {
             openChildForm(new beauty());
-            /*
-            beauty b = new beauty();
-            b.Show();
-            this.Close();*/
-        }
+           }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new decor());
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             openChildForm(new photography());
         }
-
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             openChildForm(new dj());
@@ -101,17 +81,27 @@ namespace FinalProject
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-         openChildForm(new MainPage());
+            this.Close();
+            MainPage m = new MainPage();
+            m.Show();
+          
         }
 
         private void guna2Button10_Click(object sender, EventArgs e)
         {
-            openChildForm(new signInfo());
+            this.Close();
+            signInfo s=new signInfo();
+            s.Show();
         }
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            openChildForm(new venue());
         }
     }
 }

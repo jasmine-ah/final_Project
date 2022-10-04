@@ -24,10 +24,11 @@ namespace FinalProject.model
         public string Occupation { get; set; }
         public string Gender { get; set; }
 
-        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
-        SqlConnection connection = new SqlConnection(connectionString);
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        
         public void save()
         {
+            SqlConnection connection = new SqlConnection(connectionString);
             Aclass.Add(this);
             
             try
@@ -71,7 +72,7 @@ namespace FinalProject.model
         static public List<AdminClass> GetAllProducts()
         {
             List<AdminClass> Bclass = new List<AdminClass>();
-            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+            //string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -118,7 +119,7 @@ namespace FinalProject.model
         {
             List<AdminClass> Bclass = new List<AdminClass>();
             SqlConnection connection;
-            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+          //  string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             connection = new SqlConnection(connectionString);
             string Query = "select * from employee;";
             try
@@ -158,7 +159,7 @@ namespace FinalProject.model
         }
         public static void update(string id,string fn,string ln, string cont, string date, string email,string occup,string gender)
         {
-            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+           // string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
 
             try
@@ -200,7 +201,7 @@ namespace FinalProject.model
 
         public static void delete(string id)
         {
-            string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+           // string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
 
             try

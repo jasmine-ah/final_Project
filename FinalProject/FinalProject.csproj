@@ -123,6 +123,12 @@
     <Compile Include="serviceForms\catering.Designer.cs">
       <DependentUpon>catering.cs</DependentUpon>
     </Compile>
+    <Compile Include="serviceForms\decor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="serviceForms\decor.Designer.cs">
+      <DependentUpon>decor.cs</DependentUpon>
+    </Compile>
     <Compile Include="serviceForms\dj.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,11 +182,11 @@
     <Compile Include="Services.Designer.cs">
       <DependentUpon>Services.cs</DependentUpon>
     </Compile>
-    <Compile Include="venue.cs">
+    <Compile Include="custom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="venue.Designer.cs">
-      <DependentUpon>venue.cs</DependentUpon>
+    <Compile Include="custom.Designer.cs">
+      <DependentUpon>custom.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="about_us.resx">
       <DependentUpon>about_us.cs</DependentUpon>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="serviceForms\catering.resx">
       <DependentUpon>catering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="serviceForms\decor.resx">
+      <DependentUpon>decor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="serviceForms\dj.resx">
       <DependentUpon>dj.cs</DependentUpon>
@@ -244,8 +253,8 @@
     <EmbeddedResource Include="Services.resx">
       <DependentUpon>Services.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="venue.resx">
-      <DependentUpon>venue.cs</DependentUpon>
+    <EmbeddedResource Include="custom.resx">
+      <DependentUpon>custom.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -63,11 +63,12 @@
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.Animated = true;
             this.guna2ControlBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.MistyRose;
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.SaddleBrown;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
             this.guna2ControlBox1.Location = new System.Drawing.Point(1007, 12);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);

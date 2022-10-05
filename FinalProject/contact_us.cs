@@ -14,7 +14,13 @@ namespace FinalProject
     {
         public contact_us()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
+        }
+
+        private void contact_us_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

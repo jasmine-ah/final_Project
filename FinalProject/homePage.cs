@@ -16,6 +16,7 @@ namespace FinalProject
     {
         public homePage()
         {
+           this. DoubleBuffered = true;
             InitializeComponent();
         }
 
@@ -74,7 +75,7 @@ namespace FinalProject
             form1.Show();
         }
 
-        private void servicesToolStripMenuItem_Click(object sender, EventArgs e)
+      /*  private void servicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(ActiveMdiChild != null)
             {
@@ -82,7 +83,7 @@ namespace FinalProject
             }
             Services s = new Services();
             s.Show();
-        }
+        }*/
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -111,13 +112,23 @@ namespace FinalProject
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-
-            {
-
-                MainPage screen = new MainPage();
-                screen.Show();
-                this.Hide();
+            var log = Class1.findOne(guna2TextBox3.Text, guna2TextBox4.Text);
+            if (log == null){
+                MessageBox.Show("You don't exist SUCKER!");
             }
+            else
+            {
+                {
+
+                if (ActiveMdiChild != null)
+                {
+                    ActiveMdiChild.Close();
+                }
+                Services s = new Services();
+                s.Show();
+            }
+            }
+            
         }
 
         private void pn_login_Paint(object sender, PaintEventArgs e)

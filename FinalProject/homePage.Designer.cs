@@ -34,7 +34,6 @@
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
@@ -48,10 +47,10 @@
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pn_login = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.pn_login.SuspendLayout();
@@ -63,8 +62,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutUsToolStripMenuItem,
             this.contactInfoToolStripMenuItem,
-            this.adminLoginToolStripMenuItem,
-            this.servicesToolStripMenuItem});
+            this.adminLoginToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
@@ -93,13 +91,6 @@
             this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(105, 26);
             this.adminLoginToolStripMenuItem.Text = "Admin login";
             this.adminLoginToolStripMenuItem.Click += new System.EventHandler(this.adminLoginToolStripMenuItem_Click);
-            // 
-            // servicesToolStripMenuItem
-            // 
-            this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
-            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(104, 26);
-            this.servicesToolStripMenuItem.Text = "Our Services";
-            this.servicesToolStripMenuItem.Click += new System.EventHandler(this.servicesToolStripMenuItem_Click);
             // 
             // errorProvider1
             // 
@@ -240,18 +231,6 @@
             this.pn_login.TabIndex = 20;
             this.pn_login.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_login_Paint);
             // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.Animated = true;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(928, 12);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(37, 29);
-            this.guna2ControlBox1.TabIndex = 20;
-            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
-            // 
             // guna2TextBox3
             // 
             this.guna2TextBox3.Animated = true;
@@ -272,7 +251,7 @@
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
             this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.guna2TextBox3.PlaceholderText = "Username";
+            this.guna2TextBox3.PlaceholderText = "Email";
             this.guna2TextBox3.SelectedText = "";
             this.guna2TextBox3.Size = new System.Drawing.Size(235, 36);
             this.guna2TextBox3.TabIndex = 11;
@@ -324,6 +303,18 @@
             this.guna2Button1.Text = "Create Account";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.Animated = true;
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(928, 12);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(37, 29);
+            this.guna2ControlBox1.TabIndex = 20;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
+            // 
             // homePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -362,7 +353,6 @@
         private System.Windows.Forms.ToolStripMenuItem contactInfoToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolStripMenuItem adminLoginToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem servicesToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;

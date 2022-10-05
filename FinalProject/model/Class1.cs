@@ -11,8 +11,6 @@ namespace FinalProject.model
 {
     internal class Class1
     {
-
-
         static private List<Class1> class1 = new List<Class1>();
         public int id { get; set; }
         public string firstName { get; set; }
@@ -24,7 +22,7 @@ namespace FinalProject.model
         public string contactInfo { get; set; }
 
 
-     public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+     public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
 
         public void save()
         {
@@ -47,9 +45,16 @@ namespace FinalProject.model
                 cmd.Parameters.AddWithValue("@password", this.Password);
                 cmd.Parameters.AddWithValue("@wd", this.weddingDate);
 
-                var result = cmd.ExecuteNonQuery();
+                 cmd.ExecuteNonQuery();
                 
                 MessageBox.Show("Successfully Signed up!!!");
+
+                string query2 = "exec sp_insert @email,@password";
+
+                SqlCommand cmd2 = new SqlCommand(query2, connection);
+                cmd2.Parameters.AddWithValue("@password", this.Password);
+                cmd2.Parameters.AddWithValue("@email", this.Email);
+                cmd2.ExecuteNonQuery();
 
 
 
@@ -73,12 +78,12 @@ namespace FinalProject.model
             List<Class1> temp = new List<Class1>();
             try
             {
-               // string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+               string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "select email,password from sign_up ;";
+                string Query = "select * from login ;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -86,29 +91,15 @@ namespace FinalProject.model
                 while (sdr.Read())
 
                 {
-                    string em, pwd;
-
-
-                    em = (string)sdr["email"];
-
-                    pwd = (string)sdr["password"];
-
+                    Class1 c1 = new Class1();
                     
+                    c1.Email = (string)sdr["email"];
 
-                    if (em==email && pwd == password)
-                    {
+                    c1.Password = (string)sdr["password"];
+                    temp.Add(c1);
 
-                        signInfo screen = new signInfo();
-                        screen.Show();
-                        
-                        //this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Incorrect Email or Password");
-                    }
-                   
                 }
+                
 
                 connection.Close();
 
@@ -120,7 +111,7 @@ namespace FinalProject.model
                 MessageBox.Show(ex.Message);
 
             };
-            return temp.Find(c => c.Email == email);
+            return temp.Find(c => c.Email == email && c.Password == password);
         }
 
 

@@ -14,6 +14,7 @@ namespace FinalProject
 {
     public partial class signInfo : Form
     {
+        int id;
         public signInfo()
         {
             InitializeComponent();
@@ -37,49 +38,49 @@ namespace FinalProject
 
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == "First")
+            if (bFN.Text == "First")
             {
-                textBox2.Text = "";
-                textBox2.ForeColor = Color.Black;       
+                bFN.Text = "";
+                bFN.ForeColor = Color.Black;       
             }
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (bFN.Text == "")
             {
-                textBox2.Text = "First";
-                textBox2.ForeColor = Color.Silver;
+                bFN.Text = "First";
+                bFN.ForeColor = Color.Silver;
             }
 
         }
 
         private void textBox3_Enter(object sender, EventArgs e)
         {
-            if (textBox3.Text == "Last")
+            if (bLN.Text == "Last")
             {
-                textBox3.Text = "";
-                textBox3.ForeColor = Color.Black;
+                bLN.Text = "";
+                bLN.ForeColor = Color.Black;
             }
 
         }
 
         private void textBox3_Leave(object sender, EventArgs e)
         {
-            if (textBox3.Text == "")
+            if (bLN.Text == "")
             {
-                textBox3.Text = "Last";
-                textBox3.ForeColor = Color.Silver;
+                bLN.Text = "Last";
+                bLN.ForeColor = Color.Silver;
             }
 
         }
 
         private void textBox6_Enter(object sender, EventArgs e)
         {
-            if (textBox6.Text == "First")
+            if (gFN.Text == "First")
             {
-                textBox6.Text = "";
-                textBox6.ForeColor = Color.Black;
+                gFN.Text = "";
+                gFN.ForeColor = Color.Black;
             }
 
         }
@@ -87,29 +88,29 @@ namespace FinalProject
         private void textBox6_Leave(object sender, EventArgs e)
         {
 
-            if (textBox6.Text == "")
+            if (gFN.Text == "")
             {
-                textBox6.Text = "First";
-                textBox6.ForeColor = Color.Silver;
+                gFN.Text = "First";
+                gFN.ForeColor = Color.Silver;
             }
         }
 
         private void textBox7_Enter(object sender, EventArgs e)
         {
-            if (textBox7.Text == "Last")
+            if (gLN.Text == "Last")
             {
-                textBox7.Text = "";
-                textBox7.ForeColor = Color.Black;
+                gLN.Text = "";
+                gLN.ForeColor = Color.Black;
             }
         }
 
         private void textBox7_Leave(object sender, EventArgs e)
         {
 
-            if (textBox7.Text == "")
+            if (gLN.Text == "")
             {
-                textBox7.Text = "Last";
-                textBox7.ForeColor = Color.Silver;
+                gLN.Text = "Last";
+                gLN.ForeColor = Color.Silver;
             }
         }
 
@@ -137,7 +138,51 @@ namespace FinalProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ///save customer info on your database
+            string pn = null;
+            double pr = 0.0;
+            if (rbBasic.Checked)
+            {
+                pn = "Basic";
+                pr = 150000;
+            }
+                
+            else if (rbRoyal.Checked)
+            {
+                pn = "Royal";
+                pr = 600000;
+            }
+               
+            else if (rbLuxury.Checked)
+            {
+                pn = "Luxury";
+                pr = 450000;
+            }
+               
+            else if (rbPremium.Checked)
+            {
+                pn = "Premium";
+                pr = 300000;
+            }
+
+
+            //save customer info on your database
+            Class2 c2 = new Class2
+            {
+                Id = id,
+                BrideName = bFN.Text + " " + bLN.Text,
+                GroomName = gFN.Text + " " + gLN.Text,
+                PackageName = pn,
+                price = pr,
+                GuestNumber = int.Parse(tbGuestNum.Text)
+            };
+            c2.save();
+        }
+
+      
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }

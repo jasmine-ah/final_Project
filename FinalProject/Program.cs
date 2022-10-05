@@ -17,7 +17,7 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new homePage());
+            Application.Run(new signInfo());
             
            
         }

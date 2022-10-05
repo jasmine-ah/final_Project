@@ -74,5 +74,10 @@ namespace FinalProject
             custom v1 = new custom();
             v1.Show();
         }
+
+        private void view_btn_4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

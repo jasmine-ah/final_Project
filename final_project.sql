@@ -15,9 +15,16 @@ CREATE TABLE login(
     email varchar(50) NOT NULL,
     password varchar(10) NOT NULL
 );
+select * from login
+create proc sp_insert
+@email varchar( 50),@password varchar(10)
+as
+begin
+insert into login values( @email, @password)
+end
+
 /*CREATE LOGIN admin WITH PASSWORD= 'admin' 
 CREATE USER admin FOR LOGIN admin;
-
 CREATE LOGIN user WITH PASSWORD=' '
 CREATE USER user1 FOR LOGIN user;
  */
@@ -64,7 +71,7 @@ CREATE TABLE employee(
     firstName varchar(25),
     lastName varchar(25),
     contactInfo varchar(15),
-    DOB DATE,
+    DOB varchar(50),
     email varchar(50),
     Occupation varchar(25),
     gender varchar(6)
@@ -72,11 +79,12 @@ CREATE TABLE employee(
 select *from employee
 
 GO
-CREATE PROCEDURE ADDEMP
+alter PROCEDURE ADDEMP
+
 @fn varchar(25),
 @ln varchar(25),
 @continfo varchar(15),
-@DOB DATE,
+@DOB varchar(50),
 @email varchar(50),
 @Occupation varchar(25),
 @gender varchar(6)
@@ -86,11 +94,11 @@ BEGIN
 end
 GO
 
-CREATE PROCEDURE UPDATEEMP
+alter PROCEDURE UPDATEEMP
 @fn varchar(25),
 @ln varchar(25),
 @continfo varchar(15),
-@DOB DATE,
+@DOB varchar(50),
 @email varchar(50),
 @Occupation varchar(50),
 @gender varchar(6),
@@ -154,7 +162,7 @@ CREATE TABLE updatebooking(
 );
 
 GO
-CREATE TRIGGER trigUpdate 
+CREATE TRIGGER trigUpdate
 ON booking
 AFTER UPDATE 
 AS BEGIN
@@ -162,3 +170,84 @@ INSERT updatebooking(bookId,oldValue,newValue,updatedTime)
 SELECT bookId, d.oldValue,i.newValue,i.updatedTime FROM inserted i JOIN deleted d ON i.bookId=d.bookId
 END
 GO
+--------------------------------------booking-------------------------------------------------------------------
+create table booked
+(
+userId int,
+firstName varchar(20),
+lastName varchar(20),
+WD varchar(50),
+guests int,
+payment varchar (20)
+);
+
+
+create table weddingInfo
+(
+id int,
+groomName varchar(100),
+brideName varchar(100),
+packageName varchar(50),
+price decimal(10, 2),
+guests int
+);
+select * from weddingInfo
+drop table weddingInfo
+
+
+
+alter PROCEDURE spInsert
+@id int,
+@gn varchar(100),
+@bn varchar(100),
+@packageName varchar(50),
+@price decimal(10,2),
+@guests int
+AS
+BEGIN
+    insert into weddingInfo values(@id, @gn,@bn, @packageName, @price, @guests)
+end
+GO
+
+create PROCEDURE spPopulate
+@id int
+AS
+	BEGIN
+		SELECT * FROM weddingInfo WHERE ID = @ID;
+
+
+
+create proc bookDisplay
+@id int
+as
+begin
+select userId,firstName,lastName,weddingDate from sign_up where userId = @id
+
+end
+
+exec bookDisplay 1
+
+create PROCEDURE UPDATEBOOK
+@wd varchar(50),
+@payment varchar(10),
+@guests varchar(6),
+@id int
+AS
+BEGIN
+    update booked set   WD = @wd, 
+    guests = @guests ,payment = @payment where userId = @id
+end
+GO
+
+
+CREATE PROCEDURE DELETEBOOK
+@id int
+AS
+BEGIN
+    delete from booked where userId = @id
+END
+GO
+
+---------------------custom---------------------------
+create table packageDetail(
+);

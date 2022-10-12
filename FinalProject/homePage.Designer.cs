@@ -51,6 +51,7 @@
             this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.pn_login.SuspendLayout();
@@ -66,7 +67,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(977, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(977, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -74,21 +75,21 @@
             // aboutUsToolStripMenuItem
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
             // contactInfoToolStripMenuItem
             // 
             this.contactInfoToolStripMenuItem.Name = "contactInfoToolStripMenuItem";
-            this.contactInfoToolStripMenuItem.Size = new System.Drawing.Size(104, 26);
+            this.contactInfoToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.contactInfoToolStripMenuItem.Text = "Contact info";
             this.contactInfoToolStripMenuItem.Click += new System.EventHandler(this.contactInfoToolStripMenuItem_Click);
             // 
             // adminLoginToolStripMenuItem
             // 
             this.adminLoginToolStripMenuItem.Name = "adminLoginToolStripMenuItem";
-            this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(105, 26);
+            this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(105, 24);
             this.adminLoginToolStripMenuItem.Text = "Admin login";
             this.adminLoginToolStripMenuItem.Click += new System.EventHandler(this.adminLoginToolStripMenuItem_Click);
             // 
@@ -315,6 +316,12 @@
             this.guna2ControlBox1.TabIndex = 20;
             this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // homePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -329,6 +336,7 @@
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
@@ -369,5 +377,6 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel pn_login;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

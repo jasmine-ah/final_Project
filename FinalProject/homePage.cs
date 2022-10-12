@@ -112,21 +112,28 @@ namespace FinalProject
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            var log = Class1.findOne(guna2TextBox3.Text, guna2TextBox4.Text);
-            if (log == null){
-                MessageBox.Show("You don't exist SUCKER!");
+            if (guna2TextBox3.Text == "" && guna2TextBox4.Text == "")
+            {
+                MessageBox.Show("No information entered.");
             }
             else
             {
+                var log = Class1.findOne(guna2TextBox3.Text, guna2TextBox4.Text);
+                if (log == null)
                 {
-
-                if (ActiveMdiChild != null)
-                {
-                    ActiveMdiChild.Close();
+                    MessageBox.Show("You entered incorrect information try again ");
                 }
-                Services s = new Services();
-                s.Show();
-            }
+                else
+                {
+                    {
+                        if (ActiveMdiChild != null)
+                        {
+                            ActiveMdiChild.Close();
+                        }
+                        Services s = new Services();
+                        s.Show();
+                    }
+                }
             }
             
         }

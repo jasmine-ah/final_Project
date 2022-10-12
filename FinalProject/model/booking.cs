@@ -14,52 +14,52 @@ namespace FinalProject.model
 
 
         public int id { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string weddingDate { get; set; }
+        public string groomName { get; set; }
+        public string brideName { get; set; }
+        public DateTime weddingDate { get; set; }
         public string Payment { get; set; }
         public int guests { get; set; }
 
 
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
         public void save()
         {
             Aclass.Add(this);
            // string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
-            SqlConnection connection = new SqlConnection(connectionString);
-            try
-            {
+            //SqlConnection connection = new SqlConnection(connectionString);
+            //try
+            //{
 
 
-                connection.Open();
-                MessageBox.Show("connection successful!!!");
-                // string gen;
+            //    connection.Open();
+            //    MessageBox.Show("connection successful!!!");
+            //    // string gen;
 
-                string Query = "exec ADDEMP @fname,@lname,@payment,@wd,@guests;";
+            //    string Query = "exec ADDEMP @fname,@lname,@payment,@guests;";
 
-                SqlCommand cmd = new SqlCommand(Query, connection);
-                cmd.Parameters.AddWithValue("@fname", this.firstName);
-                cmd.Parameters.AddWithValue("@lname", this.lastName);
-                cmd.Parameters.AddWithValue("@payment", this.Payment);
-                cmd.Parameters.AddWithValue("@wd", this.weddingDate);
-                cmd.Parameters.AddWithValue("@guests", this.guests);
+            //    SqlCommand cmd = new SqlCommand(Query, connection);
+            //    cmd.Parameters.AddWithValue("@fname", this.firstName);
+            //    cmd.Parameters.AddWithValue("@lname", this.lastName);
+            //    cmd.Parameters.AddWithValue("@payment", this.Payment);
+            //    //cmd.Parameters.AddWithValue("@wd", this.weddingDate);
+            //    cmd.Parameters.AddWithValue("@guests", this.guests);
 
-                var result = cmd.ExecuteNonQuery();
+            //    var result = cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Successfully Saved!!!");
+            //    MessageBox.Show("Successfully Saved!!!");
 
 
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
 
-            }
-            finally
-            {
-                connection.Close();
-            };
+            //}
+            //finally
+            //{
+            //    connection.Close();
+            //};
 
 
         }
@@ -74,7 +74,7 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "select * from sign_up;";
+                string Query = "select * from weddingInfo;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -83,15 +83,11 @@ namespace FinalProject.model
                 {
                     booking ac = new booking();
 
-                    ac.id = (int)sdr["employeeID"];
-                    ac.firstName = (string)sdr["firstName"];
-                    ac.lastName = (string)sdr["lastName"];
-                    /*ac.contactInfo = (string)sdr["ContactInfo"];
-                    ac.DateOfBirth = (string)sdr["DOB"];
-                    ac.Email = (string)sdr["email"];
-                    ac.Occupation = (string)sdr["Occupation"];
-                    ac.Gender = (string)sdr["gender"];
-*/
+                    ac.id = (int)sdr["id"];
+                    ac.groomName = (string)sdr["brideName"];
+                    ac.brideName = (string)sdr["groomName"];
+                    ac.guests = (int)sdr["guests"];
+                    ac.weddingDate = (DateTime)sdr["Weddingdate"];
 
 
                     Bclass.Add(ac);
@@ -115,7 +111,7 @@ namespace FinalProject.model
             SqlConnection connection;
           //  string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             connection = new SqlConnection(connectionString);
-            string Query = "exec bookDisplay @id;";
+            string Query = "select * from weddingInfo";
             try
             {
 
@@ -126,16 +122,17 @@ namespace FinalProject.model
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
-                cmd.Parameters.AddWithValue("@id", id);
+               // cmd.Parameters.AddWithValue("@id", id);
                 while (sdr.Read())
                 {
                     
                     booking bo = new booking();
                     
-                    bo.id = (int)sdr["employeeID"];
-                    bo.firstName = (string)sdr["firstName"];
-                    bo.lastName = (string)sdr["lastName"];                   
-                    bo.weddingDate = (string)sdr["DOB"];
+                    bo.id = (int)sdr["id"];
+                    bo.groomName = (string)sdr["brideName"];
+                    bo.brideName = (string)sdr["groomName"];
+                    bo.guests = (int)sdr["guests"];
+                    bo.weddingDate = (DateTime)sdr["WeddingDate"];
                     
 
                     Bclass.Add(bo);
@@ -152,7 +149,7 @@ namespace FinalProject.model
             
             return Bclass.Find(c => c.id == id);
         }
-        public static void update( string date,string guests,string cb)
+        public static void update( string id,string guests,string cb,string wd)
         {
             //string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
@@ -161,16 +158,17 @@ namespace FinalProject.model
             {
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
-                string Query = "exec UPDATEBOOK @wd,@guests,@payment,@id;";
+                string Query = "exec UPDATEBOOK @guests,@payment,@wd,@id;";
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
-                              
-                cmd.Parameters.AddWithValue("@wd", date);
+
+                cmd.Parameters.AddWithValue("@wd", wd);
                 cmd.Parameters.AddWithValue("@guests", guests);
                 cmd.Parameters.AddWithValue("@payment", cb);
-                
+                cmd.Parameters.AddWithValue("@id", id);
 
-                var result = cmd.ExecuteNonQuery();
+
+                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Successfully Updated!!!");
 

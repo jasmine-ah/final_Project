@@ -57,9 +57,9 @@ namespace FinalProject
 
             Regex r = new Regex(@"^([^0-9]*)$");
 
-            if (txt_cp.Text.Length != 10)
+            if (txt_phone.Text.Length != 10)
             {
-                errorProvider1.SetError(txt_cp, "Please enter 10 digits ");
+                errorProvider1.SetError(txt_phone, "Please enter 10 digits ");
             }
 
             if (string.IsNullOrEmpty(txt_password.Text))
@@ -68,12 +68,12 @@ namespace FinalProject
 
 
             }
-            if (string.IsNullOrEmpty(txt_phone.Text))
+            if (string.IsNullOrEmpty(txt_cp.Text))
             {
-                errorProvider1.SetError(txt_phone, " enter your Password again ");
-                if (txt_phone.Text != txt_password.Text)
+                errorProvider1.SetError(txt_cp, " enter your Password again ");
+                if (txt_cp.Text != txt_password.Text)
                 {
-                    errorProvider1.SetError(txt_phone, "Password Mismatch!!");
+                    errorProvider1.SetError(txt_cp, "Password Mismatch!!");
                     MessageBox.Show("Please re-enter your password correctly!!!");
                 }
 
@@ -123,7 +123,7 @@ namespace FinalProject
                         Email = (txt_email.Text),
                         contactInfo = (txt_phone.Text),
                         Password = (txt_password.Text),
-                        weddingDate = guna2DateTimePicker1.Value.ToString(),
+                       
 
 
 

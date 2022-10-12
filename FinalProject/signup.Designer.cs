@@ -29,20 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signup));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label8 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pn_Reg = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.txt_cp = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_phone = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txt_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_ln = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_fn = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.pn_Reg.SuspendLayout();
             this.SuspendLayout();
@@ -50,15 +52,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 260);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 19);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Wedding Date";
             // 
             // guna2Elipse1
             // 
@@ -68,11 +61,10 @@
             // pn_Reg
             // 
             this.pn_Reg.BackColor = System.Drawing.Color.Transparent;
+            this.pn_Reg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pn_Reg.Controls.Add(this.txt_cp);
             this.pn_Reg.Controls.Add(this.txt_phone);
             this.pn_Reg.Controls.Add(this.txt_email);
-            this.pn_Reg.Controls.Add(this.guna2DateTimePicker1);
-            this.pn_Reg.Controls.Add(this.label8);
             this.pn_Reg.Controls.Add(this.txt_password);
             this.pn_Reg.Controls.Add(this.txt_ln);
             this.pn_Reg.Controls.Add(this.txt_fn);
@@ -81,13 +73,13 @@
             this.pn_Reg.Controls.Add(this.guna2GradientButton2);
             this.pn_Reg.Cursor = System.Windows.Forms.Cursors.Default;
             this.pn_Reg.FillColor = System.Drawing.Color.White;
-            this.pn_Reg.Location = new System.Drawing.Point(326, 63);
+            this.pn_Reg.Location = new System.Drawing.Point(840, 87);
             this.pn_Reg.Name = "pn_Reg";
             this.pn_Reg.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
             this.pn_Reg.ShadowDepth = 80;
             this.pn_Reg.ShadowShift = 10;
             this.pn_Reg.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.pn_Reg.Size = new System.Drawing.Size(571, 423);
+            this.pn_Reg.Size = new System.Drawing.Size(561, 423);
             this.pn_Reg.TabIndex = 22;
             // 
             // txt_cp
@@ -106,7 +98,7 @@
             this.txt_cp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_cp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_cp.IconLeft = global::FinalProject.Properties.Resources.login_password_119241;
-            this.txt_cp.Location = new System.Drawing.Point(307, 191);
+            this.txt_cp.Location = new System.Drawing.Point(307, 209);
             this.txt_cp.Name = "txt_cp";
             this.txt_cp.PasswordChar = '●';
             this.txt_cp.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -132,7 +124,7 @@
             this.txt_phone.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_phone.IconLeft = global::FinalProject.Properties.Resources.phone_504;
-            this.txt_phone.Location = new System.Drawing.Point(307, 137);
+            this.txt_phone.Location = new System.Drawing.Point(307, 155);
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.PasswordChar = '\0';
             this.txt_phone.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -158,7 +150,7 @@
             this.txt_email.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_email.IconLeft = global::FinalProject.Properties.Resources.mail_2564;
-            this.txt_email.Location = new System.Drawing.Point(43, 137);
+            this.txt_email.Location = new System.Drawing.Point(43, 155);
             this.txt_email.Name = "txt_email";
             this.txt_email.PasswordChar = '\0';
             this.txt_email.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -166,25 +158,6 @@
             this.txt_email.SelectedText = "";
             this.txt_email.Size = new System.Drawing.Size(235, 36);
             this.txt_email.TabIndex = 24;
-            // 
-            // guna2DateTimePicker1
-            // 
-            this.guna2DateTimePicker1.Animated = true;
-            this.guna2DateTimePicker1.AutoRoundedCorners = true;
-            this.guna2DateTimePicker1.BorderRadius = 17;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(135)))));
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(183, 243);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(231, 36);
-            this.guna2DateTimePicker1.TabIndex = 23;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2022, 9, 30, 20, 57, 2, 538);
             // 
             // txt_password
             // 
@@ -202,7 +175,7 @@
             this.txt_password.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_password.IconLeft = global::FinalProject.Properties.Resources.login_password_11924;
-            this.txt_password.Location = new System.Drawing.Point(43, 191);
+            this.txt_password.Location = new System.Drawing.Point(43, 209);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '●';
             this.txt_password.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -228,7 +201,7 @@
             this.txt_ln.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_ln.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_ln.IconLeft = global::FinalProject.Properties.Resources.user_6769;
-            this.txt_ln.Location = new System.Drawing.Point(307, 85);
+            this.txt_ln.Location = new System.Drawing.Point(307, 103);
             this.txt_ln.Name = "txt_ln";
             this.txt_ln.PasswordChar = '\0';
             this.txt_ln.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -253,7 +226,7 @@
             this.txt_fn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_fn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_fn.IconLeft = global::FinalProject.Properties.Resources.user_6769;
-            this.txt_fn.Location = new System.Drawing.Point(43, 85);
+            this.txt_fn.Location = new System.Drawing.Point(43, 103);
             this.txt_fn.Name = "txt_fn";
             this.txt_fn.PasswordChar = '\0';
             this.txt_fn.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -307,12 +280,35 @@
             this.guna2GradientButton2.Text = "Create Account";
             this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.TargetForm = this;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1343, 12);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.TabIndex = 23;
+            // 
             // signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(965, 608);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1408, 573);
+            this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.pn_Reg);
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -330,9 +326,7 @@
 
         #endregion
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2ShadowPanel pn_Reg;
         private Guna.UI2.WinForms.Guna2TextBox txt_password;
         private Guna.UI2.WinForms.Guna2TextBox txt_ln;
@@ -343,6 +337,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txt_email;
         private Guna.UI2.WinForms.Guna2TextBox txt_cp;
         private Guna.UI2.WinForms.Guna2TextBox txt_phone;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }
 

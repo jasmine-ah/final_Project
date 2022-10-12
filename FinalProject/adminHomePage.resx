@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="guna2ControlBox1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="guna2ControlBox2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="guna2ControlBox3.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -124,7 +133,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAACmoAAApqCAYAAAAS/sNdAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAABM
-        4wAATOMB9c20DgAA/7JJREFUeF7s/Xv45Wd53/d2n8+nxm2apN1713HbtPvoQ1xROzgc7ADbxg62u3fT
+        4gAATOIBJ4pW6gAA/7JJREFUeF7s/Xv45Wd53/d2n8+nxm2apN1713HbtPvoQ1xROzgc7ADbxg62u3fT
         HCQaHwCbWnVIZIwUhwIhTmq7WDYBIraN62sQ+IADtqRtjGwsGURwhEDqCGRHUkaMECChw6DRoEHZ32eY
         e/SZW++11nf9fut3fn+v6/XPuuIrzFrruZ/7ee6P1u9f+1f/6l9JkiRJkiRJkiRJkiRJkiRpB+CLkiRJ
         kiRJkiRJkiRJkiRJ2j58UZIkSZIkSZIkSZIkSZIkSduHL0qSJEmSJEmSJEmSJEmSJGn78EVJkiRJkiRJ
@@ -17194,16 +17203,13 @@
         QmCC
 </value>
   </data>
-  <metadata name="guna2ControlBox3.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="guna2ControlBox2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="guna2ControlBox1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>160, 17</value>
+  </metadata>
+  <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>295, 17</value>
+  </metadata>
+  <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>512, 17</value>
   </metadata>
 </root>

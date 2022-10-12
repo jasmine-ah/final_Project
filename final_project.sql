@@ -35,21 +35,22 @@ firstName varchar(25) NOT NULL,
 lastName varchar(25) NOT NULL,
 email varchar(100),
 contactInfo varchar(15),
-password varchar(10),
-weddingDate DATETIME
+password varchar(10)
 );
 select *from sign_up
+
+drop table sign_up
 GO
-CREATE PROC sp_ins
+alter PROC sp_ins
 @fn varchar(25),
 @ln varchar(25),
 @email varchar(50),
 @ci varchar(15),
-@password varchar(10),
-@wd DATETIME
+@password varchar(10)
+
 AS
 BEGIN
-    insert into sign_up values(@fn,@ln,@email,@ci,@password, @wd)
+    insert into sign_up values(@fn,@ln,@email,@ci,@password)
 end
 GO
 ---------------SERVICES------------------
@@ -148,10 +149,11 @@ CREATE TABLE BILL(
 
 CREATE TABLE booking(
     bookId int PRIMARY KEY IDENTITY,
-    userId int FOREIGN KEY REFERENCES sign_up(userId),
+    --userId int FOREIGN KEY REFERENCES sign_up(userId),
     bookType VARCHAR(50),
     bookDate DATE
 );
+
 
 ---------------------BOOKING UPDATE-------------
 CREATE TABLE updatebooking(
@@ -173,23 +175,25 @@ GO
 --------------------------------------booking-------------------------------------------------------------------
 create table booked
 (
-userId int,
-firstName varchar(20),
-lastName varchar(20),
-WD varchar(50),
+id int,
+groomName varchar(20),
+brideName varchar(20),
+WeddingDate datetime,
 guests int,
 payment varchar (20)
 );
 
-
+drop table booked
 create table weddingInfo
 (
-id int,
+id int identity Not null,
 groomName varchar(100),
 brideName varchar(100),
 packageName varchar(50),
 price decimal(10, 2),
-guests int
+guests int,
+Weddingdate DATETIME
+
 );
 select * from weddingInfo
 drop table weddingInfo
@@ -197,15 +201,16 @@ drop table weddingInfo
 
 
 alter PROCEDURE spInsert
-@id int,
+
 @gn varchar(100),
 @bn varchar(100),
 @packageName varchar(50),
 @price decimal(10,2),
-@guests int
+@guests int,
+@wd dateTime
 AS
 BEGIN
-    insert into weddingInfo values(@id, @gn,@bn, @packageName, @price, @guests)
+    insert into weddingInfo values( @gn,@bn, @packageName, @price, @guests,@wd)
 end
 GO
 
@@ -214,28 +219,28 @@ create PROCEDURE spPopulate
 AS
 	BEGIN
 		SELECT * FROM weddingInfo WHERE ID = @ID;
+		end
 
 
-
-create proc bookDisplay
+alter proc bookDisplay
 @id int
 as
 begin
-select userId,firstName,lastName,weddingDate from sign_up where userId = @id
+select id,brideName,groomName,guests,Weddingdate from weddingInfo where @id = id
 
 end
 
 exec bookDisplay 1
 
-create PROCEDURE UPDATEBOOK
-@wd varchar(50),
-@payment varchar(10),
+alter PROCEDURE UPDATEBOOK
+@wd datetime,
+@payment varchar(20),
 @guests varchar(6),
 @id int
 AS
 BEGIN
-    update booked set   WD = @wd, 
-    guests = @guests ,payment = @payment where userId = @id
+    update booked set    
+    guests = @guests ,payment = @payment , @wd = WeddingDate where id = @id
 end
 GO
 
@@ -250,4 +255,79 @@ GO
 
 ---------------------custom---------------------------
 create table packageDetail(
+PD int identity primary key,
+serviceName varchar(100),
+price int
+
 );
+
+insert into packageDetail values ('Beauty Service',6000)
+insert into packageDetail values ('Photography Service',7000)
+insert into packageDetail values ('Catering',10000)
+insert into packageDetail values ('DJ',5000)
+insert into packageDetail values ('Decor',12000)
+insert into packageDetail values ('Venue Booking',60000)
+
+select * from packageDetail
+
+create function custom_total
+( @price int)
+returns
+as
+begin
+	
+	return @price
+end
+create table selected(
+id int,
+BeautyService bit,
+PhotographyService bit,
+Catering bit,
+DJ bit,
+Decor bit,
+VenueBooking bit,
+
+foreign key (id) references packageDetail(PD)
+);
+
+drop table selected;
+
+create proc ins_selected
+@id int ,
+@BeautyService bit,
+@PhotographyService bit,
+@Catering bit,
+@DJ bit,
+@Decor bit,
+@VenueBooking bit
+as
+begin
+insert into selected values(@id,@BeautyService,@PhotographyService,@Catering,@DJ,@Decor,@VenueBooking)
+end
+select * from selected
+create function priceCalc
+(@id int)
+returns int
+as
+begin
+  declare @price int = 0
+  if exists(select * from selected where BeautyService = 1 and ID = @id)
+    select @price += price from packageDetail where serviceName = 'Beauty Service';
+        
+  if exists(select * from selected where PhotographyService = 1 and ID = @id)
+    select @price += price from packageDetail where serviceName = 'Photography Service';
+        
+  if exists(select * from selected where Catering = 1 and ID = @id)
+    select @price += price from packageDetail where serviceName = 'Catering';
+        
+  if exists(select * from selected where DJ = 1 and ID = @id)
+    select @price += price from packageDetail where serviceName = 'DJ';
+        
+  if exists(select * from selected where Decor = 1 and ID = @id)
+    select @price += price from packageDetail where serviceName = 'Decor';
+        
+  if exists(select * from selected where VenueBooking = 1 and ID = @id)
+    select @price += price from packageDetail where serviceName = 'Venue Booking';
+  
+  return @price
+end

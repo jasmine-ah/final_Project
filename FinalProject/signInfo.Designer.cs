@@ -50,6 +50,8 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.tbGuestNum = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.SuspendLayout();
             // 
             // bLN
@@ -128,7 +130,7 @@
             this.gFN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gFN.ForeColor = System.Drawing.Color.Silver;
             this.gFN.Location = new System.Drawing.Point(100, 215);
-            this.gFN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gFN.Margin = new System.Windows.Forms.Padding(4);
             this.gFN.Name = "gFN";
             this.gFN.Size = new System.Drawing.Size(200, 26);
             this.gFN.TabIndex = 49;
@@ -141,7 +143,7 @@
             this.gLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gLN.ForeColor = System.Drawing.Color.Silver;
             this.gLN.Location = new System.Drawing.Point(321, 215);
-            this.gLN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gLN.Margin = new System.Windows.Forms.Padding(4);
             this.gLN.Name = "gLN";
             this.gLN.Size = new System.Drawing.Size(200, 26);
             this.gLN.TabIndex = 50;
@@ -164,7 +166,7 @@
             // 
             this.rbRoyal.AutoSize = true;
             this.rbRoyal.Location = new System.Drawing.Point(100, 320);
-            this.rbRoyal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbRoyal.Margin = new System.Windows.Forms.Padding(4);
             this.rbRoyal.Name = "rbRoyal";
             this.rbRoyal.Size = new System.Drawing.Size(122, 20);
             this.rbRoyal.TabIndex = 52;
@@ -176,7 +178,7 @@
             // 
             this.rbLuxury.AutoSize = true;
             this.rbLuxury.Location = new System.Drawing.Point(100, 373);
-            this.rbLuxury.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbLuxury.Margin = new System.Windows.Forms.Padding(4);
             this.rbLuxury.Name = "rbLuxury";
             this.rbLuxury.Size = new System.Drawing.Size(124, 20);
             this.rbLuxury.TabIndex = 53;
@@ -188,7 +190,7 @@
             // 
             this.rbPremium.AutoSize = true;
             this.rbPremium.Location = new System.Drawing.Point(293, 320);
-            this.rbPremium.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbPremium.Margin = new System.Windows.Forms.Padding(4);
             this.rbPremium.Name = "rbPremium";
             this.rbPremium.Size = new System.Drawing.Size(139, 20);
             this.rbPremium.TabIndex = 54;
@@ -200,7 +202,7 @@
             // 
             this.rbBasic.AutoSize = true;
             this.rbBasic.Location = new System.Drawing.Point(293, 373);
-            this.rbBasic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbBasic.Margin = new System.Windows.Forms.Padding(4);
             this.rbBasic.Name = "rbBasic";
             this.rbBasic.Size = new System.Drawing.Size(120, 20);
             this.rbBasic.TabIndex = 55;
@@ -212,7 +214,7 @@
             // 
             this.rbSimple.AutoSize = true;
             this.rbSimple.Location = new System.Drawing.Point(481, 320);
-            this.rbSimple.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbSimple.Margin = new System.Windows.Forms.Padding(4);
             this.rbSimple.Name = "rbSimple";
             this.rbSimple.Size = new System.Drawing.Size(128, 20);
             this.rbSimple.TabIndex = 56;
@@ -224,7 +226,7 @@
             // 
             this.rbcustom.AutoSize = true;
             this.rbcustom.Location = new System.Drawing.Point(481, 373);
-            this.rbcustom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbcustom.Margin = new System.Windows.Forms.Padding(4);
             this.rbcustom.Name = "rbcustom";
             this.rbcustom.Size = new System.Drawing.Size(203, 20);
             this.rbcustom.TabIndex = 57;
@@ -293,12 +295,37 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(100, 475);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 16);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Wedding Date";
+            // 
+            // guna2DateTimePicker1
+            // 
+            this.guna2DateTimePicker1.Checked = true;
+            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(282, 475);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 36);
+            this.guna2DateTimePicker1.TabIndex = 66;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2022, 10, 12, 8, 29, 59, 4);
+            // 
             // signInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1419, 639);
+            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tbGuestNum);
             this.Controls.Add(this.guna2ControlBox1);
@@ -321,7 +348,7 @@
             this.Controls.Add(this.label2);
             this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "signInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking";
@@ -354,5 +381,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.TextBox tbGuestNum;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
     }
 }

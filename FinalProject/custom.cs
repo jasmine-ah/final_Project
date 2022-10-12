@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,9 @@ namespace FinalProject
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {/*
+        {
+            
+            /*
           string chkboxselect="";
             for(int i=0;i<checkedListbox1.Items.Count;i++){
             if(checkedListBox1.Items[i].Selected){
@@ -36,6 +39,11 @@ namespace FinalProject
             this.Close();
             signInfo s = new signInfo();
             s.Show();
+        }
+
+        private void custom_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

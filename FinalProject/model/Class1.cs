@@ -18,7 +18,7 @@ namespace FinalProject.model
         public string Email { get; set; }
         public string Password { get; set; }
         public string confirmPassword { get; set; }
-        public string weddingDate { get; set; }
+        //public string weddingDate { get; set; }
         public string contactInfo { get; set; }
 
 
@@ -35,7 +35,7 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "exec sp_ins @fn,@ln,@email,@ci,@password,@wd";
+                string Query = "exec sp_ins @fn,@ln,@email,@ci,@password";
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
                 cmd.Parameters.AddWithValue("@fn", this.firstName);
@@ -43,7 +43,7 @@ namespace FinalProject.model
                 cmd.Parameters.AddWithValue("@email", this.Email);
                 cmd.Parameters.AddWithValue("@ci", this.contactInfo);
                 cmd.Parameters.AddWithValue("@password", this.Password);
-                cmd.Parameters.AddWithValue("@wd", this.weddingDate);
+               // cmd.Parameters.AddWithValue("@wd", this.weddingDate);
 
                  cmd.ExecuteNonQuery();
                 
@@ -115,7 +115,7 @@ namespace FinalProject.model
         }
 
 
-
+/*
         public static List<Class1> getAllProducts()
         {
 
@@ -142,7 +142,7 @@ namespace FinalProject.model
                     c.Email = (string)sdr["email"];
                     c.contactInfo = (string)sdr["contactInfo"];
                     c.Password = (string)sdr["password"];
-                    c.weddingDate = (string)sdr["weddingDate"];
+                   // c.weddingDate = (string)sdr["weddingDate"];
 
 
 
@@ -169,13 +169,13 @@ namespace FinalProject.model
             {
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
-                string Query = "exec UPDATEsign_up @fname,@lname,@email,@contactInfo,@pass,@wd;";
+                string Query = "exec UPDATEsign_up @fname,@lname,@email,@contactInfo,@pass;";
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
                 cmd.Parameters.AddWithValue("@fname", fn);
                 cmd.Parameters.AddWithValue("@lname", ln);
                 cmd.Parameters.AddWithValue("@contactInfo", cont);
-                cmd.Parameters.AddWithValue("@wd", date);
+                //cmd.Parameters.AddWithValue("@wd", date);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@pass", pass);
                 //cmd.Parameters.AddWithValue("@id", id);
@@ -196,14 +196,13 @@ namespace FinalProject.model
             {
                 connection.Close();
             };
-
+              */
 
 
         }
 
 
     }
-}
 
 
 

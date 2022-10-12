@@ -173,7 +173,8 @@ namespace FinalProject
                 GroomName = gFN.Text + " " + gLN.Text,
                 PackageName = pn,
                 price = pr,
-                GuestNumber = int.Parse(tbGuestNum.Text)
+                GuestNumber = int.Parse(tbGuestNum.Text),
+                 weddingDate = guna2DateTimePicker1.Value.ToString(),
             };
             c2.save();
         }

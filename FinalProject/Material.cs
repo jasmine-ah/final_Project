@@ -16,6 +16,8 @@ namespace FinalProject
         public Material()
         {
             InitializeComponent();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = booking.GetAllProducts();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -25,17 +27,20 @@ namespace FinalProject
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            int i = int.Parse(textBox_search.Text);
-            var product = booking.findOne(i);
+            //int i = int.Parse(textBox_search.Text);
+            var product = booking.findOne(int.Parse(textBox_search.Text));
             if (product == null)
             {
+                
                 MessageBox.Show("Customer doesn't Exist");
             }
             else
             {
-                textBox_fn.Text = product.firstName;
-                textBox_ln.Text = product.lastName;                
-                dateTimePicker1.Value = DateTime.Parse(product.weddingDate);
+                textBox_fn.Text = product.groomName;
+                textBox_ln.Text = product.brideName;
+                dateTimePicker1.Value = DateTime.Parse(product.weddingDate.ToString());
+                textBox_ng.Text = product.guests.ToString();
+                //dateTimePicker1.Value = DateTime.Parse(product.weddingDate);
                 
             }
 
@@ -43,15 +48,15 @@ namespace FinalProject
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            booking.update(  dateTimePicker1.Text, textBox_ng.Text, comboBox1.Text);
+            booking.update(dateTimePicker1.ToString(), textBox_ng.Text ,comboBox1.Text, label7.Text);
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = booking.GetAllProducts();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            int i = int.Parse(label7.Text);
-            booking.delete(i);
+            int result = Int32.Parse(label7.Text);
+            booking.delete(result);
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = booking.GetAllProducts();
         }

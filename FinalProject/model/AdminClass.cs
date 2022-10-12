@@ -24,7 +24,7 @@ namespace FinalProject.model
         public string Occupation { get; set; }
         public string Gender { get; set; }
 
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
         
         public void save()
         {
@@ -119,7 +119,7 @@ namespace FinalProject.model
         {
             List<AdminClass> Bclass = new List<AdminClass>();
             SqlConnection connection;
-          //  string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+           string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             connection = new SqlConnection(connectionString);
             string Query = "select * from employee;";
             try
@@ -178,7 +178,7 @@ namespace FinalProject.model
                 cmd.Parameters.AddWithValue("@gender", gender);
                 cmd.Parameters.AddWithValue("@id", id);
 
-                var result = cmd.ExecuteNonQuery();
+                 cmd.ExecuteNonQuery();
              
                 MessageBox.Show("Successfully Updated!!!");
 

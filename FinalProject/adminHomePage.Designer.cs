@@ -38,16 +38,13 @@
             this.employeeManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 17;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // guna2ControlBox1
             // 
@@ -87,6 +84,11 @@
             guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
             guna2ControlBox3.TabIndex = 2;
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 17;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -122,6 +124,16 @@
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.TargetForm = this;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // adminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -154,5 +166,7 @@
         private System.Windows.Forms.ToolStripMenuItem employeeManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookingManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

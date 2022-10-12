@@ -16,13 +16,14 @@ CREATE TABLE login(
     password varchar(10) NOT NULL
 );
 select * from login
+GO
 create proc sp_insert
 @email varchar( 50),@password varchar(10)
 as
 begin
 insert into login values( @email, @password)
 end
-
+GO
 /*CREATE LOGIN admin WITH PASSWORD= 'admin' 
 CREATE USER admin FOR LOGIN admin;
 CREATE LOGIN user WITH PASSWORD=' '
@@ -53,16 +54,6 @@ BEGIN
     insert into sign_up values(@fn,@ln,@email,@ci,@password)
 end
 GO
----------------SERVICES------------------
-
-CREATE TABLE services(
-    dj ,
-    photographer,
-    venue,
-    bakery,
-
-
-);
 
 
 ----------EMPLOYEE--------------------
@@ -118,7 +109,7 @@ BEGIN
     delete from employee where employeeid = @id
 END
 GO
-
+/*
 GO
 CREATE PROCEDURE calcSalary
 @sal money
@@ -172,6 +163,7 @@ INSERT updatebooking(bookId,oldValue,newValue,updatedTime)
 SELECT bookId, d.oldValue,i.newValue,i.updatedTime FROM inserted i JOIN deleted d ON i.bookId=d.bookId
 END
 GO
+*/
 --------------------------------------booking-------------------------------------------------------------------
 create table booked
 (
@@ -184,6 +176,7 @@ payment varchar (20)
 );
 
 drop table booked
+
 create table weddingInfo
 (
 id int identity Not null,
@@ -198,8 +191,7 @@ Weddingdate DATETIME
 select * from weddingInfo
 drop table weddingInfo
 
-
-
+GO
 alter PROCEDURE spInsert
 
 @gn varchar(100),
@@ -291,7 +283,7 @@ foreign key (id) references packageDetail(PD)
 );
 
 drop table selected;
-
+GO
 create proc ins_selected
 @id int ,
 @BeautyService bit,
@@ -305,6 +297,8 @@ begin
 insert into selected values(@id,@BeautyService,@PhotographyService,@Catering,@DJ,@Decor,@VenueBooking)
 end
 select * from selected
+
+GO
 create function priceCalc
 (@id int)
 returns int
@@ -331,3 +325,101 @@ begin
   
   return @price
 end
+/*
+
+drop trigger trig_full
+---------------------------trigger that fires if the inserted wedding date is near-----------------------------
+go
+create trigger trig_nearDate
+on weddingInfo
+after insert 
+as begin
+declare @wd date
+set @wd=(select cast(weddingDate AS datetime)from inserted )
+if datediff(day,getdate(),@wd)<15
+begin
+raiserror('Cannot book!!! Wedding date is near.',16,1)
+rollback
+end
+end
+go
+-----------------------trigger that fires if there is booking on occupied wedding date------------------------
+go
+create trigger trig_full
+on weddingInfo
+after insert 
+as begin
+declare @wd date,@s int
+set @wd=(select cast(weddingDate AS datetime)from inserted )
+set @s=(select count(w.weddingDate)from weddingInfo w join inserted i on w.weddingDate=i.weddingDate)
+if @s>3
+begin
+raiserror('CANNOT BOOK!! Inserted Wedding date is fully booked ',16,1)
+rollback
+end
+end
+
+-----------------------------triggger to stop booking morethan one wedding with the same email-----------
+go
+create trigger trig_no2acc
+on sign_up
+instead of insert
+as begin
+declare @
+
+----------------------------------------------------------------------
+go
+drop trigger trigins2
+go
+create trigger trig_noupdate
+on booked
+after update
+as begin
+declare @wd date
+set @wd=(select cast(WD as datetime)from booked where id=)
+if DATEDIFF(day,getdate(),@wd)<15
+begin
+raiserror('Cannot update any info',16,1)
+rollback
+end
+end
+
+go
+create trigger trigins
+on sign_up
+after insert
+as begin 
+insert booked(userId,firstName,lastName,WD)
+select i.id,i.firstName,i.lastName,i.weddingDate from inserted i
+end
+---------------------------------------------------------------------------
+go
+
+create trigger trigins2
+on weddingInfo
+after insert
+as begin
+insert booked(groomName,brideName,guests)
+select i.groomName,i.brideName,i.guests from inserted i
+end
+go
+------------------------trigger that fires when same email and pwd is inserted for creating acc---------------------------------------------------
+create trigger trig_sameEmail
+on sign_up
+instead of insert
+as begin
+declare @em varchar(100),@pwd varchar(10)
+set @em=(select email from inserted)
+set @pwd=(select password from inserted)
+if @em=(select email from sign_up) 
+BEGIN
+raiserror('EMAIL ALREADY TAKEN CANNNOT CREATE ACCOUNT',16,1)
+ROLLBACK
+end
+IF @pwd=(select password from sign_up)
+begin
+raiserror('PASSWORD ALREADY TAKEN!!!',16,1)
+ROLLBACK
+end
+end
+*/

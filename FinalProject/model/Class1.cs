@@ -18,7 +18,7 @@ namespace FinalProject.model
         public string Email { get; set; }
         public string Password { get; set; }
         public string confirmPassword { get; set; }
-        //public string weddingDate { get; set; }
+        public string emailextension { get; set; }
         public string contactInfo { get; set; }
 
 
@@ -43,7 +43,7 @@ namespace FinalProject.model
                 cmd.Parameters.AddWithValue("@email", this.Email);
                 cmd.Parameters.AddWithValue("@ci", this.contactInfo);
                 cmd.Parameters.AddWithValue("@password", this.Password);
-               // cmd.Parameters.AddWithValue("@wd", this.weddingDate);
+              
 
                  cmd.ExecuteNonQuery();
                 
@@ -78,7 +78,7 @@ namespace FinalProject.model
             List<Class1> temp = new List<Class1>();
             try
             {
-               string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+        
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 MessageBox.Show("connection successful!!!");

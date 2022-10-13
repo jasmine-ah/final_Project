@@ -17,7 +17,7 @@ namespace FinalProject.model
         public string PackageName { get; set; }
         public double price { get; set; }
         public int GuestNumber { get; set; }
-        public string weddingDate { get; set; }
+        public DateTime weddingDate { get; set; }
 
         static private List<Class2> class2 = new List<Class2>();
         public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
@@ -34,10 +34,11 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "exec spInsert  @bf,@gn,@pn,@price,@ng,@wd";
+                string Query = "insert into weddingInfo values( @id,@bf,@gn, @pn, @price, @ng,@wd);";
+
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
-                
+                cmd.Parameters.AddWithValue("@id", this.Id);
                 cmd.Parameters.AddWithValue("@bf", this.BrideName);
                 cmd.Parameters.AddWithValue("@gn", this.GroomName);
                 cmd.Parameters.AddWithValue("@pn", this.PackageName);

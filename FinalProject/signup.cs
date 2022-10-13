@@ -55,7 +55,7 @@ namespace FinalProject
         {
             errorProvider1.Clear();
 
-            Regex r = new Regex(@"^([^0-9]*)$");
+           /* Regex r = new Regex(@"^([^0-9]*)$");
 
             if (txt_phone.Text.Length != 10)
             {
@@ -85,6 +85,10 @@ namespace FinalProject
             {
                 errorProvider1.SetError(txt_email, "Your Email is required");
             }
+            if (string.IsNullOrEmpty(guna2ComboBox1.Text))
+            {
+                errorProvider1.SetError(guna2ComboBox1, "Your required to select one email adreess extension");
+            }
             if (string.IsNullOrEmpty(txt_fn.Text))
             {
                 errorProvider1.SetError(txt_fn, "First name is required");
@@ -109,9 +113,11 @@ namespace FinalProject
             if (txt_password.Text != txt_cp.Text)
             {
                 MessageBox.Show("Please re-enter your password correctly!!!");
+            }*/
+            if (txt_fn.Text == "" || txt_ln.Text == "" || txt_email.Text == "" || txt_phone.Text == "" || txt_password.Text == "")
+            {
+                MessageBox.Show("Please enter all information");
             }
-
-
             else
             {
                 try
@@ -120,23 +126,14 @@ namespace FinalProject
                     {
                         firstName = (txt_fn.Text),
                         lastName = (txt_ln.Text),
-                        Email = (txt_email.Text),
+                        Email = (txt_email.Text)+ (guna2ComboBox1.Text),
+                        
                         contactInfo = (txt_phone.Text),
-                        Password = (txt_password.Text),
-                       
-
-
-
-
-
+                        Password = (txt_password.Text)
                     };
                     c.save();
-                    MessageBox.Show("Successfully signed up");
-                    /*
-                    Panel screen = new Panel();
-                    screen.Show();
-                    this.Hide();
-                    */
+                   
+                  
                 }
                 catch (Exception)
                 {

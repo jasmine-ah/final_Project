@@ -15,9 +15,10 @@ namespace FinalProject
     public partial class signInfo : Form
     {
         int id;
-        public signInfo()
+        public signInfo(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -132,7 +133,7 @@ namespace FinalProject
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
             this.Close();
-            custom c = new custom();
+            custom c = new custom(id);
             c.Show();
         }
 
@@ -174,7 +175,7 @@ namespace FinalProject
                 PackageName = pn,
                 price = pr,
                 GuestNumber = int.Parse(tbGuestNum.Text),
-                 weddingDate = guna2DateTimePicker1.Value.ToString(),
+                 weddingDate = guna2DateTimePicker1.Value,
             };
             c2.save();
         }

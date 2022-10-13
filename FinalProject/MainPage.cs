@@ -71,8 +71,8 @@ namespace FinalProject
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            custom v1 = new custom();
-            v1.Show();
+            /*custom v1 = new custom();
+            v1.Show();*/
         }
 
         private void view_btn_4_Click(object sender, EventArgs e)

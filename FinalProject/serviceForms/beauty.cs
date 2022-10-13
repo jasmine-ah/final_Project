@@ -12,10 +12,12 @@ namespace FinalProject.serviceForms
 {
     public partial class beauty : Form
     {
-        public beauty()
+        int id;
+        public beauty(int id)
         {
             this.DoubleBuffered = true;
             InitializeComponent();
+            this.id = id;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace FinalProject.serviceForms
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Services s = new Services();
+            Services s = new Services(id);
             s.Show();
             this.Hide();
         }

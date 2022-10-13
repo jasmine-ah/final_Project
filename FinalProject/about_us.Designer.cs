@@ -84,6 +84,7 @@
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "about_us";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

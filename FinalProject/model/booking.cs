@@ -199,7 +199,7 @@ namespace FinalProject.model
 
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
-                string Query = "exec DELETEBOOK @id;";
+                string Query = "exec DB @id;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 cmd.Parameters.AddWithValue("@id", id);

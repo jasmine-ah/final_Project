@@ -45,6 +45,7 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.pn_Reg.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             this.pn_Reg.BackColor = System.Drawing.Color.Transparent;
             this.pn_Reg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pn_Reg.Controls.Add(this.guna2ComboBox1);
             this.pn_Reg.Controls.Add(this.txt_cp);
             this.pn_Reg.Controls.Add(this.txt_phone);
             this.pn_Reg.Controls.Add(this.txt_email);
@@ -79,7 +81,7 @@
             this.pn_Reg.ShadowDepth = 80;
             this.pn_Reg.ShadowShift = 10;
             this.pn_Reg.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.pn_Reg.Size = new System.Drawing.Size(561, 423);
+            this.pn_Reg.Size = new System.Drawing.Size(561, 445);
             this.pn_Reg.TabIndex = 22;
             // 
             // txt_cp
@@ -98,7 +100,7 @@
             this.txt_cp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_cp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_cp.IconLeft = global::FinalProject.Properties.Resources.login_password_119241;
-            this.txt_cp.Location = new System.Drawing.Point(307, 209);
+            this.txt_cp.Location = new System.Drawing.Point(307, 267);
             this.txt_cp.Name = "txt_cp";
             this.txt_cp.PasswordChar = '●';
             this.txt_cp.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -124,7 +126,7 @@
             this.txt_phone.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_phone.IconLeft = global::FinalProject.Properties.Resources.phone_504;
-            this.txt_phone.Location = new System.Drawing.Point(307, 155);
+            this.txt_phone.Location = new System.Drawing.Point(43, 213);
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.PasswordChar = '\0';
             this.txt_phone.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -175,7 +177,7 @@
             this.txt_password.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_password.IconLeft = global::FinalProject.Properties.Resources.login_password_11924;
-            this.txt_password.Location = new System.Drawing.Point(43, 209);
+            this.txt_password.Location = new System.Drawing.Point(43, 267);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '●';
             this.txt_password.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -252,7 +254,7 @@
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(500, 378);
+            this.label10.Location = new System.Drawing.Point(500, 395);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 17);
             this.label10.TabIndex = 16;
@@ -273,7 +275,7 @@
             this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(135)))));
             this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(307, 314);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(307, 331);
             this.guna2GradientButton2.Name = "guna2GradientButton2";
             this.guna2GradientButton2.Size = new System.Drawing.Size(235, 45);
             this.guna2GradientButton2.TabIndex = 15;
@@ -299,6 +301,30 @@
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 23;
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderRadius = 17;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "@Gmail.com",
+            "@Yahoo.com",
+            "@Hotmail.com",
+            "@Outlook.com",
+            "@Inbox.com",
+            "@Mail.com"});
+            this.guna2ComboBox1.Location = new System.Drawing.Point(307, 155);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(235, 36);
+            this.guna2ComboBox1.TabIndex = 27;
             // 
             // signup
             // 
@@ -340,6 +366,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }
 

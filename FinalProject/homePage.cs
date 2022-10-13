@@ -130,7 +130,7 @@ namespace FinalProject
                         {
                             ActiveMdiChild.Close();
                         }
-                        Services s = new Services();
+                        Services s = new Services(log.id);
                         s.Show();
                     }
                 }

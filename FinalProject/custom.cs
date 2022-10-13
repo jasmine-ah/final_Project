@@ -13,9 +13,11 @@ namespace FinalProject
 {
     public partial class custom : Form
     {
-        public custom()
+        int id;
+        public custom(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace FinalProject
             }}}
           */
             this.Close();
-            signInfo s = new signInfo();
+            signInfo s = new signInfo(id);
             s.Show();
         }
 

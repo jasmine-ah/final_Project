@@ -54,8 +54,8 @@ BEGIN
     insert into sign_up values(@fn,@ln,@email,@ci,@password)
 end
 GO
-
-
+ insert into sign_up values('df','ff','ff','ff','fff');
+select * from sign_up
 ----------EMPLOYEE--------------------
 
 CREATE TABLE employee(
@@ -172,14 +172,32 @@ groomName varchar(20),
 brideName varchar(20),
 WeddingDate datetime,
 guests int,
-payment varchar (20)
+payment varchar (20),
+foreign key (id) references sign_up(userId)
 );
+select * from booked
+drop table booked
+go
+create PROC spInserted
+
+@gn varchar(25),
+@bn varchar(25),
+@wedding datetime,
+@g int,
+@pay varchar(20)
+
+AS
+BEGIn
+    insert into booked values(@gn,@bn,@wedding,@g,@pay)
+end
+GO
 
 drop table booked
 
 create table weddingInfo
 (
-id int identity Not null,
+id int ,
+foreign key (id) references sign_up(userId),
 groomName varchar(100),
 brideName varchar(100),
 packageName varchar(50),
@@ -193,7 +211,7 @@ drop table weddingInfo
 
 GO
 alter PROCEDURE spInsert
-
+@id int,
 @gn varchar(100),
 @bn varchar(100),
 @packageName varchar(50),
@@ -202,9 +220,10 @@ alter PROCEDURE spInsert
 @wd dateTime
 AS
 BEGIN
-    insert into weddingInfo values( @gn,@bn, @packageName, @price, @guests,@wd)
+    insert into weddingInfo values( @id,@gn,@bn, @packageName, @price, @guests,@wd)
 end
 GO
+insert into weddingInfo values(1,'khjk','jkj','jhjh',67.88,8,'1/12/2012');
 
 create PROCEDURE spPopulate
 @id int
@@ -237,11 +256,11 @@ end
 GO
 
 
-CREATE PROCEDURE DELETEBOOK
+create PROCEDURE DB
 @id int
 AS
 BEGIN
-    delete from booked where userId = @id
+    delete from booked where id = @id
 END
 GO
 
@@ -325,7 +344,7 @@ begin
   
   return @price
 end
-/*
+
 
 drop trigger trig_full
 ---------------------------trigger that fires if the inserted wedding date is near-----------------------------
@@ -422,4 +441,3 @@ raiserror('PASSWORD ALREADY TAKEN!!!',16,1)
 ROLLBACK
 end
 end
-*/

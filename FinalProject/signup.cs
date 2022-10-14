@@ -55,7 +55,7 @@ namespace FinalProject
         {
             errorProvider1.Clear();
 
-           /* Regex r = new Regex(@"^([^0-9]*)$");
+            Regex r = new Regex(@"^([^0-9]*)$");
 
             if (txt_phone.Text.Length != 10)
             {
@@ -113,7 +113,7 @@ namespace FinalProject
             if (txt_password.Text != txt_cp.Text)
             {
                 MessageBox.Show("Please re-enter your password correctly!!!");
-            }*/
+            }
             if (txt_fn.Text == "" || txt_ln.Text == "" || txt_email.Text == "" || txt_phone.Text == "" || txt_password.Text == "")
             {
                 MessageBox.Show("Please enter all information");

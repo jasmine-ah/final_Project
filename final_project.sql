@@ -39,7 +39,7 @@ contactInfo varchar(15),
 password varchar(10)
 );
 select *from sign_up
-
+delete from sign_up where userId=1;
 drop table sign_up
 GO
 alter PROC sp_ins
@@ -54,8 +54,7 @@ BEGIN
     insert into sign_up values(@fn,@ln,@email,@ci,@password)
 end
 GO
- insert into sign_up values('df','ff','ff','ff','fff');
-select * from sign_up
+
 ----------EMPLOYEE--------------------
 
 CREATE TABLE employee(
@@ -223,7 +222,7 @@ BEGIN
     insert into weddingInfo values( @id,@gn,@bn, @packageName, @price, @guests,@wd)
 end
 GO
-insert into weddingInfo values(1,'khjk','jkj','jhjh',67.88,8,'1/12/2012');
+
 
 create PROCEDURE spPopulate
 @id int

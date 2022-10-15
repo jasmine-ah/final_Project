@@ -169,7 +169,7 @@ namespace FinalProject
             //save customer info on your database
             Class2 c2 = new Class2
             {
-                Id = id,
+                Id = this.id,
                 BrideName = bFN.Text + " " + bLN.Text,
                 GroomName = gFN.Text + " " + gLN.Text,
                 PackageName = pn,

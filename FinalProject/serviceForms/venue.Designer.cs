@@ -50,7 +50,7 @@
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.MistyRose;
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.Controls.Add(this.label9);
             this.guna2GradientPanel1.Controls.Add(this.label2);
@@ -58,11 +58,11 @@
             this.guna2GradientPanel1.Controls.Add(this.label6);
             this.guna2GradientPanel1.Controls.Add(this.label4);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.LightGray;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.MistyRose;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(222, 366);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(222, 404);
             this.guna2GradientPanel1.TabIndex = 10;
             // 
             // label9
@@ -127,6 +127,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,6 +140,7 @@
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(241, 235);
@@ -151,6 +153,7 @@
             // 
             // guna2PictureBox2
             // 
+            this.guna2PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(241, 117);
@@ -162,6 +165,7 @@
             // 
             // guna2PictureBox3
             // 
+            this.guna2PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 0F;
             this.guna2PictureBox3.Location = new System.Drawing.Point(456, 117);
@@ -173,6 +177,7 @@
             // 
             // guna2PictureBox4
             // 
+            this.guna2PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
             this.guna2PictureBox4.ImageRotate = 0F;
             this.guna2PictureBox4.Location = new System.Drawing.Point(465, 235);
@@ -184,6 +189,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -198,9 +204,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.MistyRose;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(611, 366);
+            this.ClientSize = new System.Drawing.Size(654, 404);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.guna2PictureBox4);
             this.Controls.Add(this.guna2PictureBox3);

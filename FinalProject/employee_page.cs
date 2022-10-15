@@ -153,5 +153,10 @@ namespace FinalProject
             adminHomePage form1 = new adminHomePage();
             form1.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pn_Reg = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txt_cp = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_phone = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
@@ -45,7 +46,6 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.pn_Reg.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,30 @@
             this.pn_Reg.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.pn_Reg.Size = new System.Drawing.Size(561, 445);
             this.pn_Reg.TabIndex = 22;
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderRadius = 17;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "@Gmail.com",
+            "@Yahoo.com",
+            "@Hotmail.com",
+            "@Outlook.com",
+            "@Inbox.com",
+            "@Mail.com"});
+            this.guna2ComboBox1.Location = new System.Drawing.Point(307, 155);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(235, 36);
+            this.guna2ComboBox1.TabIndex = 27;
             // 
             // txt_cp
             // 
@@ -244,7 +268,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(148, 24);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(242, 36);
+            this.label9.Size = new System.Drawing.Size(192, 27);
             this.label9.TabIndex = 18;
             this.label9.Text = "Create Account";
             // 
@@ -256,7 +280,7 @@
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(500, 395);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 17);
+            this.label10.Size = new System.Drawing.Size(34, 15);
             this.label10.TabIndex = 16;
             this.label10.Text = "login";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -302,38 +326,14 @@
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 23;
             // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 17;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "@Gmail.com",
-            "@Yahoo.com",
-            "@Hotmail.com",
-            "@Outlook.com",
-            "@Inbox.com",
-            "@Mail.com"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(307, 155);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(235, 36);
-            this.guna2ComboBox1.TabIndex = 27;
-            // 
             // signup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1408, 573);
+            this.ClientSize = new System.Drawing.Size(1386, 573);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.pn_Reg);
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

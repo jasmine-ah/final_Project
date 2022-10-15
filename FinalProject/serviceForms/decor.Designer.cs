@@ -42,6 +42,7 @@
             // 
             // guna2GradientPanel1
             // 
+            this.guna2GradientPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.Controls.Add(this.label9);
@@ -131,6 +132,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));

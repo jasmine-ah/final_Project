@@ -163,11 +163,12 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label1.Location = new System.Drawing.Point(196, 58);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(223, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(527, 62);
             this.label1.TabIndex = 10;
@@ -177,13 +178,14 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label8.Location = new System.Drawing.Point(351, 186);
+            this.label8.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(319, 185);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(293, 18);
+            this.label8.Size = new System.Drawing.Size(343, 21);
             this.label8.TabIndex = 11;
             this.label8.Text = "DELICIOUS, HIGH-QUALITY CUISINE";
             this.label8.Click += new System.EventHandler(this.label8_Click);

@@ -1,4 +1,5 @@
-﻿using FinalProject.serviceForms;
+﻿using FinalProject.model;
+using FinalProject.serviceForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,7 @@ namespace FinalProject
         {
             this.DoubleBuffered = true;
             InitializeComponent();
-            this.id = id;
+          this.id=id;
         }
         private Form activeForm = null;
         public void openChildForm(Form childForm)

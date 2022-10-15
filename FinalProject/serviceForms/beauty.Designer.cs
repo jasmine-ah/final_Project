@@ -60,9 +60,8 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1139, 554);
+            this.panel1.Size = new System.Drawing.Size(854, 450);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -84,10 +83,9 @@
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.White;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Sienna;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(872, 0);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(654, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(267, 554);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(200, 450);
             this.guna2GradientPanel1.TabIndex = 14;
             // 
             // label9
@@ -96,10 +94,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(35, 11);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(26, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(187, 23);
+            this.label9.Size = new System.Drawing.Size(150, 19);
             this.label9.TabIndex = 14;
             this.label9.Text = "Our services include:";
             // 
@@ -110,11 +107,10 @@
             this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(4, 42);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(3, 34);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(88, 71);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(66, 58);
             this.guna2ImageButton1.TabIndex = 2;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -124,10 +120,9 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(95, 337);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(71, 274);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(138, 46);
+            this.label8.Size = new System.Drawing.Size(112, 38);
             this.label8.TabIndex = 13;
             this.label8.Text = "Hair coloring \r\nand Extensions";
             // 
@@ -137,10 +132,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(100, 282);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(75, 229);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 23);
+            this.label4.Size = new System.Drawing.Size(101, 19);
             this.label4.TabIndex = 8;
             this.label4.Text = "Men\'s haircut";
             // 
@@ -150,10 +144,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(96, 426);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(72, 346);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 46);
+            this.label5.Size = new System.Drawing.Size(104, 38);
             this.label5.TabIndex = 9;
             this.label5.Text = "Shampoo and \r\n Blow Dry";
             // 
@@ -165,11 +158,10 @@
             this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
             this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton2.ImageRotate = 0F;
-            this.guna2ImageButton2.Location = new System.Drawing.Point(0, 409);
-            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(0, 332);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Size = new System.Drawing.Size(92, 64);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(69, 52);
             this.guna2ImageButton2.TabIndex = 4;
             // 
             // label3
@@ -178,10 +170,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(100, 74);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(75, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.Size = new System.Drawing.Size(70, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "  Makeup";
             // 
@@ -193,11 +184,10 @@
             this.guna2ImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton6.Image")));
             this.guna2ImageButton6.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton6.ImageRotate = 0F;
-            this.guna2ImageButton6.Location = new System.Drawing.Point(4, 337);
-            this.guna2ImageButton6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton6.Location = new System.Drawing.Point(3, 274);
             this.guna2ImageButton6.Name = "guna2ImageButton6";
             this.guna2ImageButton6.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton6.Size = new System.Drawing.Size(88, 64);
+            this.guna2ImageButton6.Size = new System.Drawing.Size(66, 52);
             this.guna2ImageButton6.TabIndex = 12;
             // 
             // guna2ImageButton5
@@ -207,11 +197,10 @@
             this.guna2ImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton5.Image")));
             this.guna2ImageButton5.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton5.ImageRotate = 0F;
-            this.guna2ImageButton5.Location = new System.Drawing.Point(4, 121);
-            this.guna2ImageButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton5.Location = new System.Drawing.Point(3, 98);
             this.guna2ImageButton5.Name = "guna2ImageButton5";
             this.guna2ImageButton5.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton5.Size = new System.Drawing.Size(88, 64);
+            this.guna2ImageButton5.Size = new System.Drawing.Size(66, 52);
             this.guna2ImageButton5.TabIndex = 7;
             // 
             // guna2ImageButton3
@@ -222,11 +211,10 @@
             this.guna2ImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton3.Image")));
             this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton3.ImageRotate = 0F;
-            this.guna2ImageButton3.Location = new System.Drawing.Point(4, 262);
-            this.guna2ImageButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton3.Location = new System.Drawing.Point(3, 213);
             this.guna2ImageButton3.Name = "guna2ImageButton3";
             this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.Size = new System.Drawing.Size(88, 68);
+            this.guna2ImageButton3.Size = new System.Drawing.Size(66, 55);
             this.guna2ImageButton3.TabIndex = 5;
             // 
             // label7
@@ -235,10 +223,9 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(100, 142);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(75, 115);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 23);
+            this.label7.Size = new System.Drawing.Size(80, 19);
             this.label7.TabIndex = 11;
             this.label7.Text = "  Skin care";
             // 
@@ -249,24 +236,21 @@
             this.guna2ImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton4.Image")));
             this.guna2ImageButton4.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton4.ImageRotate = 0F;
-            this.guna2ImageButton4.Location = new System.Drawing.Point(0, 192);
-            this.guna2ImageButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton4.Location = new System.Drawing.Point(0, 156);
             this.guna2ImageButton4.Name = "guna2ImageButton4";
             this.guna2ImageButton4.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton4.Size = new System.Drawing.Size(92, 63);
+            this.guna2ImageButton4.Size = new System.Drawing.Size(69, 51);
             this.guna2ImageButton4.TabIndex = 6;
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(95, 208);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(71, 169);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 23);
+            this.label6.Size = new System.Drawing.Size(116, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = "Lash extensions";
             // 
@@ -276,10 +260,9 @@
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(132, 74);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(148, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(489, 62);
+            this.label1.Size = new System.Drawing.Size(408, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "LET US MAKE SURE YOU LOOK \r\nYOUR BEST ON YOUR BIG DAY";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -290,26 +273,24 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(56, 192);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(790, 110);
+            this.label2.Size = new System.Drawing.Size(646, 90);
             this.label2.TabIndex = 0;
             this.label2.Text = resources.GetString("label2.Text");
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // beauty
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Snow;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1139, 554);
+            this.ClientSize = new System.Drawing.Size(854, 450);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "beauty";
             this.Text = "beauty";
             this.Load += new System.EventHandler(this.beauty_Load);

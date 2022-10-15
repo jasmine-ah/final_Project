@@ -53,9 +53,10 @@
             guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             guna2ControlBox1.ForeColor = System.Drawing.Color.CornflowerBlue;
             guna2ControlBox1.IconColor = System.Drawing.Color.DarkRed;
-            guna2ControlBox1.Location = new System.Drawing.Point(745, 11);
+            guna2ControlBox1.Location = new System.Drawing.Point(559, 9);
+            guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
             guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            guna2ControlBox1.Size = new System.Drawing.Size(34, 24);
             guna2ControlBox1.TabIndex = 0;
             // 
             // guna2ControlBox2
@@ -66,9 +67,10 @@
             guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             guna2ControlBox2.ForeColor = System.Drawing.Color.CornflowerBlue;
             guna2ControlBox2.IconColor = System.Drawing.Color.DarkRed;
-            guna2ControlBox2.Location = new System.Drawing.Point(684, 11);
+            guna2ControlBox2.Location = new System.Drawing.Point(513, 9);
+            guna2ControlBox2.Margin = new System.Windows.Forms.Padding(2);
             guna2ControlBox2.Name = "guna2ControlBox2";
-            guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
+            guna2ControlBox2.Size = new System.Drawing.Size(34, 24);
             guna2ControlBox2.TabIndex = 1;
             // 
             // guna2ControlBox3
@@ -79,9 +81,10 @@
             guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             guna2ControlBox3.ForeColor = System.Drawing.Color.CornflowerBlue;
             guna2ControlBox3.IconColor = System.Drawing.Color.DarkRed;
-            guna2ControlBox3.Location = new System.Drawing.Point(633, 11);
+            guna2ControlBox3.Location = new System.Drawing.Point(475, 9);
+            guna2ControlBox3.Margin = new System.Windows.Forms.Padding(2);
             guna2ControlBox3.Name = "guna2ControlBox3";
-            guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
+            guna2ControlBox3.Size = new System.Drawing.Size(34, 24);
             guna2ControlBox3.TabIndex = 2;
             // 
             // guna2Elipse1
@@ -99,28 +102,29 @@
             this.logOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // employeeManagementToolStripMenuItem
             // 
             this.employeeManagementToolStripMenuItem.Name = "employeeManagementToolStripMenuItem";
-            this.employeeManagementToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.employeeManagementToolStripMenuItem.Size = new System.Drawing.Size(145, 20);
             this.employeeManagementToolStripMenuItem.Text = "Employee Management";
             this.employeeManagementToolStripMenuItem.Click += new System.EventHandler(this.employeeManagementToolStripMenuItem_Click);
             // 
             // bookingManagementToolStripMenuItem
             // 
             this.bookingManagementToolStripMenuItem.Name = "bookingManagementToolStripMenuItem";
-            this.bookingManagementToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
+            this.bookingManagementToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
             this.bookingManagementToolStripMenuItem.Text = "Booking Management";
             this.bookingManagementToolStripMenuItem.Click += new System.EventHandler(this.bookingManagementToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -136,12 +140,12 @@
             // 
             // adminHomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(800, 505);
+            this.ClientSize = new System.Drawing.Size(600, 410);
             this.Controls.Add(guna2ControlBox3);
             this.Controls.Add(guna2ControlBox2);
             this.Controls.Add(guna2ControlBox1);
@@ -149,9 +153,11 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "adminHomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adminHomePage";
+            this.Load += new System.EventHandler(this.adminHomePage_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

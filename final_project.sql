@@ -24,6 +24,7 @@ begin
 insert into login values( @email, @password)
 end
 GO
+
 /*CREATE LOGIN admin WITH PASSWORD= 'admin' 
 CREATE USER admin FOR LOGIN admin;
 CREATE LOGIN user WITH PASSWORD=' '
@@ -39,8 +40,12 @@ contactInfo varchar(15),
 password varchar(10)
 );
 select *from sign_up
-delete from sign_up where userId=1;
-drop table sign_up
+insert into sign_up values('a','s','a@Gmail.com','0987654322','12');
+
+
+
+--delete from sign_up where userId=1;
+--drop table sign_up
 GO
 alter PROC sp_ins
 @fn varchar(25),
@@ -54,7 +59,25 @@ BEGIN
     insert into sign_up values(@fn,@ln,@email,@ci,@password)
 end
 GO
-
+------------------------trigger that fires when same email and pwd is inserted for creating acc---------------------------------------------------
+create trigger trig_sameEmail
+on sign_up
+instead of insert
+as begin
+declare @em varchar(100),@pwd varchar(10)
+set @em=(select email from inserted)
+set @pwd=(select password from inserted)
+if @em=(select email from sign_up) 
+BEGIN
+raiserror('EMAIL ALREADY TAKEN CANNNOT CREATE ACCOUNT',16,1)
+ROLLBACK
+end
+IF @pwd=(select password from sign_up)
+begin
+raiserror('PASSWORD ALREADY TAKEN!!!',16,1)
+ROLLBACK
+end
+end
 ----------EMPLOYEE--------------------
 
 CREATE TABLE employee(
@@ -70,7 +93,7 @@ CREATE TABLE employee(
 select *from employee
 
 GO
-alter PROCEDURE ADDEMP
+CREATE PROCEDURE ADDEMP
 
 @fn varchar(25),
 @ln varchar(25),
@@ -85,7 +108,7 @@ BEGIN
 end
 GO
 
-alter PROCEDURE UPDATEEMP
+CREATE PROCEDURE UPDATEEMP
 @fn varchar(25),
 @ln varchar(25),
 @continfo varchar(15),
@@ -175,10 +198,10 @@ payment varchar (20),
 foreign key (id) references sign_up(userId)
 );
 select * from booked
-drop table booked
+--drop table booked
 go
-create PROC spInserted
-
+alter PROC spInserted
+@id INT,
 @gn varchar(25),
 @bn varchar(25),
 @wedding datetime,
@@ -187,11 +210,30 @@ create PROC spInserted
 
 AS
 BEGIn
-    insert into booked values(@gn,@bn,@wedding,@g,@pay)
+
+
+    insert into booked values(@@IDENTITY,@gn,@bn,@wedding,@g,@pay)
 end
 GO
+alter trigger addId
+on sign_up
+after insert
+as begin
+insert booked(id)
+select userId from inserted
+insert weddingInfo(id) select userId from inserted
+end
 
-drop table booked
+go
+create trigger addInfo
+on weddingInfo
+after insert
+as begin
+insert booked(groomName,brideName,guests,WeddingDate)
+select groomName,brideName,guests,weddingDate from inserted 
+end
+go
+--drop table booked
 
 create table weddingInfo
 (
@@ -206,7 +248,7 @@ Weddingdate DATETIME
 
 );
 select * from weddingInfo
-drop table weddingInfo
+--drop table weddingInfo
 
 GO
 alter PROCEDURE spInsert
@@ -219,11 +261,20 @@ alter PROCEDURE spInsert
 @wd dateTime
 AS
 BEGIN
-    insert into weddingInfo values( @id,@gn,@bn, @packageName, @price, @guests,@wd)
+--declare @em varchar(100)=(select email from sign_up where @email)
+    insert weddingInfo values((select userId from sign_up ),@gn, @bn, @packageName, @price, @guests,@wd)
 end
 GO
 
 
+alter trigger trigins2
+on weddingInfo
+after insert
+as begin
+insert booked(groomName,brideName,WeddingDate,guests)
+select i.groomName,i.brideName,i.Weddingdate,i.guests from inserted i 
+end
+go
 create PROCEDURE spPopulate
 @id int
 AS
@@ -231,8 +282,8 @@ AS
 		SELECT * FROM weddingInfo WHERE ID = @ID;
 		end
 
-
-alter proc bookDisplay
+go
+create proc bookDisplay
 @id int
 as
 begin
@@ -241,8 +292,8 @@ select id,brideName,groomName,guests,Weddingdate from weddingInfo where @id = id
 end
 
 exec bookDisplay 1
-
-alter PROCEDURE UPDATEBOOK
+go
+create PROCEDURE UPDATEBOOK
 @wd datetime,
 @payment varchar(20),
 @guests varchar(6),
@@ -279,7 +330,7 @@ insert into packageDetail values ('Decor',12000)
 insert into packageDetail values ('Venue Booking',60000)
 
 select * from packageDetail
-
+/*
 create function custom_total
 ( @price int)
 returns
@@ -288,8 +339,9 @@ begin
 	
 	return @price
 end
+*/
 create table selected(
-id int,
+id int foreign key references packageDetail(PD),
 BeautyService bit,
 PhotographyService bit,
 Catering bit,
@@ -297,12 +349,11 @@ DJ bit,
 Decor bit,
 VenueBooking bit,
 
-foreign key (id) references packageDetail(PD)
 );
 
-drop table selected;
+--drop table selected;
 GO
-create proc ins_selected
+alter proc ins_selected
 @id int ,
 @BeautyService bit,
 @PhotographyService bit,
@@ -315,11 +366,12 @@ begin
 insert into selected values(@id,@BeautyService,@PhotographyService,@Catering,@DJ,@Decor,@VenueBooking)
 end
 select * from selected
+go
 
 GO
-create function priceCalc
-(@id int)
-returns int
+create proc priceCalc
+@id int
+
 as
 begin
   declare @price int = 0
@@ -343,6 +395,9 @@ begin
   
   return @price
 end
+
+
+
 
 
 drop trigger trig_full
@@ -370,7 +425,7 @@ as begin
 declare @wd date,@s int
 set @wd=(select cast(weddingDate AS datetime)from inserted )
 set @s=(select count(w.weddingDate)from weddingInfo w join inserted i on w.weddingDate=i.weddingDate)
-if @s>3
+if @s>5
 begin
 raiserror('CANNOT BOOK!! Inserted Wedding date is fully booked ',16,1)
 rollback
@@ -413,30 +468,5 @@ end
 ---------------------------------------------------------------------------
 go
 
-create trigger trigins2
-on weddingInfo
-after insert
-as begin
-insert booked(groomName,brideName,guests)
-select i.groomName,i.brideName,i.guests from inserted i
-end
-go
-------------------------trigger that fires when same email and pwd is inserted for creating acc---------------------------------------------------
-create trigger trig_sameEmail
-on sign_up
-instead of insert
-as begin
-declare @em varchar(100),@pwd varchar(10)
-set @em=(select email from inserted)
-set @pwd=(select password from inserted)
-if @em=(select email from sign_up) 
-BEGIN
-raiserror('EMAIL ALREADY TAKEN CANNNOT CREATE ACCOUNT',16,1)
-ROLLBACK
-end
-IF @pwd=(select password from sign_up)
-begin
-raiserror('PASSWORD ALREADY TAKEN!!!',16,1)
-ROLLBACK
-end
-end
+
+

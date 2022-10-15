@@ -67,7 +67,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(977, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(977, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -75,21 +75,21 @@
             // aboutUsToolStripMenuItem
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
             // contactInfoToolStripMenuItem
             // 
             this.contactInfoToolStripMenuItem.Name = "contactInfoToolStripMenuItem";
-            this.contactInfoToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.contactInfoToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.contactInfoToolStripMenuItem.Text = "Contact info";
             this.contactInfoToolStripMenuItem.Click += new System.EventHandler(this.contactInfoToolStripMenuItem_Click);
             // 
             // adminLoginToolStripMenuItem
             // 
             this.adminLoginToolStripMenuItem.Name = "adminLoginToolStripMenuItem";
-            this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(105, 24);
+            this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.adminLoginToolStripMenuItem.Text = "Admin login";
             this.adminLoginToolStripMenuItem.Click += new System.EventHandler(this.adminLoginToolStripMenuItem_Click);
             // 
@@ -128,7 +128,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(91, 191);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 19);
+            this.label1.Size = new System.Drawing.Size(111, 17);
             this.label1.TabIndex = 14;
             this.label1.Text = "Remember me";
             // 
@@ -159,7 +159,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(53, 301);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 17);
+            this.label2.Size = new System.Drawing.Size(171, 15);
             this.label2.TabIndex = 16;
             this.label2.Text = "Forgot Username or Password?";
             // 
@@ -170,7 +170,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(89, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 36);
+            this.label3.Size = new System.Drawing.Size(125, 27);
             this.label3.TabIndex = 18;
             this.label3.Text = "User Login";
             // 
@@ -324,7 +324,7 @@
             // 
             // homePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -344,6 +344,7 @@
             this.Name = "homePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "+";
+            this.Load += new System.EventHandler(this.homePage_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FinalProject
 {
@@ -27,7 +29,43 @@ namespace FinalProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            string chkboxselect = "";
+            for (int i = 0; i <=checkedListBox1.CheckedItems.Count; i++)
+            {
+                if (checkedListBox1.GetItemChecked(i))
+                {
+                    if (chkboxselect == "")
+                    {
+                        chkboxselect = checkedListBox1.Items[i].ToString();
+                    }
+
+                 
+                    }
+                
+            }
+            string str = @"Data Source=PCDOC-PC\MSSQLSERVER01;Initial Catalog=final_project;Integrated Security=true;";
+            SqlConnection con = new SqlConnection(str);
+            try
+            {
+                con.Open();
+                string query = "insert into selected values('" + chkboxselect+ "')";
+                SqlCommand cmd=new SqlCommand(query, con);
+                /*cmd.Parameters.AddWithValue("@id",this.id);
+                cmd.Parameters.AddWithValue("@BeautyService", );
+                
+                label3.Text=*/
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("succesful");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
             /*
           string chkboxselect="";
             for(int i=0;i<checkedListbox1.Items.Count;i++){
@@ -38,9 +76,9 @@ namespace FinalProject
             chkbocselect+=","+checkedListBox1.Items[i].Text;
             }}}
           */
-            this.Close();
+            /*this.Close();
             signInfo s = new signInfo(id);
-            s.Show();
+            s.Show();*/
         }
 
         private void custom_Load(object sender, EventArgs e)

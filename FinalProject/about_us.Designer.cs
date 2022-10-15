@@ -39,9 +39,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(492, 383);
+            this.label1.Location = new System.Drawing.Point(369, 311);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 22);
+            this.label1.Size = new System.Drawing.Size(72, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "About Us";
             // 
@@ -52,10 +53,9 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(225, 418);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(169, 340);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(633, 84);
+            this.label3.Size = new System.Drawing.Size(528, 80);
             this.label3.TabIndex = 2;
             this.label3.Text = resources.GetString("label3.Text");
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,23 +69,25 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1007, 12);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(755, 10);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(34, 24);
             this.guna2ControlBox1.TabIndex = 3;
             // 
             // about_us
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1064, 570);
+            this.ClientSize = new System.Drawing.Size(798, 463);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "about_us";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "about_us";

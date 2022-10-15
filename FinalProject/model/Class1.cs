@@ -22,7 +22,7 @@ namespace FinalProject.model
         public string contactInfo { get; set; }
 
 
-     public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+     public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
 
         public void save()
         {
@@ -55,7 +55,6 @@ namespace FinalProject.model
                 cmd2.Parameters.AddWithValue("@password", this.Password);
                 cmd2.Parameters.AddWithValue("@email", this.Email);
                 cmd2.ExecuteNonQuery();
-
 
 
             }

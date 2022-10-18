@@ -104,6 +104,12 @@
     <Compile Include="contact_us.Designer.cs">
       <DependentUpon>contact_us.cs</DependentUpon>
     </Compile>
+    <Compile Include="loggedIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loggedIn.Designer.cs">
+      <DependentUpon>loggedIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="contact_us.resx">
       <DependentUpon>contact_us.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loggedIn.resx">
+      <DependentUpon>loggedIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>

@@ -34,7 +34,9 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "insert into weddingInfo(brideName,groomName,packageName,price,guests,weddingDate) values(@bf,@gn, @pn, @price, @ng,@wd);";
+                string Query = "insert into weddingInfo values (@id,@bf,@gn, @pn, @price, @ng,@wd); ";
+                    
+                    //"values(@bf,@gn, @pn, @price, @ng,@wd);";
 
 
                 SqlCommand cmd = new SqlCommand(Query, connection);

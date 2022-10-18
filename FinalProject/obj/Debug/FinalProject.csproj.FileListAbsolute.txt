@@ -184,3 +184,4 @@ C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.custom.resources
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.serviceForms.decor.resources
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.custom.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.loggedIn.resources

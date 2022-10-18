@@ -131,8 +131,11 @@ namespace FinalProject
                         {
                             ActiveMdiChild.Close();
                         }
+                        loggedIn l=new loggedIn(log.id);
+                        l.Show();
+                        /*
                         Services s = new Services(log.id);
-                        s.Show();
+                        s.Show();*/
                     }
                 }
             }

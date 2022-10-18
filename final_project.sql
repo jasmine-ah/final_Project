@@ -262,7 +262,7 @@ alter PROCEDURE spInsert
 AS
 BEGIN
 --declare @em varchar(100)=(select email from sign_up where @email)
-    insert weddingInfo values((select userId from sign_up ),@gn, @bn, @packageName, @price, @guests,@wd)
+    insert weddingInfo values(@id,@gn, @bn, @packageName, @price, @guests,@wd)
 end
 GO
 

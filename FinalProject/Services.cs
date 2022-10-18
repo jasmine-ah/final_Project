@@ -15,12 +15,12 @@ namespace FinalProject
 {
     public partial class Services : Form
     {
-        int id;
-        public Services(int id)
+        //int id;
+        public Services()
         {
             this.DoubleBuffered = true;
             InitializeComponent();
-          this.id=id;
+            //this.id=id;
         }
         private Form activeForm = null;
         public void openChildForm(Form childForm)
@@ -51,7 +51,7 @@ namespace FinalProject
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            openChildForm(new beauty(id));
+            openChildForm(new beauty());
            }
 
         private void guna2Button5_Click(object sender, EventArgs e)
@@ -91,10 +91,10 @@ namespace FinalProject
         }
 
         private void guna2Button10_Click(object sender, EventArgs e)
-        {
+        {/*
             this.Close();
-            signInfo s=new signInfo(id);
-            s.Show();
+            signInfo s=new signInfo();
+            s.Show();*/
         }
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)

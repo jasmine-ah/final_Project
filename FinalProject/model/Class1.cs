@@ -98,7 +98,19 @@ namespace FinalProject.model
                     temp.Add(c1);
 
                 }
+                connection.Close();
                 
+                connection.Open();
+                String query2 = "select userId from sign_up where email='"+email+"' and password='"+password+"'";
+                SqlCommand cmd2=new SqlCommand(query2, connection);
+                SqlDataReader sdr2=cmd2.ExecuteReader();
+                while (sdr2.Read())
+                {
+                        Class1 c2 = new Class1();
+                        c2.id= (int)sdr2["id"];
+                       temp.Add(c2);
+                    
+                }
 
                 connection.Close();
 
@@ -121,7 +133,7 @@ namespace FinalProject.model
             List<Class1> temp = new List<Class1>();
             try
             {
-               // string connectionString = @"Data Source=TINELLA\\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+               // string connectionString = @"Data Source=PCDOC; Initial catalog=final_project;Integrated Security=true;";
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 MessageBox.Show("connection successful!!!");

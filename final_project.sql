@@ -31,7 +31,7 @@ CREATE LOGIN user WITH PASSWORD=' '
 CREATE USER user1 FOR LOGIN user;
  */
 ---------------SIGNUP------------------
-CREATE TABLE sign_up(
+CREATE TABLE sign_up_info(
 userId INT PRIMARY KEY IDENTITY,
 firstName varchar(25) NOT NULL,
 lastName varchar(25) NOT NULL,
@@ -39,9 +39,10 @@ email varchar(100),
 contactInfo varchar(15),
 password varchar(10)
 );
-select *from sign_up
-insert into sign_up values('a','s','a@Gmail.com','0987654322','12');
-
+select *from sign_up_info
+insert into sign_up_info values('abebe','shewa','a@Gmail.com','0987654322','12');
+insert into sign_up_info values('kebede','shewa','k@Gmail.com','0987987322','1234');
+drop table sign_up
 
 
 --delete from sign_up where userId=1;
@@ -56,25 +57,25 @@ alter PROC sp_ins
 
 AS
 BEGIN
-    insert into sign_up values(@fn,@ln,@email,@ci,@password)
+    insert into sign_up_info values(@fn,@ln,@email,@ci,@password)
 end
 GO
 ------------------------trigger that fires when same email and pwd is inserted for creating acc---------------------------------------------------
-create trigger trig_sameEmail
+create trigger trig_sameEmailAndPhone
 on sign_up
 instead of insert
 as begin
-declare @em varchar(100),@pwd varchar(10)
+declare @em varchar(100),@ci varchar(15)
 set @em=(select email from inserted)
-set @pwd=(select password from inserted)
+set @ci=(select contactInfo from inserted)
 if @em=(select email from sign_up) 
 BEGIN
 raiserror('EMAIL ALREADY TAKEN CANNNOT CREATE ACCOUNT',16,1)
 ROLLBACK
 end
-IF @pwd=(select password from sign_up)
+IF @ci=(select contactInfo from sign_up)
 begin
-raiserror('PASSWORD ALREADY TAKEN!!!',16,1)
+raiserror('USER WITH THIS PHONE NUMBER ALREADY TAKEN!!!',16,1)
 ROLLBACK
 end
 end
@@ -195,13 +196,12 @@ brideName varchar(20),
 WeddingDate datetime,
 guests int,
 payment varchar (20),
-foreign key (id) references sign_up(userId)
+foreign key (id) references sign_up_info(userId)
 );
 select * from booked
---drop table booked
+drop table booked
 go
 alter PROC spInserted
-@id INT,
 @gn varchar(25),
 @bn varchar(25),
 @wedding datetime,
@@ -210,11 +210,14 @@ alter PROC spInserted
 
 AS
 BEGIn
+declare @lastid int;
+set @lastid = SCOPE_IDENTITY()
 
-
-    insert into booked values(@@IDENTITY,@gn,@bn,@wedding,@g,@pay)
+    insert into booked values(@lastid,@gn,@bn,@wedding,@g,@pay)
 end
 GO
+
+
 alter trigger addId
 on sign_up
 after insert
@@ -235,34 +238,40 @@ end
 go
 --drop table booked
 
-create table weddingInfo
+create table weddingInfos
 (
-id int ,
-foreign key (id) references sign_up(userId),
+
 groomName varchar(100),
 brideName varchar(100),
 packageName varchar(50),
 price decimal(10, 2),
 guests int,
-Weddingdate DATETIME
+Weddingdate DATETIME,
+userId int identity foreign key references sign_up_info (userId)
 
 );
-select * from weddingInfo
---drop table weddingInfo
+select * from weddingInfos
+drop table weddingInfos
+
+
 
 GO
 alter PROCEDURE spInsert
-@id int,
+
 @gn varchar(100),
 @bn varchar(100),
 @packageName varchar(50),
 @price decimal(10,2),
 @guests int,
 @wd dateTime
+
 AS
 BEGIN
 --declare @em varchar(100)=(select email from sign_up where @email)
-    insert weddingInfo values(@id,@gn, @bn, @packageName, @price, @guests,@wd)
+
+
+
+    insert weddingInfos values(@gn, @bn, @packageName, @price, @guests,@wd)
 end
 GO
 
@@ -279,7 +288,7 @@ create PROCEDURE spPopulate
 @id int
 AS
 	BEGIN
-		SELECT * FROM weddingInfo WHERE ID = @ID;
+		SELECT * FROM weddingInfo WHERE id = @ID;
 		end
 
 go
@@ -293,7 +302,7 @@ end
 
 exec bookDisplay 1
 go
-create PROCEDURE UPDATEBOOK
+alter PROCEDURE UPDATEBOOK
 @wd datetime,
 @payment varchar(20),
 @guests varchar(6),

@@ -21,7 +21,7 @@ namespace FinalProject.model
         public int guests { get; set; }
 
 
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
         public void save()
         {
             Aclass.Add(this);
@@ -74,7 +74,7 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "select * from weddingInfo;";
+                string Query = "select * from weddingInfos;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -111,7 +111,7 @@ namespace FinalProject.model
             SqlConnection connection;
           //  string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             connection = new SqlConnection(connectionString);
-            string Query = "select * from weddingInfo";
+            string Query = "select * from weddingInfos";
             try
             {
 

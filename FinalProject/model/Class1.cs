@@ -22,7 +22,7 @@ namespace FinalProject.model
         public string contactInfo { get; set; }
 
 
-     public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+     public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
 
         public void save()
         {
@@ -101,7 +101,7 @@ namespace FinalProject.model
                 connection.Close();
                 
                 connection.Open();
-                String query2 = "select userId from sign_up where email='"+email+"' and password='"+password+"'";
+                String query2 = "select userId from sign_up where email='" + email + "' and password='" + password + "'";
                 SqlCommand cmd2=new SqlCommand(query2, connection);
                 SqlDataReader sdr2=cmd2.ExecuteReader();
                 while (sdr2.Read())
@@ -109,9 +109,9 @@ namespace FinalProject.model
                         Class1 c2 = new Class1();
                         c2.id= (int)sdr2["id"];
                        temp.Add(c2);
-                    
+                    MessageBox.Show(c2.id.ToString());
                 }
-
+                
                 connection.Close();
 
             }

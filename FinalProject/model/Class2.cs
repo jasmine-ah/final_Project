@@ -20,7 +20,7 @@ namespace FinalProject.model
         public DateTime weddingDate { get; set; }
 
         static private List<Class2> class2 = new List<Class2>();
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
 
         public void save()
         {
@@ -34,13 +34,13 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "insert into weddingInfo values (@id,@bf,@gn, @pn, @price, @ng,@wd); ";
+                string Query = "exec spInsert @bf,@gn, @pn, @price, @ng,@wd; ";
                     
                     //"values(@bf,@gn, @pn, @price, @ng,@wd);";
 
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
-               cmd.Parameters.AddWithValue("@id", this.Id);
+               //cmd.Parameters.AddWithValue("@id", this.Id);
                 cmd.Parameters.AddWithValue("@bf", this.BrideName);
                 cmd.Parameters.AddWithValue("@gn", this.GroomName);
                 cmd.Parameters.AddWithValue("@pn", this.PackageName);

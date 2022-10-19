@@ -20,13 +20,25 @@ namespace FinalProject
             this.id = id;
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
+       /* private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
             Services s = new Services();
             s.Show();
         }
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+            signInfo si = new signInfo(id);
+            si.Show();
+        }*/
+
+        private void guna2GradientCircleButton1_Click(object sender, EventArgs e)
+        {
+            Services s = new Services();
+            s.Show();
+        }
+
+        private void guna2GradientCircleButton2_Click(object sender, EventArgs e)
         {
             signInfo si = new signInfo(id);
             si.Show();

@@ -88,6 +88,7 @@ namespace FinalProject.model
                     ac.brideName = (string)sdr["groomName"];
                     ac.guests = (int)sdr["guests"];
                     ac.weddingDate = (DateTime)sdr["Weddingdate"];
+                    //ac.Payment=(string) sdr["payment"];
 
 
                     Bclass.Add(ac);
@@ -133,6 +134,7 @@ namespace FinalProject.model
                     bo.brideName = (string)sdr["groomName"];
                     bo.guests = (int)sdr["guests"];
                     bo.weddingDate = (DateTime)sdr["WeddingDate"];
+                    //bo.Payment = (string)sdr["payment"];
                     
 
                     Bclass.Add(bo);
@@ -147,7 +149,7 @@ namespace FinalProject.model
                 connection.Close();
             };
             
-            return Bclass.Find(c => c.id == id);
+            return Bclass.Find(bo => bo.id == id);
         }
         public static void update( int id,string guests,string cb,string wd)
         {
@@ -189,7 +191,7 @@ namespace FinalProject.model
 
         }
 
-        public static void delete(int id)
+        public static void delete(string id)
         {
             string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);

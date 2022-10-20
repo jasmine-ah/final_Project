@@ -55,8 +55,8 @@ namespace FinalProject
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            int result = Int32.Parse(label7.Text);
-            booking.delete(result);
+            
+            booking.delete(label7.Text);
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = booking.GetAllProducts();
         }
@@ -74,6 +74,11 @@ namespace FinalProject
             }
             adminHomePage home = new adminHomePage();
             home.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

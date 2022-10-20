@@ -13,15 +13,17 @@ CREATE TABLE role(
 
 CREATE TABLE login(
     email varchar(50) NOT NULL,
-    password varchar(10) NOT NULL
+    password varchar(10) NOT NULL,
+	id int foreign key references sign_up_info(userId)
 );
+--drop table login
 select * from login
 GO
-create proc sp_insert
-@email varchar( 50),@password varchar(10)
+alter proc sp_insert
+@email varchar( 50),@password varchar(10),@id int
 as
 begin
-insert into login values( @email, @password)
+insert into login values( @email, @password,@id)
 end
 GO
 
@@ -42,7 +44,7 @@ password varchar(10)
 select *from sign_up_info
 insert into sign_up_info values('abebe','shewa','a@Gmail.com','0987654322','12');
 insert into sign_up_info values('kebede','shewa','k@Gmail.com','0987987322','1234');
-drop table sign_up
+--drop table sign_up
 
 
 --delete from sign_up where userId=1;
@@ -53,11 +55,13 @@ alter PROC sp_ins
 @ln varchar(25),
 @email varchar(50),
 @ci varchar(15),
-@password varchar(10)
+@password varchar(10),
+@id int output
 
 AS
 BEGIN
     insert into sign_up_info values(@fn,@ln,@email,@ci,@password)
+	select @id=(select SCOPE_IDENTITY())
 end
 GO
 ------------------------trigger that fires when same email and pwd is inserted for creating acc---------------------------------------------------
@@ -244,10 +248,10 @@ create table weddingInfos
 groomName varchar(100),
 brideName varchar(100),
 packageName varchar(50),
-price decimal(10, 2),
+price int,
 guests int,
 Weddingdate DATETIME,
-userId int identity foreign key references sign_up_info (userId)
+userId int foreign key references sign_up_info (userId)
 
 );
 select * from weddingInfos
@@ -263,7 +267,8 @@ alter PROCEDURE spInsert
 @packageName varchar(50),
 @price decimal(10,2),
 @guests int,
-@wd dateTime
+@wd dateTime,
+@id int
 
 AS
 BEGIN
@@ -271,7 +276,7 @@ BEGIN
 
 
 
-    insert weddingInfos values(@gn, @bn, @packageName, @price, @guests,@wd)
+    insert weddingInfos values(@gn, @bn, @packageName, @price, @guests,@wd,@id)
 end
 GO
 
@@ -310,7 +315,7 @@ alter PROCEDURE UPDATEBOOK
 AS
 BEGIN
     update booked set    
-    guests = @guests ,payment = @payment , @wd = WeddingDate where id = @id
+    guests = @guests ,payment = @payment , WeddingDate = @wd where id = @id
 end
 GO
 
@@ -338,6 +343,8 @@ insert into packageDetail values ('DJ',5000)
 insert into packageDetail values ('Decor',12000)
 insert into packageDetail values ('Venue Booking',60000)
 
+drop table packageDetail
+
 select * from packageDetail
 /*
 create function custom_total
@@ -350,14 +357,14 @@ begin
 end
 */
 create table selected(
-id int foreign key references packageDetail(PD),
+id int ,
 BeautyService bit,
 PhotographyService bit,
 Catering bit,
 DJ bit,
 Decor bit,
 VenueBooking bit,
-
+foreign key (id) references packageDetail(PD),
 );
 
 --drop table selected;
@@ -373,17 +380,25 @@ alter proc ins_selected
 as
 begin
 insert into selected values(@id,@BeautyService,@PhotographyService,@Catering,@DJ,@Decor,@VenueBooking)
+
 end
+CREATE PROCEDURE PRICE
+@id int
+AS
+BEGIN
+	SELECT DBO.priceCalc (@id);
+END
 select * from selected
 go
 
 GO
-create proc priceCalc
-@id int
-
+ALTER FUNCTION priceCalc
+(@id int)
+returns int
 as
 begin
   declare @price int = 0
+--  DECLARE @id int=0
   if exists(select * from selected where BeautyService = 1 and ID = @id)
     select @price += price from packageDetail where serviceName = 'Beauty Service';
         
@@ -405,8 +420,7 @@ begin
   return @price
 end
 
-
-
+go
 
 
 drop trigger trig_full
@@ -468,11 +482,11 @@ end
 
 go
 create trigger trigins
-on sign_up
+on weddingInfos
 after insert
 as begin 
-insert booked(userId,firstName,lastName,WD)
-select i.id,i.firstName,i.lastName,i.weddingDate from inserted i
+insert booked(id,groomName,brideName,weddingDate,guests)
+select i.userId,i.groomName,i.brideName,i.weddingDate,i.guests from inserted i
 end
 ---------------------------------------------------------------------------
 go

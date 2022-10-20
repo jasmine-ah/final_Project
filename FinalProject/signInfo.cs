@@ -140,7 +140,7 @@ namespace FinalProject
         private void button1_Click(object sender, EventArgs e)
         {
             string pn = null;
-            double pr = 0.0;
+            int pr = 0;
             if (rbBasic.Checked)
             {
                 pn = "Basic";
@@ -165,11 +165,10 @@ namespace FinalProject
                 pr = 300000;
             }
 
-
             //save customer info on your database
             Class2 c2 = new Class2
             {
-                Id = this.id,
+                Id = id,
                 BrideName = bFN.Text + " " + bLN.Text,
                 GroomName = gFN.Text + " " + gLN.Text,
                 PackageName = pn,

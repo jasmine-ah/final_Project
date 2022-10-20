@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
-
+using System.Data;
 namespace FinalProject.model
 {
     internal class Class1
@@ -35,23 +35,33 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "exec sp_ins @fn,@ln,@email,@ci,@password";
+                //string Query = "exec sp_ins @fn,@ln,@email,@ci,@password";
 
-                SqlCommand cmd = new SqlCommand(Query, connection);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_ins";
+                
                 cmd.Parameters.AddWithValue("@fn", this.firstName);
                 cmd.Parameters.AddWithValue("@ln", this.lastName);
                 cmd.Parameters.AddWithValue("@email", this.Email);
                 cmd.Parameters.AddWithValue("@ci", this.contactInfo);
                 cmd.Parameters.AddWithValue("@password", this.Password);
-              
+
+                SqlParameter o = new SqlParameter();
+                o.ParameterName = "@id";
+                o.SqlDbType = SqlDbType.Int;
+                o.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(o);
 
                  cmd.ExecuteNonQuery();
-                
+                this.id=int.Parse(o.Value.ToString());
                 MessageBox.Show("Successfully Signed up!!!");
 
-                string query2 = "exec sp_insert @email,@password";
+                string query2 = "exec sp_insert @email,@password,@id";
 
                 SqlCommand cmd2 = new SqlCommand(query2, connection);
+                cmd2.Parameters.AddWithValue("@id", id);
                 cmd2.Parameters.AddWithValue("@password", this.Password);
                 cmd2.Parameters.AddWithValue("@email", this.Email);
                 cmd2.ExecuteNonQuery();
@@ -82,7 +92,7 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "select * from login ;";
+                string Query = "select * from login;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -91,16 +101,14 @@ namespace FinalProject.model
 
                 {
                     Class1 c1 = new Class1();
-                    
+                    c1.id = (int)sdr["id"];
                     c1.Email = (string)sdr["email"];
-
                     c1.Password = (string)sdr["password"];
                     temp.Add(c1);
-
                 }
                 connection.Close();
                 
-                connection.Open();
+                /*connection.Open();
                 String query2 = "select userId from sign_up where email='" + email + "' and password='" + password + "'";
                 SqlCommand cmd2=new SqlCommand(query2, connection);
                 SqlDataReader sdr2=cmd2.ExecuteReader();
@@ -112,17 +120,14 @@ namespace FinalProject.model
                     MessageBox.Show(c2.id.ToString());
                 }
                 
-                connection.Close();
+                connection.Close();*/
 
             }
-
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             };
-            return temp.Find(c => c.Email == email && c.Password == password);
+            return temp.Find(c1 => c1.Email == email && c1.Password == password);
         }
 
 

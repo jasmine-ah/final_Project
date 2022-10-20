@@ -48,7 +48,7 @@ namespace FinalProject
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            booking.update(dateTimePicker1.ToString(), textBox_ng.Text ,comboBox1.Text, label7.Text);
+            booking.update(int.Parse(label7.Text), textBox_ng.Text, comboBox1.Text, dateTimePicker1.ToString());
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = booking.GetAllProducts();
         }

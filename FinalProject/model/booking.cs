@@ -74,7 +74,7 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "select * from weddingInfos;";
+                string Query = "select * from booked;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -111,7 +111,7 @@ namespace FinalProject.model
             SqlConnection connection;
           //  string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             connection = new SqlConnection(connectionString);
-            string Query = "select * from weddingInfos";
+            string Query = "select * from booked";
             try
             {
 
@@ -149,7 +149,7 @@ namespace FinalProject.model
             
             return Bclass.Find(c => c.id == id);
         }
-        public static void update( string id,string guests,string cb,string wd)
+        public static void update( int id,string guests,string cb,string wd)
         {
             //string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
@@ -162,9 +162,9 @@ namespace FinalProject.model
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
-                cmd.Parameters.AddWithValue("@wd", wd);
                 cmd.Parameters.AddWithValue("@guests", guests);
                 cmd.Parameters.AddWithValue("@payment", cb);
+                cmd.Parameters.AddWithValue("@wd", wd);
                 cmd.Parameters.AddWithValue("@id", id);
 
 

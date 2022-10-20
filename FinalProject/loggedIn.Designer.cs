@@ -133,6 +133,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "loggedIn";
             this.Text = "loggedIn";
+            this.Load += new System.EventHandler(this.loggedIn_Load);
             this.ResumeLayout(false);
 
         }

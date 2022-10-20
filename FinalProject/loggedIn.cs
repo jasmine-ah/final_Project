@@ -43,5 +43,10 @@ namespace FinalProject
             signInfo si = new signInfo(id);
             si.Show();
         }
+
+        private void loggedIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

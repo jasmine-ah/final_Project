@@ -28,9 +28,16 @@ namespace FinalProject
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            string chkboxselect = "";
-            for (int i = 0; i <=checkedListBox1.CheckedItems.Count; i++)
+        { Class2 c2=new Class2();
+            c2.selected(id, checkedListBox1);
+            MessageBox.Show("customized");
+            label4.Text = c2.price.ToString();
+           /* signInfo s = new signInfo(id);
+            s.Show();
+            this.Close();*/
+
+          /*  string chkboxselect = "";
+           for (int i = 0; i <=checkedListBox1.CheckedItems.Count; i++)
             {
                 if (checkedListBox1.GetItemChecked(i))
                 {
@@ -42,8 +49,8 @@ namespace FinalProject
                  
                     }
                 
-            }
-            string str = @"Data Source=PCDOC-PC\MSSQLSERVER01;Initial Catalog=final_project;Integrated Security=true;";
+            }*/
+           /* string str = @"Data Source=TINELLA\SQLEXPRESS;Initial Catalog=final_project;Integrated Security=true;";
             SqlConnection con = new SqlConnection(str);
             try
             {
@@ -53,7 +60,7 @@ namespace FinalProject
                 /*cmd.Parameters.AddWithValue("@id",this.id);
                 cmd.Parameters.AddWithValue("@BeautyService", );
                 
-                label3.Text=*/
+                label3.Text=
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("succesful");
             }
@@ -64,8 +71,8 @@ namespace FinalProject
             finally
             {
                 con.Close();
-            }
-
+            };
+*/
             /*
           string chkboxselect="";
             for(int i=0;i<checkedListbox1.Items.Count;i++){

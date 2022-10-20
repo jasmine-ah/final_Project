@@ -15,9 +15,11 @@ namespace FinalProject.model
         public string BrideName { get; set; }
         public string GroomName { get; set; }
         public string PackageName { get; set; }
-        public double price { get; set; }
+
+        public int price { get; set; }
         public int GuestNumber { get; set; }
         public DateTime weddingDate { get; set; }
+        
 
         static private List<Class2> class2 = new List<Class2>();
         public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
@@ -34,13 +36,13 @@ namespace FinalProject.model
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
 
-                string Query = "exec spInsert @bf,@gn, @pn, @price, @ng,@wd; ";
+                string Query = "exec spInsert @bf,@gn, @pn, @price, @ng,@wd,@id; ";
                     
                     //"values(@bf,@gn, @pn, @price, @ng,@wd);";
 
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
-               //cmd.Parameters.AddWithValue("@id", this.Id);
+               cmd.Parameters.AddWithValue("@id", this.Id);
                 cmd.Parameters.AddWithValue("@bf", this.BrideName);
                 cmd.Parameters.AddWithValue("@gn", this.GroomName);
                 cmd.Parameters.AddWithValue("@pn", this.PackageName);
@@ -70,16 +72,20 @@ namespace FinalProject.model
 
         }
 
-        public static void selected(int id, CheckedListBox checkedListBox1)
+        public void selected(int id, CheckedListBox checkedListBox1)
         {
             SqlConnection connection = new SqlConnection(connectionString);
           
             try
             {
                 connection.Open();
-                string query = "Exec ins_selected @id,@bs,@ps,@cat,@dj,@dec,@vb";
-                SqlCommand cmd=new SqlCommand(query, connection);
-                connection.Open();
+                string query1 = "Exec ins_selected @id,@bs,@ps,@cat,@dj,@dec,@vb";
+                string query2 = "Select dbo.PRICE (@id)";
+
+                SqlCommand cmd=new SqlCommand(query1, connection);
+                SqlCommand cmd2 = new SqlCommand(query2, connection);
+
+
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@bs", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(0);
                 cmd.Parameters.AddWithValue("@ps", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(1);
@@ -88,6 +94,12 @@ namespace FinalProject.model
                 cmd.Parameters.AddWithValue("@dec", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(4);
                 cmd.Parameters.AddWithValue("@vb", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(5);
 
+                cmd2.Parameters.AddWithValue("@id", id);
+             
+                cmd.ExecuteNonQuery();
+                int p = Convert.ToInt32(cmd2.ExecuteScalar());
+                Class2 c = new Class2();
+                c.price =p;
             }
             catch(Exception ee)
             {

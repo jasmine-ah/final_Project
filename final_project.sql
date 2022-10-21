@@ -65,21 +65,25 @@ BEGIN
 end
 GO
 ------------------------trigger that fires when same email and pwd is inserted for creating acc---------------------------------------------------
-create trigger trig_sameEmailAndPhone
-on sign_up
-instead of insert
+alter trigger trig_sameEmailAndPhone
+on sign_up_info
+after insert
 as begin
-declare @em varchar(100),@ci varchar(15)
-set @em=(select email from inserted)
-set @ci=(select contactInfo from inserted)
-if @em=(select email from sign_up) 
-BEGIN
+
+if exists(select email from inserted )
+begin
 raiserror('EMAIL ALREADY TAKEN CANNNOT CREATE ACCOUNT',16,1)
 ROLLBACK
 end
-IF @ci=(select contactInfo from sign_up)
+END
+go
+CREATE TRIGGER trigsamePhone
+on sign_up_info
+after insert
+as begin
+if exists (select contactInfo from inserted)
 begin
-raiserror('USER WITH THIS PHONE NUMBER ALREADY TAKEN!!!',16,1)
+raiserror('USER WITH THIS PHONE NUMBER ALREADY EXISTS!!!',16,1)
 ROLLBACK
 end
 end

@@ -161,6 +161,22 @@ namespace FinalProject
         {
 
         }
+
+        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+           if( ActiveMdiChild != null)
+           {
+                ActiveMdiChild.Close();
+            }
+            
+            ForgotPassword fp = new ForgotPassword();
+            fp.Show();
+        }
     }
 }
 

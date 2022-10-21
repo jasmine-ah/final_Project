@@ -104,6 +104,12 @@
     <Compile Include="contact_us.Designer.cs">
       <DependentUpon>contact_us.cs</DependentUpon>
     </Compile>
+    <Compile Include="ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="loggedIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,12 @@
       <DependentUpon>Material.cs</DependentUpon>
     </Compile>
     <Compile Include="model\booking.cs" />
+    <Compile Include="SeeOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeeOrder.Designer.cs">
+      <DependentUpon>SeeOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="serviceForms\beauty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,11 +224,17 @@
     <EmbeddedResource Include="contact_us.resx">
       <DependentUpon>contact_us.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="loggedIn.resx">
       <DependentUpon>loggedIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeeOrder.resx">
+      <DependentUpon>SeeOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="serviceForms\beauty.resx">
       <DependentUpon>beauty.cs</DependentUpon>

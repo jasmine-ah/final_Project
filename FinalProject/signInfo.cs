@@ -158,7 +158,12 @@ namespace FinalProject
                 pn = "Luxury";
                 pr = 450000;
             }
-               
+            else if (rbSimple.Checked)
+            {
+                pn = "Simple";
+                pr = 100000;
+            }
+
             else if (rbPremium.Checked)
             {
                 pn = "Premium";
@@ -177,13 +182,35 @@ namespace FinalProject
                  weddingDate = guna2DateTimePicker1.Value,
             };
             c2.save();
+            SeeOrder s = new SeeOrder();
+            s.label1.Text = bFN.Text;
         }
 
-      
+  
 
         private void button3_Click_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void gFN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbRoyal_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

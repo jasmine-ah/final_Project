@@ -101,6 +101,7 @@
             this.guna2GradientCircleButton3.Size = new System.Drawing.Size(198, 206);
             this.guna2GradientCircleButton3.TabIndex = 5;
             this.guna2GradientCircleButton3.Text = "See Your Order";
+            this.guna2GradientCircleButton3.Click += new System.EventHandler(this.guna2GradientCircleButton3_Click);
             // 
             // guna2BorderlessForm1
             // 

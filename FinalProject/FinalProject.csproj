@@ -123,11 +123,11 @@
       <DependentUpon>Material.cs</DependentUpon>
     </Compile>
     <Compile Include="model\booking.cs" />
-    <Compile Include="SeeOrder.cs">
+    <Compile Include="SeeOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SeeOrder.Designer.cs">
-      <DependentUpon>SeeOrder.cs</DependentUpon>
+    <Compile Include="SeeOrders.Designer.cs">
+      <DependentUpon>SeeOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="serviceForms\beauty.cs">
       <SubType>Form</SubType>
@@ -233,8 +233,8 @@
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SeeOrder.resx">
-      <DependentUpon>SeeOrder.cs</DependentUpon>
+    <EmbeddedResource Include="SeeOrders.resx">
+      <DependentUpon>SeeOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="serviceForms\beauty.resx">
       <DependentUpon>beauty.cs</DependentUpon>
@@ -339,6 +339,7 @@
     <None Include="Resources\camera-6734.png" />
     <None Include="Resources\party-confetti-2994.png" />
     <None Include="Resources\gift-box-and-hearts-11420.png" />
+    <None Include="Resources\round-warning-sign-in-red-flat-design-error-alert-vector-31082002.jpg" />
     <Content Include="Scripts\fontawesome\all.js" />
     <Content Include="Scripts\fontawesome\all.min.js" />
     <Content Include="Scripts\fontawesome\brands.js" />

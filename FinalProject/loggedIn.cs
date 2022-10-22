@@ -52,9 +52,6 @@ namespace FinalProject
         private void guna2GradientCircleButton3_Click(object sender, EventArgs e)
         {
           
-            this.Close();
-            SeeOrder s = new SeeOrder();
-            s.Show();
         }
     }
 }

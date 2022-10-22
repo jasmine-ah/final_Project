@@ -181,6 +181,7 @@
             this.rbLuxury.TabStop = true;
             this.rbLuxury.Text = "Luxury Package";
             this.rbLuxury.UseVisualStyleBackColor = true;
+            this.rbLuxury.CheckedChanged += new System.EventHandler(this.rbLuxury_CheckedChanged);
             // 
             // rbPremium
             // 
@@ -194,6 +195,7 @@
             this.rbPremium.TabStop = true;
             this.rbPremium.Text = "Premium Package";
             this.rbPremium.UseVisualStyleBackColor = true;
+            this.rbPremium.CheckedChanged += new System.EventHandler(this.rbPremium_CheckedChanged);
             // 
             // rbBasic
             // 
@@ -207,6 +209,7 @@
             this.rbBasic.TabStop = true;
             this.rbBasic.Text = "Basic Package";
             this.rbBasic.UseVisualStyleBackColor = true;
+            this.rbBasic.CheckedChanged += new System.EventHandler(this.rbBasic_CheckedChanged);
             // 
             // rbSimple
             // 
@@ -220,6 +223,7 @@
             this.rbSimple.TabStop = true;
             this.rbSimple.Text = "Simple Package";
             this.rbSimple.UseVisualStyleBackColor = true;
+            this.rbSimple.CheckedChanged += new System.EventHandler(this.rbSimple_CheckedChanged);
             // 
             // rbcustom
             // 
@@ -364,12 +368,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox bLN;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox gFN;
-        private System.Windows.Forms.TextBox gLN;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton rbRoyal;
         private System.Windows.Forms.RadioButton rbLuxury;
@@ -381,10 +382,13 @@
         private System.Windows.Forms.Button button1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private System.Windows.Forms.TextBox tbGuestNum;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         public System.Windows.Forms.TextBox bFN;
+        public System.Windows.Forms.TextBox bLN;
+        public System.Windows.Forms.TextBox gFN;
+        public System.Windows.Forms.TextBox gLN;
+        public System.Windows.Forms.TextBox tbGuestNum;
+        public Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
     }
 }

@@ -113,6 +113,19 @@ namespace FinalProject
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
+            if(guna2CheckBox1.Checked== true)
+            {
+                Properties.Settings.Default.Email = guna2TextBox3.Text;
+                Properties.Settings.Default.Password = guna2TextBox4.Text;
+                Properties.Settings.Default.Save();
+            }
+            if (guna2CheckBox1.Checked == false)
+            {
+                Properties.Settings.Default.Email = "";
+                Properties.Settings.Default.Password = "";
+                Properties.Settings.Default.Save();
+            }
+
             if (guna2TextBox3.Text == "" && guna2TextBox4.Text == "")
             {
                 MessageBox.Show("No information entered.");
@@ -159,7 +172,11 @@ namespace FinalProject
 
         private void homePage_Load(object sender, EventArgs e)
         {
-
+            if(Properties.Settings.Default.Email != String.Empty)
+            {
+                guna2TextBox3.Text = Properties.Settings.Default.Email;
+                guna2TextBox4.Text = Properties.Settings.Default.Password;
+            }
         }
 
         private void guna2TextBox3_TextChanged(object sender, EventArgs e)

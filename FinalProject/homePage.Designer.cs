@@ -37,8 +37,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +50,7 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.pn_login.SuspendLayout();
@@ -105,32 +104,6 @@
             // guna2ShadowForm1
             // 
             this.guna2ShadowForm1.TargetForm = this;
-            // 
-            // guna2ToggleSwitch1
-            // 
-            this.guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(43, 190);
-            this.guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            this.guna2ToggleSwitch1.Size = new System.Drawing.Size(35, 20);
-            this.guna2ToggleSwitch1.TabIndex = 13;
-            this.guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(91, 191);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 19);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Remember me";
             // 
             // guna2GradientButton1
             // 
@@ -214,12 +187,11 @@
             // 
             this.pn_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_login.BackColor = System.Drawing.Color.Transparent;
+            this.pn_login.Controls.Add(this.guna2CheckBox1);
             this.pn_login.Controls.Add(this.guna2TextBox3);
             this.pn_login.Controls.Add(this.guna2TextBox4);
             this.pn_login.Controls.Add(this.label3);
-            this.pn_login.Controls.Add(this.guna2ToggleSwitch1);
             this.pn_login.Controls.Add(this.guna2Button1);
-            this.pn_login.Controls.Add(this.label1);
             this.pn_login.Controls.Add(this.label2);
             this.pn_login.Controls.Add(this.guna2GradientButton1);
             this.pn_login.FillColor = System.Drawing.Color.White;
@@ -324,6 +296,25 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // guna2CheckBox1
+            // 
+            this.guna2CheckBox1.AutoSize = true;
+            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox1.CheckedState.BorderRadius = 0;
+            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.Pink;
+            this.guna2CheckBox1.CheckMarkColor = System.Drawing.Color.Snow;
+            this.guna2CheckBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.guna2CheckBox1.Location = new System.Drawing.Point(51, 192);
+            this.guna2CheckBox1.Name = "guna2CheckBox1";
+            this.guna2CheckBox1.Size = new System.Drawing.Size(153, 23);
+            this.guna2CheckBox1.TabIndex = 20;
+            this.guna2CheckBox1.Text = "Remember Me";
+            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox1.UncheckedState.BorderRadius = 2;
+            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.Bisque;
+            // 
             // homePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -371,8 +362,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch1;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
@@ -381,5 +370,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
     }
 }

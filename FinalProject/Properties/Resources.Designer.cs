@@ -183,6 +183,16 @@ namespace FinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap round_warning_sign_in_red_flat_design_error_alert_vector_31082002 {
+            get {
+                object obj = ResourceManager.GetObject("round-warning-sign-in-red-flat-design-error-alert-vector-31082002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap share_arrow_855 {
             get {
                 object obj = ResourceManager.GetObject("share-arrow-855", resourceCulture);

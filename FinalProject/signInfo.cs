@@ -1,14 +1,7 @@
 ﻿using FinalProject.model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinalProject
 {
@@ -24,8 +17,8 @@ namespace FinalProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-          
-           
+
+
         }
 
         private void signInfo_Load(object sender, EventArgs e)
@@ -43,7 +36,7 @@ namespace FinalProject
             if (bFN.Text == "First")
             {
                 bFN.Text = "";
-                bFN.ForeColor = Color.Black;       
+                bFN.ForeColor = Color.Black;
             }
         }
 
@@ -128,7 +121,7 @@ namespace FinalProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
@@ -140,7 +133,7 @@ namespace FinalProject
             this.Close();
             custom c = new custom(id);
             c.Show();
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -152,13 +145,13 @@ namespace FinalProject
                 pn = "Basic";
                 pr = 150000;
             }
-                
+
             else if (rbRoyal.Checked)
             {
                 pn = "Royal";
                 pr = 600000;
             }
-               
+
             else if (rbLuxury.Checked)
             {
                 pn = "Luxury";
@@ -185,35 +178,30 @@ namespace FinalProject
                 PackageName = pn,
                 price = pr,
                 GuestNumber = int.Parse(tbGuestNum.Text),
-                 weddingDate = guna2DateTimePicker1.Value,
+                weddingDate = guna2DateTimePicker1.Value,
             };
             c2.save();
-<<<<<<< Updated upstream
-           
-=======
-            //SeeOrder s = new SeeOrder();
-            //s.label1.Text = bFN.Text;
->>>>>>> Stashed changes
+
         }
 
-  
+
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-          
+
             //this.Close();
             SeeOrders s = new SeeOrders();
             s.bridename = bFN.Text;
-            s.bridelname= bLN.Text;
-            s.groomname=gFN.Text;
-            s.groomlname= gLN.Text;
-            s.guests=tbGuestNum.Text;
+            s.bridelname = bLN.Text;
+            s.groomname = gFN.Text;
+            s.groomlname = gLN.Text;
+            s.guests = tbGuestNum.Text;
             s.royal = rbRoyal.Checked.ToString();
-            s.premium=rbPremium.Checked.ToString();
-            s.simple= rbSimple.Checked.ToString();
-            s.luxury=rbLuxury.Checked.ToString();
-            s.basic=rbBasic.Checked.ToString();
-            s.custom=rbcustom.Checked.ToString();
+            s.premium = rbPremium.Checked.ToString();
+            s.simple = rbSimple.Checked.ToString();
+            s.luxury = rbLuxury.Checked.ToString();
+            s.basic = rbBasic.Checked.ToString();
+            s.custom = rbcustom.Checked.ToString();
             s.weddingDate = guna2DateTimePicker1.Text;
             s.package = selected;
             s.ShowDialog();
@@ -226,10 +214,10 @@ namespace FinalProject
 
         private void rbRoyal_CheckedChanged(object sender, EventArgs e)
         {
-            
+
             if (rbRoyal.Checked == true)
             {
-                selected= rbRoyal.Text;
+                selected = rbRoyal.Text;
             }
         }
 

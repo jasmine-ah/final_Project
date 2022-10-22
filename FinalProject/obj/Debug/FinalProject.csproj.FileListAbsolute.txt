@@ -192,6 +192,5 @@ C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalPro
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.ForgotPassword.resources
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.SeeOrders.resources
 =======
-C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.ForgotPassword.resources
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.SeeOrder.resources
 >>>>>>> Stashed changes

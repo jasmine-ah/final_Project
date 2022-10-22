@@ -24,7 +24,7 @@ namespace FinalProject.model
         public string Occupation { get; set; }
         public string Gender { get; set; }
 
-        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
         
         public void save()
         {

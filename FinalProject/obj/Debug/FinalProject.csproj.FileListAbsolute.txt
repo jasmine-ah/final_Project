@@ -188,3 +188,5 @@ C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.loggedIn.resources
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.ForgotPassword.resources
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.SeeOrders.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.ForgotPassword.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.SeeOrders.resources

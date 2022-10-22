@@ -188,7 +188,12 @@ namespace FinalProject
                  weddingDate = guna2DateTimePicker1.Value,
             };
             c2.save();
+<<<<<<< Updated upstream
            
+=======
+            //SeeOrder s = new SeeOrder();
+            //s.label1.Text = bFN.Text;
+>>>>>>> Stashed changes
         }
 
   

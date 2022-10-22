@@ -36,6 +36,7 @@ namespace FinalProject
             }
             else
             {
+                label7.Text = product.id.ToString();
                 textBox_fn.Text = product.groomName;
                 textBox_ln.Text = product.brideName;
                 dateTimePicker1.Value = DateTime.Parse(product.weddingDate.ToString());
@@ -48,7 +49,7 @@ namespace FinalProject
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            booking.update(int.Parse(label7.Text), textBox_ng.Text, comboBox1.SelectedText.ToString(), dateTimePicker1.ToString());
+            booking.update(int.Parse(label7.Text),textBox_fn.Text,textBox_ln.Text, int.Parse(textBox_ng.Text), comboBox1.SelectedItem.ToString(),dateTimePicker1.Value);
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = booking.GetAllProducts();
         }

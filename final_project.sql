@@ -203,11 +203,12 @@ groomName varchar(20),
 brideName varchar(20),
 WeddingDate datetime,
 guests int,
-payment varchar (20),
+payment varchar (20) default ' ',
 foreign key (id) references sign_up_info(userId)
 );
+ 
 select * from booked
-drop table booked
+--drop table booked
 go
 alter PROC spInserted
 @gn varchar(25),
@@ -224,26 +225,17 @@ set @lastid = SCOPE_IDENTITY()
     insert into booked values(@lastid,@gn,@bn,@wedding,@g,@pay)
 end
 GO
-
-
-alter trigger addId
-on sign_up
-after insert
-as begin
-insert booked(id)
-select userId from inserted
-insert weddingInfo(id) select userId from inserted
-end
-
+/*
 go
 create trigger addInfo
-on weddingInfo
+on weddingInfos
 after insert
 as begin
 insert booked(groomName,brideName,guests,WeddingDate)
 select groomName,brideName,guests,weddingDate from inserted 
 end
 go
+*/
 --drop table booked
 
 create table weddingInfos
@@ -259,9 +251,7 @@ userId int foreign key references sign_up_info (userId)
 
 );
 select * from weddingInfos
-drop table weddingInfos
-
-
+--drop table weddingInfos
 
 GO
 alter PROCEDURE spInsert
@@ -273,25 +263,29 @@ alter PROCEDURE spInsert
 @guests int,
 @wd dateTime,
 @id int
-
 AS
 BEGIN
---declare @em varchar(100)=(select email from sign_up where @email)
-
-
-
     insert weddingInfos values(@gn, @bn, @packageName, @price, @guests,@wd,@id)
 end
 GO
-
-
+--------------------------------trigger inserts records on booked table after there is an insert in weddingInfo----------------
+create trigger trigins
+on weddingInfos
+after insert
+as begin 
+insert booked(id,groomName,brideName,weddingDate,guests)
+select i.userId,i.groomName,i.brideName,i.weddingDate,i.guests from inserted i
+end
+------------------------------------------------------------------------------
+/*
 alter trigger trigins2
-on weddingInfo
+on weddingInfos
 after insert
 as begin
 insert booked(groomName,brideName,WeddingDate,guests)
 select i.groomName,i.brideName,i.Weddingdate,i.guests from inserted i 
 end
+*/
 go
 create PROCEDURE spPopulate
 @id int
@@ -312,6 +306,8 @@ end
 exec bookDisplay 1
 go
 alter PROCEDURE UPDATEBOOK
+@gn varchar(100),
+@bn varchar(100),
 @wd datetime,
 @payment varchar(20),
 @guests varchar(6),
@@ -319,11 +315,9 @@ alter PROCEDURE UPDATEBOOK
 AS
 BEGIN
     update booked set    
-    guests = @guests ,payment = @payment , WeddingDate = @wd where id = @id
+             groomName=@gn,brideName=@bn, guests = @guests ,payment = @payment , WeddingDate = @wd where id = @id
 end
 GO
-
-
 create PROCEDURE DB
 @id int
 AS
@@ -332,6 +326,19 @@ BEGIN
 END
 GO
 
+create trigger updwedd
+on booked
+after update
+as begin
+update weddingInfos set groomName=i.groomName,brideName=i.brideName,guests=i.guests,Weddingdate=i.WeddingDate from inserted i join weddingInfos w on i.id=w.userId
+end
+go
+create trigger delwed
+on booked 
+after delete
+as begin
+delete from weddingInfos w inner join deleted d userId on w.userId=d.id
+end
 ---------------------custom---------------------------
 create table packageDetail(
 PD int identity primary key,
@@ -386,6 +393,7 @@ begin
 insert into selected values(@id,@BeautyService,@PhotographyService,@Catering,@DJ,@Decor,@VenueBooking)
 
 end
+go
 CREATE PROCEDURE PRICE
 @id int
 AS
@@ -427,11 +435,11 @@ end
 go
 
 
-drop trigger trig_full
+
 ---------------------------trigger that fires if the inserted wedding date is near-----------------------------
 go
 create trigger trig_nearDate
-on weddingInfo
+on weddingInfos
 after insert 
 as begin
 declare @wd date
@@ -446,12 +454,12 @@ go
 -----------------------trigger that fires if there is booking on occupied wedding date------------------------
 go
 create trigger trig_full
-on weddingInfo
+on weddingInfos
 after insert 
 as begin
 declare @wd date,@s int
 set @wd=(select cast(weddingDate AS datetime)from inserted )
-set @s=(select count(w.weddingDate)from weddingInfo w join inserted i on w.weddingDate=i.weddingDate)
+set @s=(select count(w.weddingDate)from weddingInfos w join inserted i on w.weddingDate=i.weddingDate)
 if @s>5
 begin
 raiserror('CANNOT BOOK!! Inserted Wedding date is fully booked ',16,1)
@@ -460,40 +468,29 @@ end
 end
 
 -----------------------------triggger to stop booking morethan one wedding with the same email-----------
-go
-create trigger trig_no2acc
-on sign_up
-instead of insert
-as begin
-declare @
 
-----------------------------------------------------------------------
-go
-drop trigger trigins2
 go
 create trigger trig_noupdate
 on booked
 after update
 as begin
 declare @wd date
-set @wd=(select cast(WD as datetime)from booked where id=)
+declare @id int
+set @wd=(select WeddingDate from booked where id=@id)
 if DATEDIFF(day,getdate(),@wd)<15
 begin
-raiserror('Cannot update any info',16,1)
+raiserror('Cannot update any info the wedding is near!!!',16,1)
 rollback
 end
 end
-
 go
-create trigger trigins
-on weddingInfos
-after insert
-as begin 
-insert booked(id,groomName,brideName,weddingDate,guests)
-select i.userId,i.groomName,i.brideName,i.weddingDate,i.guests from inserted i
-end
 ---------------------------------------------------------------------------
+CREATE TABLE revenue(
+total money,
+vat money
+);
 go
+CREATE FUNCTION 
 
 
 

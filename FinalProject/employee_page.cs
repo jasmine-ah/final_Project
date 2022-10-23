@@ -49,18 +49,18 @@ namespace FinalProject
             }
             if (string.IsNullOrEmpty(textBox4.Text))
             {
-                errorProvider1.SetError(textBox4, "Your Contact info is required");
+                errorProvider1.SetError(textBox4, "Contact info is required");
             }
             if (string.IsNullOrEmpty(textBox7.Text))
             {
-                errorProvider1.SetError(textBox7, "Your Email is required");
+                errorProvider1.SetError(textBox7, "Email is required");
             }
             else if (!r.IsMatch(textBox2.Text))
-                errorProvider1.SetError(textBox2, "Your Name should'nt contain numbers");
+                errorProvider1.SetError(textBox2, "Name should'nt contain numbers");
 
             
             else if (!r.IsMatch(textBox3.Text))
-                errorProvider1.SetError(textBox3, "Your Name should'nt contain numbers");
+                errorProvider1.SetError(textBox3, "Name should'nt contain numbers");
 
 
             else
@@ -80,7 +80,7 @@ namespace FinalProject
                         contactInfo = textBox4.Text,
                         DateOfBirth =dateTimePicker1.Value.ToString(),
                         Email = textBox7.Text,
-                        Occupation = textBox8.Text,
+                        Occupation = comboBox1.Text,
                         Gender = gen
                     };
 
@@ -115,7 +115,7 @@ namespace FinalProject
                 textBox4.Text = product.contactInfo;
                 dateTimePicker1.Value = DateTime.Parse(product.DateOfBirth);
                 textBox7.Text = product.Email;
-                textBox8.Text = product.Occupation;
+                comboBox1.Text = product.Occupation;
             }
 
         }
@@ -127,7 +127,7 @@ namespace FinalProject
                 gen = radioButton1.Text;
             else
                 gen = radioButton2.Text;
-            AdminClass.update(label9.Text, textBox2.Text, textBox3.Text, textBox4.Text,dateTimePicker1.Text, textBox7.Text, textBox8.Text,gen);
+            AdminClass.update(label9.Text, textBox2.Text, textBox3.Text, textBox4.Text,dateTimePicker1.Text, textBox7.Text, comboBox1.Text,gen);
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = AdminClass.GetAllProducts();
         }

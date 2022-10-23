@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace FinalProject.model
         public string Email { get; set; }
         public string Occupation { get; set; }
         public string Gender { get; set; }
+        public int salary { get; set; }
 
         public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
         
@@ -39,16 +41,18 @@ namespace FinalProject.model
                 MessageBox.Show("connection successful!!!");
                // string gen;
 
-                string Query = "exec ADDEMP @fname,@lname,@contactInfo,@dob,@email,@occupation,@gender;";
+                string Query = "exec ADDEMP @fn,@ln,@continfo,@DOB,@email,@Occupation,@gender;";
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
-                cmd.Parameters.AddWithValue("@fname", this.firstName);
-                cmd.Parameters.AddWithValue("@lname", this.lastName);
-                cmd.Parameters.AddWithValue("@contactInfo", this.contactInfo);
-                cmd.Parameters.AddWithValue("@dob", this.DateOfBirth);
+                cmd.Parameters.AddWithValue("@fn", this.firstName);
+                cmd.Parameters.AddWithValue("@ln", this.lastName);
+                cmd.Parameters.AddWithValue("@continfo", this.contactInfo);
+                cmd.Parameters.AddWithValue("@DOB", this.DateOfBirth);
                 cmd.Parameters.AddWithValue("@email", this.Email);
-                cmd.Parameters.AddWithValue("@occupation", this.Occupation);
+                cmd.Parameters.AddWithValue("@Occupation", this.Occupation);
                 cmd.Parameters.AddWithValue("@gender", this.Gender);
+                
+
 
                 var result = cmd.ExecuteNonQuery();
              
@@ -97,6 +101,7 @@ namespace FinalProject.model
                     ac.Email = (string)sdr["email"];
                     ac.Occupation = (string)sdr["Occupation"];
                     ac.Gender = (string)sdr["gender"];
+                    ac.salary=(int)sdr["salary"];
 
 
 
@@ -144,6 +149,7 @@ namespace FinalProject.model
                     ac.Email = (string)sdr["email"];
                     ac.Occupation = (string)sdr["Occupation"];
                     ac.Gender = (string)sdr["gender"];
+                    ac.salary = (int)sdr["salary"];
                     Bclass.Add(ac);
                 }
             }
@@ -177,8 +183,9 @@ namespace FinalProject.model
                 cmd.Parameters.AddWithValue("@occupation", occup);
                 cmd.Parameters.AddWithValue("@gender", gender);
                 cmd.Parameters.AddWithValue("@id", id);
+              
 
-                 cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
              
                 MessageBox.Show("Successfully Updated!!!");
 

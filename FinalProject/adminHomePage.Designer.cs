@@ -37,7 +37,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.employeeManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revenueManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -53,7 +54,7 @@
             guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             guna2ControlBox1.ForeColor = System.Drawing.Color.CornflowerBlue;
             guna2ControlBox1.IconColor = System.Drawing.Color.DarkRed;
-            guna2ControlBox1.Location = new System.Drawing.Point(559, 9);
+            guna2ControlBox1.Location = new System.Drawing.Point(594, 9);
             guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.Size = new System.Drawing.Size(34, 24);
@@ -67,7 +68,7 @@
             guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             guna2ControlBox2.ForeColor = System.Drawing.Color.CornflowerBlue;
             guna2ControlBox2.IconColor = System.Drawing.Color.DarkRed;
-            guna2ControlBox2.Location = new System.Drawing.Point(513, 9);
+            guna2ControlBox2.Location = new System.Drawing.Point(548, 9);
             guna2ControlBox2.Margin = new System.Windows.Forms.Padding(2);
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.Size = new System.Drawing.Size(34, 24);
@@ -81,7 +82,7 @@
             guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             guna2ControlBox3.ForeColor = System.Drawing.Color.CornflowerBlue;
             guna2ControlBox3.IconColor = System.Drawing.Color.DarkRed;
-            guna2ControlBox3.Location = new System.Drawing.Point(475, 9);
+            guna2ControlBox3.Location = new System.Drawing.Point(510, 9);
             guna2ControlBox3.Margin = new System.Windows.Forms.Padding(2);
             guna2ControlBox3.Name = "guna2ControlBox3";
             guna2ControlBox3.Size = new System.Drawing.Size(34, 24);
@@ -99,11 +100,12 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.employeeManagementToolStripMenuItem,
             this.bookingManagementToolStripMenuItem,
-            this.logOutToolStripMenuItem});
+            this.revenueManagementToolStripMenuItem,
+            this.logOutToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(635, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,12 +123,19 @@
             this.bookingManagementToolStripMenuItem.Text = "Booking Management";
             this.bookingManagementToolStripMenuItem.Click += new System.EventHandler(this.bookingManagementToolStripMenuItem_Click);
             // 
-            // logOutToolStripMenuItem
+            // revenueManagementToolStripMenuItem
             // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.logOutToolStripMenuItem.Text = "Log Out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            this.revenueManagementToolStripMenuItem.Name = "revenueManagementToolStripMenuItem";
+            this.revenueManagementToolStripMenuItem.Size = new System.Drawing.Size(138, 20);
+            this.revenueManagementToolStripMenuItem.Text = "Revenue Management";
+            this.revenueManagementToolStripMenuItem.Click += new System.EventHandler(this.revenueManagementToolStripMenuItem_Click);
+            // 
+            // logOutToolStripMenuItem1
+            // 
+            this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
+            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(62, 20);
+            this.logOutToolStripMenuItem1.Text = "Log Out";
+            this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
             // 
             // guna2AnimateWindow1
             // 
@@ -145,7 +154,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(600, 410);
+            this.ClientSize = new System.Drawing.Size(635, 410);
             this.Controls.Add(guna2ControlBox3);
             this.Controls.Add(guna2ControlBox2);
             this.Controls.Add(guna2ControlBox1);
@@ -171,8 +180,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem employeeManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookingManagementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem revenueManagementToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem1;
     }
 }

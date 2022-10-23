@@ -34,9 +34,11 @@ namespace FinalProject.model
 
                 connection.Open();
                 MessageBox.Show("connection successful!!!");
-
-                //string Query = "exec sp_ins @fn,@ln,@email,@ci,@password";
-
+                /*
+                string Query = "exec spSameEmnPwd @em,@ci";
+                SqlCommand c = new SqlCommand(Query,connection);
+                c.ExecuteNonQuery();
+                */
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.StoredProcedure;

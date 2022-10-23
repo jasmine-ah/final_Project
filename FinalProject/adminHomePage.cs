@@ -37,7 +37,14 @@ namespace FinalProject
             mat.Show();
         }
 
-        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        
+
+        private void adminHomePage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logOutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (ActiveForm != null)
             {
@@ -47,14 +54,14 @@ namespace FinalProject
             ad.Show();
         }
 
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        private void revenueManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void adminHomePage_Load(object sender, EventArgs e)
-        {
-
+            if (ActiveForm != null)
+            {
+                ActiveForm.Close();
+            }
+            revenue r = new revenue();
+            r.Show();
         }
     }
 }

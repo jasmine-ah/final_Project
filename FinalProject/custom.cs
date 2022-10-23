@@ -28,11 +28,29 @@ namespace FinalProject
         }
 
         private void button1_Click(object sender, EventArgs e)
-        { Class2 c2=new Class2();
+        //{ for (int i=0; i<=checkedListBox1.Items.Count-1; i++)
+        //    { 
+        //        string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        //        SqlConnection con = new SqlConnection(connectionString);
+        //        string Query = "insert into selected values(@id,@bs,@ps,@c,@dj,@d,@vb);";
+        //        SqlCommand cmd = new SqlCommand(Query, con);
+        //        cmd.Parameters.AddWithValue("@id",id);
+        //        cmd.Parameters.AddWithValue("beautyService",@bs);
+        //        cmd.Parameters.AddWithValue("id", @ps);
+        //        cmd.Parameters.AddWithValue("id", @id);
+        //        cmd.Parameters.AddWithValue("id", @id);
+        //        cmd.Parameters.AddWithValue("id", @id);
+
+        //    }
+
+
+        { 
+            
+            Class2 c2=new Class2();
             c2.selected(id, checkedListBox1);
             MessageBox.Show("customized");
             label4.Text = c2.price.ToString();
-           /* signInfo s = new signInfo(id);
+           /* signInfo s = new signInfo(id)
             s.Show();
             this.Close();*/
 

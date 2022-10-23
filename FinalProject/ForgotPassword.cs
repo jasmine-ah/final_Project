@@ -15,6 +15,7 @@ namespace FinalProject
     {
         public ForgotPassword()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
         }
 

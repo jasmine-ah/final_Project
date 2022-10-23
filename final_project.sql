@@ -64,13 +64,13 @@ BEGIN
 	select @id=(select SCOPE_IDENTITY())
 end
 GO
-------------------------trigger that fires when same email and pwd is inserted for creating acc---------------------------------------------------
-alter trigger trig_sameEmailAndPhone
+------------------------trigger that fires when same email and phone is inserted for creating acc---------------------------------------------------
+
+alter trigger trig_sameEmail
 on sign_up_info
 after insert
 as begin
-
-if exists(select email from inserted )
+if exists(select s.email from sign_up_info s inner join inserted i on i.email=s.email and i.userId<>s.userId)
 begin
 raiserror('EMAIL ALREADY TAKEN CANNNOT CREATE ACCOUNT',16,1)
 ROLLBACK
@@ -81,7 +81,7 @@ CREATE TRIGGER trigsamePhone
 on sign_up_info
 after insert
 as begin
-if exists (select contactInfo from inserted)
+if exists (select s.contactInfo from sign_up_info s inner join inserted i on i.contactInfo=s.contactInfo and i.userId<>s.userId)
 begin
 raiserror('USER WITH THIS PHONE NUMBER ALREADY EXISTS!!!',16,1)
 ROLLBACK
@@ -99,10 +99,12 @@ CREATE TABLE employee(
     Occupation varchar(25),
     gender varchar(6)
 );
+insert into employee(firstName,lastName,contactInfo,DOB,email,Occupation,gender) values('kebede','shewa','k@Gmail.com','0987987322','1234','f','u');
+alter table employee add constraint df_sal default '0' for salary
 select *from employee
-
+DELETE employee where employeeId=11
 GO
-CREATE PROCEDURE ADDEMP
+alter PROCEDURE ADDEMP
 
 @fn varchar(25),
 @ln varchar(25),
@@ -113,11 +115,11 @@ CREATE PROCEDURE ADDEMP
 @gender varchar(6)
 AS
 BEGIN
-    insert into employee values(@fn,@ln, @continfo, @DOB, @email, @Occupation, @gender)
+    insert into employee (firstName,lastName,contactInfo,DOB,email,Occupation,gender)values(@fn,@ln, @continfo, @DOB, @email, @Occupation, @gender)
 end
 GO
 
-CREATE PROCEDURE UPDATEEMP
+alter PROCEDURE UPDATEEMP
 @fn varchar(25),
 @ln varchar(25),
 @continfo varchar(15),
@@ -140,61 +142,51 @@ BEGIN
     delete from employee where employeeid = @id
 END
 GO
-/*
+
 GO
-CREATE PROCEDURE calcSalary
-@sal money
+alter function calcSalary
+(@id int)
+returns int
 As BEGIN
-DECLARE @occ VARCHAR(50)
-SET @occ=(SELECT Occupation from employee)
-case @occ
-when 'Photographer' then @sal=5000
-when ''
-
+DECLARE @occ VARCHAR(50)=(SELECT Occupation from employee where employeeId=@id)
+declare @sal int=(SELECT salary from employee where employeeId=@id)
+if (@occ='Event Photographer') set @sal=8000
+else if @occ='Catering Manager' set @sal=8500
+else if @occ='Chef' set @sal=6000
+else if @occ='Venue Manager' set @sal=8500
+else if @occ='Cleaning Staff' set @sal=3000
+else if @occ='Decorator' set @sal=5000
+else if @occ='DJ' set @sal=5500
+else if @occ='Hair Removal Specialist' set @sal=3500
+else if @occ='Hair stylist' set @sal=3000
+else if @occ='Head Waiter' set @sal=3100
+else if @occ='Makeup Artist' set @sal=6500
+else if @occ='Patisserie' set @sal=4000
+else if @occ='Personal Stylist' set @sal=4500
+else if @occ='Photo Editor' set @sal=7000
+else if @occ='Staff Coordinator' set @sal=5600
+else if @occ='Truck Driver' set @sal=3500
+else if @occ='Videographer' set @sal=8500
+else if @occ='Waiter' set @sal=2500
+else
+set @sal=0
+return @sal
 END
 GO
+alter trigger trigg_emp
+on employee
+after insert,update
+as begin
+declare @id int=(select employeeId from inserted)
+declare @s int= (select dbo.calcSalary(@id))
+if (select e.salary from employee e join inserted i on e.employeeId=i.employeeId)=0
+insert into employee(salary)
+select @s 
+else
+update employee set salary=@s 
+end
+go
 
-----------PACKAGES--------------------
-CREATE TABLE package(
-    packageId int PRIMARY KEY IDENTITY, 
-    packageName varchar(15),
-    packagePrice money
-);
-------------BILL----------------------
-
-CREATE TABLE BILL(
-    packageId int FOREIGN KEY REFERENCES package (packageId),
-
-)
-
-----------------------BOOKING------------------
-
-CREATE TABLE booking(
-    bookId int PRIMARY KEY IDENTITY,
-    --userId int FOREIGN KEY REFERENCES sign_up(userId),
-    bookType VARCHAR(50),
-    bookDate DATE
-);
-
-
----------------------BOOKING UPDATE-------------
-CREATE TABLE updatebooking(
-    bookId int FOREIGN KEY REFERENCES booking(bookId),
-    oldValue VARCHAR(50),
-    newValue VARCHAR(50),
-    updatedTime DATETIME
-);
-
-GO
-CREATE TRIGGER trigUpdate
-ON booking
-AFTER UPDATE 
-AS BEGIN
-INSERT updatebooking(bookId,oldValue,newValue,updatedTime)
-SELECT bookId, d.oldValue,i.newValue,i.updatedTime FROM inserted i JOIN deleted d ON i.bookId=d.bookId
-END
-GO
-*/
 --------------------------------------booking-------------------------------------------------------------------
 create table booked
 (
@@ -277,15 +269,7 @@ insert booked(id,groomName,brideName,weddingDate,guests)
 select i.userId,i.groomName,i.brideName,i.weddingDate,i.guests from inserted i
 end
 ------------------------------------------------------------------------------
-/*
-alter trigger trigins2
-on weddingInfos
-after insert
-as begin
-insert booked(groomName,brideName,WeddingDate,guests)
-select i.groomName,i.brideName,i.Weddingdate,i.guests from inserted i 
-end
-*/
+
 go
 create PROCEDURE spPopulate
 @id int
@@ -337,7 +321,7 @@ create trigger delwed
 on booked 
 after delete
 as begin
-delete from weddingInfos w inner join deleted d userId on w.userId=d.id
+delete from weddingInfos where deleted.id=weddingInfos.userId
 end
 ---------------------custom---------------------------
 create table packageDetail(
@@ -367,6 +351,7 @@ begin
 	return @price
 end
 */
+
 create table selected(
 id int ,
 BeautyService bit,
@@ -451,16 +436,17 @@ rollback
 end
 end
 go
+
 -----------------------trigger that fires if there is booking on occupied wedding date------------------------
 go
-create trigger trig_full
+alter trigger trig_full
 on weddingInfos
 after insert 
 as begin
 declare @wd date,@s int
 set @wd=(select cast(weddingDate AS datetime)from inserted )
 set @s=(select count(w.weddingDate)from weddingInfos w join inserted i on w.weddingDate=i.weddingDate)
-if @s>5
+if @s>2
 begin
 raiserror('CANNOT BOOK!! Inserted Wedding date is fully booked ',16,1)
 rollback
@@ -486,11 +472,75 @@ end
 go
 ---------------------------------------------------------------------------
 CREATE TABLE revenue(
+
 total money,
 vat money
 );
+--drop table revenue
+select * from revenue
 go
-CREATE FUNCTION 
+alter trigger updateRev
+on weddingInfos
+after insert,update
+as begin
+declare @t money=(select dbo.tot())
+declare @v money=(select dbo.vat())
+if (select count(*) from revenue)=0
+insert revenue(total,vat) select @t,@v 
+else
+update revenue set total=@t ,vat=@v
+end
+----------------------------Functions---------------------------------
+go
 
+alter FUNCTION tot()
+returns int
+as begin
+declare @tot int
+set @tot=(select sum(price) from weddingInfos)
+return @tot
+end
+go
+select dbo.tot()
 
+go
+create function vat()
+returns money
+as begin
+declare @v money,@t int
+set @t=(select sum(price) from weddingInfos)
+set @v=(@t*15)/100
+return @v
+end
+go
+select dbo.vat()
 
+go 
+create function totCust()
+returns int
+as begin
+declare @c int
+set @c=(select count(userId) from sign_up_info)
+return @c
+end
+go
+select dbo.totCust()
+go
+create function totEmp()
+returns int
+as begin
+declare @c int
+set @c=(select count(employeeId) from employee)
+return @c
+end
+go 
+
+select dbo.totalwedd()
+go
+create function totalWedd()
+returns int
+as begin
+declare @c int
+set @c=(select count(userId)from weddingInfos)
+return @c
+end

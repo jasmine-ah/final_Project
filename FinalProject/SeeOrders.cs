@@ -40,5 +40,12 @@ namespace FinalProject
             label5.Text = weddingDate; 
 
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            contact_us c = new contact_us();
+            c.Show();
+        }
     }
 }

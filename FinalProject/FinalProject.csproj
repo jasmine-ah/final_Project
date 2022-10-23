@@ -123,6 +123,12 @@
       <DependentUpon>Material.cs</DependentUpon>
     </Compile>
     <Compile Include="model\booking.cs" />
+    <Compile Include="revenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="revenue.Designer.cs">
+      <DependentUpon>revenue.cs</DependentUpon>
+    </Compile>
     <Compile Include="SeeOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="revenue.resx">
+      <DependentUpon>revenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeeOrders.resx">
       <DependentUpon>SeeOrders.cs</DependentUpon>

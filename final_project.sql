@@ -87,6 +87,17 @@ raiserror('USER WITH THIS PHONE NUMBER ALREADY EXISTS!!!',16,1)
 ROLLBACK
 end
 end
+go
+create proc delBook
+as begin
+declare @wd datetime=(select weddingDate from weddingInfos)
+declare @d datetime=(select DATEDIFF(day,@wd,Getdate()))
+if @d>0
+delete from weddingInfos 
+end
+
+
+
 ----------EMPLOYEE--------------------
 
 CREATE TABLE employee(
@@ -101,8 +112,10 @@ CREATE TABLE employee(
 );
 insert into employee(firstName,lastName,contactInfo,DOB,email,Occupation,gender) values('kebede','shewa','k@Gmail.com','0987987322','1234','f','u');
 alter table employee add constraint df_sal default '0' for salary
+alter table employee drop df_sal
+alter table employee alter column salary money
 select *from employee
-DELETE employee where employeeId=11
+DELETE employee where employeeId=13
 GO
 alter PROCEDURE ADDEMP
 
@@ -146,10 +159,10 @@ GO
 GO
 alter function calcSalary
 (@id int)
-returns int
+returns money
 As BEGIN
 DECLARE @occ VARCHAR(50)=(SELECT Occupation from employee where employeeId=@id)
-declare @sal int=(SELECT salary from employee where employeeId=@id)
+declare @sal money=(SELECT salary from employee where employeeId=@id)
 if (@occ='Event Photographer') set @sal=8000
 else if @occ='Catering Manager' set @sal=8500
 else if @occ='Chef' set @sal=6000
@@ -178,12 +191,9 @@ on employee
 after insert,update
 as begin
 declare @id int=(select employeeId from inserted)
-declare @s int= (select dbo.calcSalary(@id))
-if (select e.salary from employee e join inserted i on e.employeeId=i.employeeId)=0
-insert into employee(salary)
-select @s 
-else
-update employee set salary=@s 
+declare @s money= (select dbo.calcSalary(@id))
+select e.salary from employee e join inserted i on e.employeeId=i.employeeId
+update employee set salary=@s WHERE employeeId=@id
 end
 go
 
@@ -324,19 +334,7 @@ as begin
 delete from weddingInfos where deleted.id=weddingInfos.userId
 end
 ---------------------custom---------------------------
-create table packageDetail(
-PD int identity primary key,
-serviceName varchar(100),
-price int
 
-);
-
-insert into packageDetail values ('Beauty Service',6000)
-insert into packageDetail values ('Photography Service',7000)
-insert into packageDetail values ('Catering',10000)
-insert into packageDetail values ('DJ',5000)
-insert into packageDetail values ('Decor',12000)
-insert into packageDetail values ('Venue Booking',60000)
 
 drop table packageDetail
 
@@ -360,9 +358,9 @@ Catering bit,
 DJ bit,
 Decor bit,
 VenueBooking bit,
-foreign key (id) references packageDetail(PD),
+foreign key (id) references sign_Up_info(userId),
 );
-
+select * from selected
 --drop table selected;
 GO
 alter proc ins_selected
@@ -544,3 +542,85 @@ declare @c int
 set @c=(select count(userId)from weddingInfos)
 return @c
 end
+go
+create function calcProfit()
+returns money
+as begin
+declare @s int=(select sum(salary) from employee)
+declare @t int=(select total from revenue)
+declare @v int=(select vat from revenue)
+declare @p money
+set @p=(@t-@v-@s)
+return @p
+end
+go
+
+-----------------------------------------------------custom--------------------------
+create table packageDetail(
+PD int identity primary key,
+serviceName varchar(100),
+price int
+
+);
+
+insert into packageDetail values ('Beauty Service',6000)
+insert into packageDetail values ('Photography Service',7000)
+insert into packageDetail values ('Catering',10000)
+insert into packageDetail values ('DJ',5000)
+insert into packageDetail values ('Decor',12000)
+insert into packageDetail values ('Venue Booking',60000)
+
+create table custom(
+cid int foreign key references sign_up_info(userId),
+serviceName varchar(50),
+isChecked bit,
+
+);
+insert into custom (cid,serviceName,isChecked)values(2,'DJ',1)
+alter table custom add constraint df_pr default '0' for price
+select * from custom
+delete from custom where cid=22
+go
+
+go
+create function priceins(@id int)
+returns int
+as begin
+declare @i bit=(select isChecked from custom)
+declare @s varchar(50)=(select serviceName from custom)
+declare @p int=(select price from custom)
+while(@i=1)
+begin
+if @s='Beauty Service'
+set @p= 6000
+if @s='Photography Service'
+set @p=7000
+if @s='Catering'
+set @p=10000
+if @s='DJ'
+set @p=5000
+if @s='Decor'
+set @p=12000
+if @s='Venue Booking'
+set @p=60000
+end
+return @p
+end
+go
+go
+alter trigger ins_custom
+on custom
+after insert
+as begin
+declare @id int=(select cid from inserted)
+declare @n varchar(50)=(select serviceName from inserted)
+declare @s int=(select dbo.priceins(@id))
+update custom set price=@s where cid=@id and serviceName=@s
+end
+go
+--select p.price from packageDetail p join inserted i on p.serviceName=i.serviceName and isChecked=1
+end
+create proc serviceCal
+@id int
+as begin
+select sum(

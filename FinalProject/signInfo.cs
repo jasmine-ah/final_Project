@@ -168,7 +168,12 @@ namespace FinalProject
                 pn = "Premium";
                 pr = 300000;
             }
-
+            else if (rbcustom.Checked)
+            {
+                pn = "Custom";
+               // custom c = new custom(id);
+                //pr = c.price;
+            }
             //save customer info on your database
             Class2 c2 = new Class2
             {

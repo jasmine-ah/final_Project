@@ -20,6 +20,7 @@ namespace FinalProject
             label2.Text = GetTotEmp();
             label7.Text = GetTotWedd();
             label10.Text = GetVat();
+            label12.Text=GetProf();
         }
         public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
@@ -88,6 +89,18 @@ namespace FinalProject
             return t;
         }
 
+        private string GetProf()
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            string Query = "select dbo.calcProfit()";
+            SqlCommand cmd = new SqlCommand(Query, con);
+
+            string t = cmd.ExecuteScalar().ToString();
+
+            con.Close();
+            return t;
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -126,6 +139,11 @@ namespace FinalProject
         }
 
         private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

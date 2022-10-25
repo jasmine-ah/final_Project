@@ -24,7 +24,7 @@ namespace FinalProject.model
         public string Email { get; set; }
         public string Occupation { get; set; }
         public string Gender { get; set; }
-        public int salary { get; set; }
+        public decimal salary { get; set; }
 
         public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
         
@@ -101,7 +101,7 @@ namespace FinalProject.model
                     ac.Email = (string)sdr["email"];
                     ac.Occupation = (string)sdr["Occupation"];
                     ac.Gender = (string)sdr["gender"];
-                    ac.salary=(int)sdr["salary"];
+                    ac.salary=(decimal)sdr["salary"];
 
 
 
@@ -149,7 +149,7 @@ namespace FinalProject.model
                     ac.Email = (string)sdr["email"];
                     ac.Occupation = (string)sdr["Occupation"];
                     ac.Gender = (string)sdr["gender"];
-                    ac.salary = (int)sdr["salary"];
+                    ac.salary = (decimal)sdr["salary"];
                     Bclass.Add(ac);
                 }
             }

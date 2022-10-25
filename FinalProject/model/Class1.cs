@@ -21,8 +21,8 @@ namespace FinalProject.model
         public string emailextension { get; set; }
         public string contactInfo { get; set; }
 
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
 
-        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
 
         public void save()
         {

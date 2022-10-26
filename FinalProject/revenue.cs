@@ -22,7 +22,7 @@ namespace FinalProject
             label10.Text = GetVat();
             label12.Text=GetProf();
         }
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=DESKTOP-91AV9G7\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 

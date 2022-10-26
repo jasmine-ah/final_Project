@@ -21,7 +21,7 @@ namespace FinalProject.model
         public int guests { get; set; }
 
 
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=DESKTOP-91AV9G7\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
         public void save()
         {
             Aclass.Add(this);

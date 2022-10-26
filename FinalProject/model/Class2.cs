@@ -22,7 +22,7 @@ namespace FinalProject.model
         
 
         static private List<Class2> class2 = new List<Class2>();
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=DESKTOP-91AV9G7\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
 
         public void save()
         {
@@ -71,6 +71,40 @@ namespace FinalProject.model
 
 
         }
+
+        public void displayBooked(int id)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                string query1 = "Exec sp_loadsinglebooked @id";
+                SqlCommand cmd = new SqlCommand(query1, connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    id = (int)sdr["id"];
+                    GroomName = (string)sdr["groomName"];
+                    BrideName = (string)sdr["brideName"];
+                    PackageName = (string)sdr["packageName"];
+                    price = (int)sdr["price"];
+                    GuestNumber = (int)sdr["guests"];
+                    weddingDate = (DateTime)sdr["Weddingdate"];
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            };
+        }
+
 
         public void selected(int id, CheckedListBox checkedListBox1)
         {

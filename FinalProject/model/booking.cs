@@ -21,7 +21,11 @@ namespace FinalProject.model
         public int guests { get; set; }
 
 
+<<<<<<< HEAD
         public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+=======
+        public static string connectionString = @"Data Source=DESKTOP-91AV9G7\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+>>>>>>> 91cd054a224f4afd15f79e3208eb6a6ee8e43a41
         public void save()
         {
             Aclass.Add(this);

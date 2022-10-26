@@ -1,7 +1,7 @@
 create database final_project
 use final_project
-
-
+use master
+drop database final_project
 -----------------ROLE OPTION----------
 CREATE TABLE role(
     admin VARCHAR(10),
@@ -572,7 +572,7 @@ insert into packageDetail values ('Venue Booking',60000)
 
 create table custom(
 cid int foreign key references sign_up_info(userId),
-serviceName varchar(50),
+
 isChecked bit,
 
 );
@@ -620,7 +620,21 @@ end
 go
 --select p.price from packageDetail p join inserted i on p.serviceName=i.serviceName and isChecked=1
 end
-create proc serviceCal
+ -- create proc serviceCal
+-- @id int
+-- as begin
+-- select sum(
+
+alter procedure sp_loadbooked
+as
+begin
+	select * from weddingInfo;
+end
+
+
+alter procedure sp_loadsinglebooked
 @id int
-as begin
-select sum(
+as
+begin
+	select * from weddingInfo where id = @id;
+end

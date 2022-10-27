@@ -10,4 +10,5 @@ While the admin side includes:
 	•	Admin login informations
 	•	Booking management in which the admin can track the reservations 
 	•	Employee management where the admin can manage our company employees 
-
+	•       Revenue tracking
+       

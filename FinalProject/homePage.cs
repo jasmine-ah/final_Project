@@ -10,6 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FinalProject
 {
@@ -113,7 +114,16 @@ namespace FinalProject
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            if(guna2CheckBox1.Checked== true)
+
+           /* SqlConnection connection = new SqlConnection(@"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;");
+            SqlDataAdapter sda = new SqlDataAdapter("select * from login where email ='"+guna2TextBox3.Text +"' and password ='"+guna2TextBox4.Text+"'",connection);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if(dt.Rows.Count > 0)
+            {
+               
+            }*/
+            if (guna2CheckBox1.Checked== true)
             {
                 Properties.Settings.Default.Email = guna2TextBox3.Text;
                 Properties.Settings.Default.Password = guna2TextBox4.Text;
@@ -191,7 +201,7 @@ namespace FinalProject
                 ActiveMdiChild.Close();
             }
             
-            ForgotPassword fp = new ForgotPassword();
+            Fp fp = new Fp();
             fp.Show();
         }
     }

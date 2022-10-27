@@ -30,11 +30,8 @@ namespace FinalProject
         private void button1_Click(object sender, EventArgs e)
         { for (int i = 0; i <= checkedListBox1.Items.Count - 1; i++)
             {
-<<<<<<< HEAD
                 string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
-=======
-                string connectionString = @"Data Source=DESKTOP-91AV9G7\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
->>>>>>> 91cd054a224f4afd15f79e3208eb6a6ee8e43a41
+
                 SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
                 string Query = "insert into custom (cid,serviceName,isChecked)values(@id,@sn,@isch);";

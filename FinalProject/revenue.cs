@@ -22,11 +22,9 @@ namespace FinalProject
             label10.Text = GetVat();
             label12.Text=GetProf();
         }
-<<<<<<< HEAD
+
         public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
-=======
-        public static string connectionString = @"Data Source=DESKTOP-91AV9G7\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
->>>>>>> 91cd054a224f4afd15f79e3208eb6a6ee8e43a41
+
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 

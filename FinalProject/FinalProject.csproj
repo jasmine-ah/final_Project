@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Net" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -104,11 +105,11 @@
     <Compile Include="contact_us.Designer.cs">
       <DependentUpon>contact_us.cs</DependentUpon>
     </Compile>
-    <Compile Include="ForgotPassword.cs">
+    <Compile Include="Fp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForgotPassword.Designer.cs">
-      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    <Compile Include="Fp.Designer.cs">
+      <DependentUpon>Fp.cs</DependentUpon>
     </Compile>
     <Compile Include="loggedIn.cs">
       <SubType>Form</SubType>
@@ -123,6 +124,12 @@
       <DependentUpon>Material.cs</DependentUpon>
     </Compile>
     <Compile Include="model\booking.cs" />
+    <Compile Include="resetpwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resetpwd.Designer.cs">
+      <DependentUpon>resetpwd.cs</DependentUpon>
+    </Compile>
     <Compile Include="revenue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,14 +237,17 @@
     <EmbeddedResource Include="contact_us.resx">
       <DependentUpon>contact_us.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgotPassword.resx">
-      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    <EmbeddedResource Include="Fp.resx">
+      <DependentUpon>Fp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loggedIn.resx">
       <DependentUpon>loggedIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resetpwd.resx">
+      <DependentUpon>resetpwd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="revenue.resx">
       <DependentUpon>revenue.cs</DependentUpon>

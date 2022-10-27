@@ -18,7 +18,6 @@ C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.admin_page.resources
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.employee_page.resources
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.contact_us.resources
-C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.ForgotPassword.resources
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.loggedIn.resources
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.Material.resources
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.revenue.resources
@@ -128,3 +127,5 @@ C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalPro
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.Fp.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.Fp.resources
+C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.resetpwd.resources

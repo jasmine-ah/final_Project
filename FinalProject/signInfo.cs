@@ -193,10 +193,11 @@ namespace FinalProject
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-           // Class2.displayBooked(id);
-      
+            // Class2.displayBooked(id);
+
             //this.Close();
-            SeeOrders s = new SeeOrders( id);
+            /*
+            SeeOrders s = new SeeOrders(id);
             s.bridename = bFN.Text;
             s.bridelname = bLN.Text;
             s.groomname = gFN.Text;
@@ -211,8 +212,8 @@ namespace FinalProject
             s.weddingDate = guna2DateTimePicker1.Text;
             s.package = selected;
             s.ShowDialog();
+       */
         }
-
         private void gFN_TextChanged(object sender, EventArgs e)
         {
 

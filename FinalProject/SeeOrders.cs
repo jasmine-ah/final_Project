@@ -33,7 +33,7 @@ namespace FinalProject
             InitializeComponent();
             this.id = id;
         }
-        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
         private void SeeOrders_Load(object sender, EventArgs e)
         {
            // int ID = id;
@@ -41,7 +41,7 @@ namespace FinalProject
             try
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("select groomName,brideName,packageName,guests,weddingdate from weddingInfos", connection);
+                SqlCommand cmd = new SqlCommand("select groomName,brideName,packageName,guests,weddingdate from weddingInfos where userId='"+id+"'", connection);
                 cmd.Parameters.AddWithValue("id", id);
                 SqlDataReader reader;
                 reader = cmd.ExecuteReader();

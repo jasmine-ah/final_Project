@@ -69,7 +69,7 @@
             this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.Maroon;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(826, 3);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(901, 3);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox3.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.Maroon;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(889, 3);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(850, 3);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox2.TabIndex = 1;
@@ -164,7 +164,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(15, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(189, 36);
+            this.label3.Size = new System.Drawing.Size(152, 27);
             this.label3.TabIndex = 19;
             this.label3.Text = "Admin Login";
             this.label3.UseWaitCursor = true;
@@ -249,7 +249,7 @@
             // 
             // admin_login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));

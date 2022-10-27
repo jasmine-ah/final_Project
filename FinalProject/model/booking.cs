@@ -22,49 +22,13 @@ namespace FinalProject.model
 
 
 
-        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
 
       
         public void save()
         {
             Aclass.Add(this);
-           // string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
-            //SqlConnection connection = new SqlConnection(connectionString);
-            //try
-            //{
-
-
-            //    connection.Open();
-            //    MessageBox.Show("connection successful!!!");
-            //    // string gen;
-
-            //    string Query = "exec ADDEMP @fname,@lname,@payment,@guests;";
-
-            //    SqlCommand cmd = new SqlCommand(Query, connection);
-            //    cmd.Parameters.AddWithValue("@fname", this.firstName);
-            //    cmd.Parameters.AddWithValue("@lname", this.lastName);
-            //    cmd.Parameters.AddWithValue("@payment", this.Payment);
-            //    //cmd.Parameters.AddWithValue("@wd", this.weddingDate);
-            //    cmd.Parameters.AddWithValue("@guests", this.guests);
-
-            //    var result = cmd.ExecuteNonQuery();
-
-            //    MessageBox.Show("Successfully Saved!!!");
-
-
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-
-            //}
-            //finally
-            //{
-            //    connection.Close();
-            //};
-
-
+         
         }
         static public List<booking> GetAllProducts()
         {
@@ -75,8 +39,6 @@ namespace FinalProject.model
             {
 
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
-
                 string Query = "select * from booked;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
@@ -113,20 +75,15 @@ namespace FinalProject.model
         {
             List<booking> Bclass = new List<booking>();
             SqlConnection connection;
-          //  string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             connection = new SqlConnection(connectionString);
             string Query = "select * from booked where id='"+id+"'";
             try
             {
 
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
-
-
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
-               // cmd.Parameters.AddWithValue("@id", id);
                 while (sdr.Read())
                 {
                     
@@ -156,13 +113,11 @@ namespace FinalProject.model
         }
         public static void update( int id,string gn,string bn,int guests,string cb,DateTime wd)
         {
-            //string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
 
             try
             {
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
                 string Query = "exec UPDATEBOOK @gn,@bn,@wd,@payment,@guests,@id;";
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
@@ -197,14 +152,12 @@ namespace FinalProject.model
 
         public static void delete(string id)
         {
-            //string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
 
             try
             {
 
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
                 string Query = "exec DB @id;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 

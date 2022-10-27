@@ -2,13 +2,6 @@ create database final_project
 use final_project
 use master
 drop database final_project
------------------ROLE OPTION----------
-CREATE TABLE role(
-    admin VARCHAR(10),
-    customer VARCHAR(10),
-    password VARCHAR(10)
-);
-
 -----------------LOGIN---------------- 
 
 CREATE TABLE login(
@@ -27,12 +20,6 @@ begin
 insert into login values( @email, @password,@id)
 end
 GO
-
-/*CREATE LOGIN admin WITH PASSWORD= 'admin' 
-CREATE USER admin FOR LOGIN admin;
-CREATE LOGIN user WITH PASSWORD=' '
-CREATE USER user1 FOR LOGIN user;
- */
 ---------------SIGNUP------------------
 CREATE TABLE sign_up_info(
 userId INT PRIMARY KEY IDENTITY,
@@ -43,14 +30,11 @@ contactInfo varchar(15),
 password varchar(10)
 );
 select *from sign_up_info
-insert into sign_up_info values('Tinella','Fikru','tinellafikru28@Gmail.com','0987654322','56789');
+insert into sign_up_info values('Tinella','Fikru','yasminip30@gmail.com','0987654322','56789');
 insert into sign_up_info values('abebe','shewa','a@Gmail.com','0987654322','12');
 insert into sign_up_info values('kebede','shewa','k@Gmail.com','0987987322','1234');
---drop table sign_up
+delete from sign_up_info where userId=25
 
-
---delete from sign_up where userId=1;
---drop table sign_up
 GO
 alter PROC sp_ins
 @fn varchar(25),
@@ -66,6 +50,7 @@ BEGIN
 	select @id=(select SCOPE_IDENTITY())
 end
 GO
+
 ------------------------trigger that fires when same email and phone is inserted for creating acc---------------------------------------------------
 
 create trigger trig_sameEmail
@@ -230,19 +215,6 @@ set @lastid = SCOPE_IDENTITY()
     insert into booked values(@lastid,@gn,@bn,@wedding,@g,@pay)
 end
 GO
-/*
-go
-create trigger addInfo
-on weddingInfos
-after insert
-as begin
-insert booked(groomName,brideName,guests,WeddingDate)
-select groomName,brideName,guests,weddingDate from inserted 
-end
-go
-*/
---drop table booked
-
 create table weddingInfos
 (
 
@@ -282,13 +254,14 @@ insert booked(id,groomName,brideName,weddingDate,guests)
 select i.userId,i.groomName,i.brideName,i.weddingDate,i.guests from inserted i
 end
 ------------------------------------------------------------------------------
+go
 
 go
 create PROCEDURE spPopulate
 @id int
 AS
 	BEGIN
-		SELECT * FROM weddingInfo WHERE id = @ID;
+		SELECT * FROM weddingInfos WHERE id = @ID;
 		end
 
 go
@@ -296,7 +269,7 @@ create proc bookDisplay
 @id int
 as
 begin
-select id,brideName,groomName,guests,Weddingdate from weddingInfo where @id = id
+select userId,brideName,groomName,guests,Weddingdate from weddingInfos where userId=@id
 
 end
 
@@ -342,16 +315,7 @@ end
 drop table packageDetail
 
 select * from packageDetail
-/*
-create function custom_total
-( @price int)
-returns
-as
-begin
-	
-	return @price
-end
-*/
+
 
 create table selected(
 id int ,
@@ -622,7 +586,7 @@ update custom set price=@s where cid=@id and serviceName=@s
 end
 go
 --select p.price from packageDetail p join inserted i on p.serviceName=i.serviceName and isChecked=1
-end
+
  -- create proc serviceCal
 -- @id int
 -- as begin

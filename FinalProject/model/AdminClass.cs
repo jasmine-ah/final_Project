@@ -26,7 +26,7 @@ namespace FinalProject.model
         public string Gender { get; set; }
         public decimal salary { get; set; }
 
-        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
         
         public void save()
         {
@@ -38,8 +38,6 @@ namespace FinalProject.model
                
                 
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
-               // string gen;
 
                 string Query = "exec ADDEMP @fn,@ln,@continfo,@DOB,@email,@Occupation,@gender;";
 
@@ -76,14 +74,11 @@ namespace FinalProject.model
         static public List<AdminClass> GetAllProducts()
         {
             List<AdminClass> Bclass = new List<AdminClass>();
-            //string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
                 
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
-
                 string Query = "select * from employee;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
@@ -124,16 +119,12 @@ namespace FinalProject.model
         {
             List<AdminClass> Bclass = new List<AdminClass>();
             SqlConnection connection;
-          // string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             connection = new SqlConnection(connectionString);
             string Query = "select * from employee;";
             try
             {
 
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
-
-
                 SqlCommand cmd = new SqlCommand(Query, connection);
 
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -165,13 +156,12 @@ namespace FinalProject.model
         }
         public static void update(string id,string fn,string ln, string cont, string date, string email,string occup,string gender)
         {
-           // string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+          
             SqlConnection connection = new SqlConnection(connectionString);
 
             try
             {
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
                 string Query = "exec UPDATEEMP @fname,@lname,@contactInfo,@dob,@email,@occupation,@gender,@id;";
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
@@ -208,14 +198,12 @@ namespace FinalProject.model
 
         public static void delete(string id)
         {
-           // string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
             SqlConnection connection = new SqlConnection(connectionString);
 
             try
             {
                
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
                 string Query = "exec DELETEEMP @id;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
                 

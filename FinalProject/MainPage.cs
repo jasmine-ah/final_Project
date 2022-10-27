@@ -16,7 +16,7 @@ namespace FinalProject
     {
         public MainPage()
         {
-            this.DoubleBuffered = true;
+            this.DoubleBuffered = false;
             InitializeComponent();
         }
 
@@ -47,37 +47,23 @@ namespace FinalProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*
-            string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
-            SqlConnection connection = new SqlConnection(connectionString);
-            try
-            {
-
-                connection.Open();
-                MessageBox.Show("connection successful!!!");
-
-                string Query = "exec ";
-
-                SqlCommand cmd = new SqlCommand(Query, connection);
-                cmd.Parameters.AddWithValue("@fn", this.firstName);
-
-                MessageBox.Show("Thank you for choosing the Royal Package.");
-            }*/
+         
             } 
         private void MainPage_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-            /*custom v1 = new custom();
-            v1.Show();*/
-        }
-
         private void view_btn_4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2ControlBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Services s = new Services();
+            s.Show();
         }
     }
 }

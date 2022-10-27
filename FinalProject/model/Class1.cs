@@ -22,7 +22,7 @@ namespace FinalProject.model
         public string contactInfo { get; set; }
 
 
-        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
 
 
 
@@ -35,12 +35,6 @@ namespace FinalProject.model
             {
 
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
-                /*
-                string Query = "exec spSameEmnPwd @em,@ci";
-                SqlCommand c = new SqlCommand(Query,connection);
-                c.ExecuteNonQuery();
-                */
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -94,7 +88,6 @@ namespace FinalProject.model
 
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
 
                 string Query = "select * from sign_up_info;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
@@ -122,9 +115,6 @@ namespace FinalProject.model
             return temp.Find(c1 => c1.Email == email && c1.contactInfo == ci);
         }
 
-
-
-
         public static Class1 findOne(string email, string password)
         {
             List<Class1> temp = new List<Class1>();
@@ -133,7 +123,6 @@ namespace FinalProject.model
 
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
-                MessageBox.Show("connection successful!!!");
 
                 string Query = "select * from login;";
                 SqlCommand cmd = new SqlCommand(Query, connection);
@@ -152,20 +141,6 @@ namespace FinalProject.model
                 connection.Close();
 
                 connection.Close();
-                /*connection.Open();
-                String query2 = "select userId from sign_up where email='" + email + "' and password='" + password + "'";
-                SqlCommand cmd2=new SqlCommand(query2, connection);
-                SqlDataReader sdr2=cmd2.ExecuteReader();
-                while (sdr2.Read())
-                {
-                        Class1 c2 = new Class1();
-                        c2.id= (int)sdr2["id"];
-                       temp.Add(c2);
-                    MessageBox.Show(c2.id.ToString());
-                }
-                
-                connection.Close();*/
-
             }
             catch (Exception ex)
             {
@@ -174,91 +149,6 @@ namespace FinalProject.model
             return temp.Find(c1 => c1.Email == email && c1.Password == password);
         }
     
-
-        /*
-                public static List<Class1> getAllProducts()
-                {
-
-                    List<Class1> temp = new List<Class1>();
-                    try
-                    {
-                       // string connectionString = @"Data Source=PCDOC; Initial catalog=final_project;Integrated Security=true;";
-                        SqlConnection connection = new SqlConnection(connectionString);
-                        connection.Open();
-                        MessageBox.Show("connection successful!!!");
-
-                        string Query = "select * from employee;";
-                        SqlCommand cmd = new SqlCommand(Query, connection);
-
-                        SqlDataReader sdr = cmd.ExecuteReader();
-
-                        while (sdr.Read())
-
-                        {
-                            Class1 c = new Class1();
-                            c.id=(int)sdr["id"];
-                            c.firstName = (string)sdr["firstName"];
-                            c.lastName = (string)sdr["lastName"];
-                            c.Email = (string)sdr["email"];
-                            c.contactInfo = (string)sdr["contactInfo"];
-                            c.Password = (string)sdr["password"];
-                           // c.weddingDate = (string)sdr["weddingDate"];
-
-
-
-                            temp.Add(c);
-                        }
-                        connection.Close();
-                    }
-
-
-
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-
-                    };
-                    return temp;
-                }
-                public static void update(string fn, string ln, string email, string cont, string pass, string date)
-                {
-                    //string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
-                    SqlConnection connection = new SqlConnection(connectionString);
-
-                    try
-                    {
-                        connection.Open();
-                        MessageBox.Show("connection successful!!!");
-                        string Query = "exec UPDATEsign_up @fname,@lname,@email,@contactInfo,@pass;";
-
-                        SqlCommand cmd = new SqlCommand(Query, connection);
-                        cmd.Parameters.AddWithValue("@fname", fn);
-                        cmd.Parameters.AddWithValue("@lname", ln);
-                        cmd.Parameters.AddWithValue("@contactInfo", cont);
-                        //cmd.Parameters.AddWithValue("@wd", date);
-                        cmd.Parameters.AddWithValue("@email", email);
-                        cmd.Parameters.AddWithValue("@pass", pass);
-                        //cmd.Parameters.AddWithValue("@id", id);
-
-                        var result = cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Successfully Updated!!!");
-
-
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    };
-                      */
-
-
     }
 
 

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FinalProject
 {
     public partial class SeeOrders : Form
     {
+        int id;
         public string bridename { set; get; }
         public string bridelname { set; get; }
         public string groomname { set; get; }
@@ -26,18 +28,51 @@ namespace FinalProject
         public string basic { set; get; }
         public string custom { set; get; }
 
-        public SeeOrders()
+        public SeeOrders(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
-
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=final_project;Integrated Security=true;";
         private void SeeOrders_Load(object sender, EventArgs e)
         {
-            label1.Text = bridename+" "+bridelname;
+           // int ID = id;
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("select groomName,brideName,packageName,guests,weddingdate from weddingInfos", connection);
+                cmd.Parameters.AddWithValue("id", id);
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+
+                    label1.Text = reader["brideName"].ToString();
+                    label2.Text = reader["groomName"].ToString();
+                    label3.Text = reader["guests"].ToString();
+                    label4.Text = reader["packageName"].ToString();
+                    label5.Text = reader["Weddingdate"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("You have not booked anything yet");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            };
+
+            /*label1.Text = bridename+" "+bridelname;
             label2.Text = groomname + " " + groomlname;
             label3.Text = guests;
             label4.Text = package;
-            label5.Text = weddingDate; 
+            label5.Text = weddingDate; */
 
         }
 

@@ -193,9 +193,10 @@ namespace FinalProject
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-
+           // Class2.displayBooked(id);
+      
             //this.Close();
-            SeeOrders s = new SeeOrders();
+            SeeOrders s = new SeeOrders( id);
             s.bridename = bFN.Text;
             s.bridelname = bLN.Text;
             s.groomname = gFN.Text;

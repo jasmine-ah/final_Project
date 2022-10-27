@@ -16,6 +16,7 @@ CREATE TABLE login(
     password varchar(10) NOT NULL,
 	id int foreign key references sign_up_info(userId)
 );
+
 --drop table login
 select * from login
 GO
@@ -42,6 +43,7 @@ contactInfo varchar(15),
 password varchar(10)
 );
 select *from sign_up_info
+insert into sign_up_info values('Tinella','Fikru','tinellafikru28@Gmail.com','0987654322','56789');
 insert into sign_up_info values('abebe','shewa','a@Gmail.com','0987654322','12');
 insert into sign_up_info values('kebede','shewa','k@Gmail.com','0987987322','1234');
 --drop table sign_up
@@ -66,9 +68,9 @@ end
 GO
 ------------------------trigger that fires when same email and phone is inserted for creating acc---------------------------------------------------
 
-alter trigger trig_sameEmail
+create trigger trig_sameEmail
 on sign_up_info
-after insert
+instead of insert
 as begin
 if exists(select s.email from sign_up_info s inner join inserted i on i.email=s.email and i.userId<>s.userId)
 begin
@@ -76,6 +78,7 @@ raiserror('EMAIL ALREADY TAKEN CANNNOT CREATE ACCOUNT',16,1)
 ROLLBACK
 end
 END
+
 go
 CREATE TRIGGER trigsamePhone
 on sign_up_info

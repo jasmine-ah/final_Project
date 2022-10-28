@@ -129,3 +129,4 @@ C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalPro
 C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.Fp.resources
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.Fp.resources
 C:\Users\PcDoc\Desktop\finalProject\FinalProject\final_Project\FinalProject\obj\Debug\FinalProject.resetpwd.resources
+C:\Users\tinel\Documents\GitHub\FP\final_Project\FinalProject\obj\Debug\FinalProject.Form1.resources

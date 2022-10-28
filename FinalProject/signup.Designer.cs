@@ -268,7 +268,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(148, 24);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(192, 27);
+            this.label9.Size = new System.Drawing.Size(242, 36);
             this.label9.TabIndex = 18;
             this.label9.Text = "Create Account";
             // 
@@ -280,7 +280,7 @@
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(500, 395);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 15);
+            this.label10.Size = new System.Drawing.Size(42, 17);
             this.label10.TabIndex = 16;
             this.label10.Text = "login";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -328,7 +328,7 @@
             // 
             // signup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -342,6 +342,7 @@
             this.Name = "signup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.pn_Reg.ResumeLayout(false);

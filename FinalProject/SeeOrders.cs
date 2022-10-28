@@ -82,5 +82,12 @@ namespace FinalProject
         {
 
         }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            loggedIn l = new loggedIn(id);
+                l.Show();
+        }
     }
 }

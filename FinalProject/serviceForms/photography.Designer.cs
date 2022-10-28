@@ -46,11 +46,12 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(298, 20);
+            this.label1.Location = new System.Drawing.Point(358, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(545, 62);
             this.label1.TabIndex = 0;
@@ -64,7 +65,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(395, 99);
+            this.label8.Location = new System.Drawing.Point(404, 96);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(273, 90);
             this.label8.TabIndex = 8;

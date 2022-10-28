@@ -81,10 +81,6 @@ end
 end
 go
 
-drop trigger trigsamePhone
-go
-
-
 
 ----------EMPLOYEE--------------------
 
@@ -187,14 +183,16 @@ end
 go
 
 
-create trigger underAge
+alter trigger underAge
 on employee
 after insert
 as begin
 declare @a varchar(50)=(select DOB from inserted)
 if DATEDIFF(year,@a,getdate())<18
+begin
 raiserror('under aged employee!!!',16,1)
 rollback
+end
 end
 
 
@@ -245,6 +243,18 @@ userId int foreign key references sign_up_infos (userId)
 );
 select * from weddingInfos
 --drop table weddingInfos
+go
+alter trigger no2Acc
+on weddingInfos
+after insert
+as begin
+declare @id int=(select userId from inserted)
+if exists(select i.userId from inserted i join weddingInfos w on i.userId=w.userId)
+begin
+raiserror('This account has already booked',16,1)
+rollback
+end
+end
 
 GO
 create PROCEDURE spInsert

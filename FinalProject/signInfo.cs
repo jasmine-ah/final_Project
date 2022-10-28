@@ -130,7 +130,7 @@ namespace FinalProject
             {
                 selected = rbcustom.Text;
             }
-            this.Close();
+            
             custom c = new custom(id);
             c.Show();
 
@@ -171,8 +171,8 @@ namespace FinalProject
             else if (rbcustom.Checked)
             {
                 pn = "Custom";
-               // custom c = new custom(id);
-                //pr = c.price;
+                Class2 c = new Class2();
+                pr = int.Parse(c.Price(id));
             }
             //save customer info on your database
             Class2 c2 = new Class2

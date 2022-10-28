@@ -31,7 +31,7 @@ namespace FinalProject
         { 
            Class2 c=new Class2();
             c.selected(id, checkedListBox1);
-            label4.Text = c.Price(id);
+          
             this.Close();
 
             }
@@ -42,68 +42,19 @@ namespace FinalProject
 
         }
 
-
-            } }
-                //Class2 c2 = new Class2();
-                //c2.selected(id, checkedListBox1);
-                //MessageBox.Show("customized");
-                //label4.Text = c2.price.ToString();
-                /* signInfo s = new signInfo(id)
-                 s.Show();
-                 this.Close();*/
-
-                /*  string chkboxselect = "";
-                 for (int i = 0; i <=checkedListBox1.CheckedItems.Count; i++)
-                  {
-                      if (checkedListBox1.GetItemChecked(i))
-                      {
-                          if (chkboxselect == "")
-                          {
-                              chkboxselect = checkedListBox1.Items[i].ToString();
-                          }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Class2 c = new Class2();
+            c.selected(id, checkedListBox1);
+            SqlConnection con = new SqlConnection(@"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=fp;Integrated Security=true;");
+            con.Open();
+            string Query = "select dbo.priceCalc(@id)";
+            SqlCommand cmd3 = new SqlCommand(Query, con);
+            cmd3.Parameters.AddWithValue("@id", id);
+            label4.Text = cmd3.ExecuteScalar().ToString();
 
 
-                          }
-
-                  }*/
-                /* string str = @"Data Source=TINELLA\SQLEXPRESS;Initial Catalog=final_project;Integrated Security=true;";
-                 SqlConnection con = new SqlConnection(str);
-                 try
-                 {
-                     con.Open();
-                     string query = "insert into selected values('" + chkboxselect+ "')";
-                     SqlCommand cmd=new SqlCommand(query, con);
-                     /*cmd.Parameters.AddWithValue("@id",this.id);
-                     cmd.Parameters.AddWithValue("@BeautyService", );
-
-                     label3.Text=
-                     cmd.ExecuteNonQuery();
-                     MessageBox.Show("succesful");
-                 }
-                 catch(Exception ex)
-                 {
-                     MessageBox.Show(ex.Message);
-                 }
-                 finally
-                 {
-                     con.Close();
-                 };
-     */
-                /*
-              string chkboxselect="";
-                for(int i=0;i<checkedListbox1.Items.Count;i++){
-                if(checkedListBox1.Items[i].Selected){
-                if(chkboxselect=""){
-                chkboxselect=CheckedListBox1.Items[i].Text;
-                }else{
-                chkbocselect+=","+checkedListBox1.Items[i].Text;
-                }}}
-              */
-                /*this.Close();
-                signInfo s = new signInfo(id);
-                s.Show();*/
-            
-
-           
-    
+            con.Close();
+        }
+    } }
 

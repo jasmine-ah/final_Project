@@ -33,7 +33,7 @@ namespace FinalProject
             InitializeComponent();
             this.id = id;
         }
-        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;";
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=fp;Integrated Security=true;";
         private void SeeOrders_Load(object sender, EventArgs e)
         {
            // int ID = id;

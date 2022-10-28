@@ -82,14 +82,7 @@ end
 go
 
 drop trigger trigsamePhone
-
-create proc delBook
-as begin
-declare @wd datetime=(select weddingDate from weddingInfos)
-declare @d datetime=(select DATEDIFF(day,@wd,Getdate()))
-if @d>0
-delete from weddingInfos 
-end
+go
 
 
 
@@ -106,11 +99,9 @@ CREATE TABLE employee(
     gender varchar(6),
 	salary money
 );
-drop table employee
-insert into employee(firstName,lastName,contactInfo,DOB,email,Occupation,gender) values('kebede','shewa','k@Gmail.com','0987987322','1234','f','u');
 alter table employee add constraint df_sal default '0' for salary
-alter table employee drop df_sal
-alter table employee alter column salary money
+
+
 select *from employee
 DELETE employee where employeeId=13
 GO
@@ -195,6 +186,19 @@ update employee set salary=@s WHERE employeeId=@id
 end
 go
 
+
+create trigger underAge
+on employee
+after insert
+as begin
+declare @a varchar(50)=(select DOB from inserted)
+if DATEDIFF(year,@a,getdate())<18
+raiserror('under aged employee!!!',16,1)
+rollback
+end
+
+
+
 --------------------------------------booking-------------------------------------------------------------------
 create table booked
 (
@@ -208,7 +212,7 @@ foreign key (id) references sign_up_infos(userId)
 );
  
 select * from booked
---drop table booked
+
 
 go
 create PROC spInserted
@@ -257,6 +261,15 @@ BEGIN
     insert weddingInfos values(@gn, @bn, @packageName, @price, @guests,@wd,@id)
 end
 GO
+
+create proc delBook
+as begin
+declare @wd datetime=(select weddingDate from weddingInfos)
+declare @d datetime=(select DATEDIFF(day,@wd,Getdate()))
+if @d>0
+delete from weddingInfos 
+end
+go
 --------------------------------trigger inserts records on booked table after there is an insert in weddingInfo----------------
 create trigger trigins
 on weddingInfos
@@ -344,18 +357,6 @@ foreign key (id) references sign_Up_infos(userId),
 select * from selected
 --drop table selected;
 GO
-create proc ins_selected
-@id int ,
-@BeautyService bit,
-@PhotographyService bit,
-@Catering bit,
-@DJ bit,
-@Decor bit,
-@VenueBooking bit
-as
-begin
-insert into selected values(@id,@BeautyService,@PhotographyService,@Catering,@DJ,@Decor,@VenueBooking)
-end
 
 go
 create PROCEDURE PRICE
@@ -366,19 +367,6 @@ BEGIN
 END
 select * from selected
 go
-
-
-go
-create trigger underAge
-on employee
-after insert
-as begin
-declare @a varchar(50)=(select DOB from inserted)
-if DATEDIFF(year,@a,getdate())<18
-raiserror('under employee!!!',16,1)
-rollback
-end
-
 
 
 
@@ -439,18 +427,7 @@ vat money
 );
 --drop table revenue
 select * from revenue
-go
-create trigger updateRev
-on weddingInfos
-after insert,update
-as begin
-declare @t money=(select dbo.tot())
-declare @v money=(select dbo.vat())
-if (select count(*) from revenue)=0
-insert revenue(total,vat) select @t,@v 
-else
-update revenue set total=@t ,vat=@v
-end
+
 ----------------------------Functions---------------------------------
 go
 
@@ -475,9 +452,20 @@ return @v
 end
 go
 select dbo.vat()
-
+go
+create trigger updateRev
+on weddingInfos
+after insert,update
+as begin
+declare @t money=(select dbo.tot())
+declare @v money=(select dbo.vat())
+if (select count(*) from revenue)=0
+insert revenue(total,vat) select @t,@v 
+else
+update revenue set total=@t ,vat=@v
+end
 go 
-alter function totCust()
+create function totCust()
 returns int
 as begin
 declare @c int
@@ -496,7 +484,6 @@ return @c
 end
 go 
 
-select dbo.totalwedd()
 go
 create function totalWedd()
 returns int
@@ -535,72 +522,19 @@ insert into packageDetail values ('DJ',5000)
 insert into packageDetail values ('Decor',12000)
 insert into packageDetail values ('Venue Booking',60000)
 
-create table custom(
-cid int foreign key references sign_up_infos(userId),
-
-isChecked bit,
-
-);
-drop table custom
-insert into custom (cid,serviceName,isChecked)values(2,'DJ',1)
-alter table custom add constraint df_pr default '0' for price
-select * from custom
-delete from custom where cid=22
 go
-
-go
-create function priceins(@id int)
-returns int
-as begin
-
-while(@i=1)
-begin
-if @s='Beauty Service'
-set @p= 6000
-if @s='Photography Service'
-set @p=7000
-if @s='Catering'
-set @p=10000
-if @s='DJ'
-set @p=5000
-if @s='Decor'
-set @p=12000
-if @s='Venue Booking'
-set @p=60000
-end
-return @p
-end
-go
-
-go
-create trigger ins_custom
-on custom
-after insert
-as begin
-declare @id int=(select cid from inserted)
-declare @n varchar(50)=(select serviceName from inserted)
-declare @s int=(select dbo.priceins(@id))
-update custom set price=@s where cid=@id and serviceName=@s
-end
-go
---select p.price from packageDetail p join inserted i on p.serviceName=i.serviceName and isChecked=1
-
- -- create proc serviceCal
--- @id int
--- as begin
--- select sum(
 
 create procedure sp_loadbooked
 as
 begin
-	select * from weddingInfo;
+	select * from weddingInfos;
 end
 go
 CREATE proc loadsinglebooked
 @id int
 as
 begin
-	select * from weddingInfo where id = @id;
+	select * from weddingInfos where userId = @id;
 end
 go
 create table custompack(
@@ -613,8 +547,9 @@ Decor bit,
 VenueBooking bit);
 --drop table custompack
 select * from custompack
+
 go
-alter proc sp_cust
+create proc sp_cust
 @id int,
 @BeautyService bit,
 @PhotographyService bit,
@@ -627,7 +562,7 @@ insert into custompack values(@id,@BeautyService,@PhotographyService,@Catering,@
 end
 
 GO
-alter FUNCTION priceCalc
+create FUNCTION priceCalc
 (@id int)
 returns int
 as
@@ -654,3 +589,5 @@ begin
   
   return @price
 end
+go
+select dbo.priceCalc(3)

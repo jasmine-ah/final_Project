@@ -23,7 +23,7 @@ namespace FinalProject.model
 
         static private List<Class2> class2 = new List<Class2>();
 
-        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;";
+        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=fp;Integrated Security=true;";
 
 
         public void save()
@@ -37,7 +37,7 @@ namespace FinalProject.model
 
                 connection.Open();
 
-                string Query = "exec spInsert @bf,@gn, @pn, @price, @ng,@wd,@id; ";
+                string Query = "exec spInsert @gn,@bf, @pn, @price, @ng,@wd,@id; ";
              
                 SqlCommand cmd = new SqlCommand(Query, connection);
                cmd.Parameters.AddWithValue("@id", this.Id);
@@ -151,34 +151,15 @@ namespace FinalProject.model
             string Query = "select dbo.priceCalc(@id)";
             SqlCommand cmd3 = new SqlCommand(Query, con);
             cmd3.Parameters.AddWithValue("@id", id);
-
-            SqlCommand cmd4 = new SqlCommand(Query, con);
-
-            string t = cmd4.ExecuteScalar().ToString();
+            string t = cmd3.ExecuteScalar().ToString();
 
             con.Close();
             return t;
 
         }
-        public static void total()
-        {
-            SqlConnection connection = new SqlConnection(connectionString);
-            try
-            {
-                connection.Open();
-                SqlCommand cmd = new SqlCommand(connectionString, connection);
-                //string query = "exec calcPrice";
-            }
-            catch (Exception ee)
-            {
-                MessageBox.Show(ee.Message);
-            }
-            finally
-            {
-                connection.Close();
-            };
+      
         }
 
         }
-    }
+    
 

@@ -28,51 +28,14 @@ namespace FinalProject
         }
 
         private void button1_Click(object sender, EventArgs e)
-        { int pid = 0;
-            if (int.Parse((string)(checkedListBox1.CheckedItems[0] ))== 1)
-            {
-                pid = 1;
-            }
-            if (int.Parse((string)(checkedListBox1.CheckedItems[1] ))== 1)
-            {
-                pid = 2;
-            }
-            if (int.Parse((string)(checkedListBox1.CheckedItems[2]))== 1)
-            {
-                pid = 3;
-            }
-            if (int.Parse((string)(checkedListBox1.CheckedItems[3])) == 1)
-            {
-                pid = 4;
-            }
-            if (int.Parse((string)(checkedListBox1.CheckedItems[4])) == 1)
-            {
-                pid = 5;
-            }
-            if (int.Parse((string)(checkedListBox1.CheckedItems[5])) == 1)
-            {
-                pid = 6;
-            }
-
-            for (int i = 0; i <= checkedListBox1.Items.Count - 1; i++)
-            {
-                string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
-
-                SqlConnection con = new SqlConnection(connectionString);
-                con.Open();
-                string Query = "insert into custom (cid,pd,isChecked)values(@id,'"+pid+"',@isch);";
-                SqlCommand cmd = new SqlCommand(Query, con);
-                cmd.Parameters.AddWithValue("@id", id);
-               // cmd.Parameters.AddWithValue("", checkedListBox1.Items[i]);
-                cmd.Parameters.AddWithValue("@isch", checkedListBox1.GetItemCheckState(i));
-                cmd.ExecuteNonQuery();
-                con.Close();
-                this .Close();
-                signInfo s = new signInfo(id);
-                s.Show();
+        { 
+           Class2 c=new Class2();
+            c.selected(id, checkedListBox1);
+            label4.Text = c.Price(id);
+            this.Close();
 
             }
-        }
+        
 
         private void custom_Load(object sender, EventArgs e)
         {

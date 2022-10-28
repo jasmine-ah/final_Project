@@ -25,7 +25,7 @@ namespace FinalProject
         }
         private void button2_Click(object sender, EventArgs e)
         {
-          //  System.Environment.Exit(0);
+          System.Environment.Exit(0);
         }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -37,13 +37,13 @@ namespace FinalProject
         }
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(Handle, 0x112, 0xf012, 0);
+        ReleaseCapture();
+        SendMessage(Handle, 0x112, 0xf012, 0);
 
         }
         private void guna2GradientButton1_Click(object sender,EventArgs e)
         {
-            if(guna2TextBox1.Text=="" && guna2TextBox2.Text == "")
+            if(guna2TextBox1.Text=="admin" && guna2TextBox2.Text == "admin")
             {
                 adminHomePage screen=new adminHomePage();
                 screen.Show();

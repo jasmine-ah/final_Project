@@ -13,7 +13,7 @@ CREATE TABLE login(
 --drop table login
 select * from login
 GO
-alter proc sp_insert
+create proc sp_insert
 @email varchar( 50),@password varchar(10),@id int
 as
 begin
@@ -29,14 +29,14 @@ email varchar(100),
 contactInfo varchar(15),
 password varchar(10)
 );
-select *from sign_up_info
-insert into sign_up_info values('Tinella','Fikru','yasminip30@gmail.com','0987654322','56789');
-insert into sign_up_info values('abebe','shewa','a@Gmail.com','0987654322','12');
-insert into sign_up_info values('kebede','shewa','k@Gmail.com','0987987322','1234');
-delete from sign_up_info where userId=25
+insert into sign_up_info values('abebe', 'kebede','abe@gmail.com','0987654321','1234')
+insert into sign_up_info values('abebe1', 'kebede1','abe@gmail.com','0987654321','1234')
+
+select firstName from sign_up_info
+drop table sign_up_info
 
 GO
-alter PROC sp_ins
+create PROC sp_ins
 @fn varchar(25),
 @ln varchar(25),
 @email varchar(50),
@@ -96,8 +96,10 @@ CREATE TABLE employee(
     DOB varchar(50),
     email varchar(50),
     Occupation varchar(25),
-    gender varchar(6)
+    gender varchar(6),
+	salary money
 );
+drop table employee
 insert into employee(firstName,lastName,contactInfo,DOB,email,Occupation,gender) values('kebede','shewa','k@Gmail.com','0987987322','1234','f','u');
 alter table employee add constraint df_sal default '0' for salary
 alter table employee drop df_sal
@@ -105,7 +107,7 @@ alter table employee alter column salary money
 select *from employee
 DELETE employee where employeeId=13
 GO
-alter PROCEDURE ADDEMP
+create PROCEDURE ADDEMP
 
 @fn varchar(25),
 @ln varchar(25),
@@ -120,7 +122,7 @@ BEGIN
 end
 GO
 
-alter PROCEDURE UPDATEEMP
+create PROCEDURE UPDATEEMP
 @fn varchar(25),
 @ln varchar(25),
 @continfo varchar(15),
@@ -145,7 +147,7 @@ END
 GO
 
 GO
-alter function calcSalary
+create function calcSalary
 (@id int)
 returns money
 As BEGIN
@@ -174,7 +176,7 @@ set @sal=0
 return @sal
 END
 GO
-alter trigger trigg_emp
+create trigger trigg_emp
 on employee
 after insert,update
 as begin
@@ -200,7 +202,7 @@ foreign key (id) references sign_up_info(userId)
 select * from booked
 --drop table booked
 go
-alter PROC spInserted
+create PROC spInserted
 @gn varchar(25),
 @bn varchar(25),
 @wedding datetime,
@@ -231,7 +233,7 @@ select * from weddingInfos
 --drop table weddingInfos
 
 GO
-alter PROCEDURE spInsert
+create PROCEDURE spInsert
 
 @gn varchar(100),
 @bn varchar(100),
@@ -261,7 +263,7 @@ create PROCEDURE spPopulate
 @id int
 AS
 	BEGIN
-		SELECT * FROM weddingInfos WHERE id = @ID;
+		SELECT * FROM weddingInfos WHERE userId = @ID;
 		end
 
 go
@@ -275,7 +277,7 @@ end
 
 exec bookDisplay 1
 go
-alter PROCEDURE UPDATEBOOK
+create PROCEDURE UPDATEBOOK
 @gn varchar(100),
 @bn varchar(100),
 @wd datetime,
@@ -330,7 +332,7 @@ foreign key (id) references sign_Up_info(userId),
 select * from selected
 --drop table selected;
 GO
-alter proc ins_selected
+create proc ins_selected
 @id int ,
 @BeautyService bit,
 @PhotographyService bit,
@@ -344,7 +346,7 @@ insert into selected values(@id,@BeautyService,@PhotographyService,@Catering,@DJ
 
 end
 go
-CREATE PROCEDURE PRICE
+create PROCEDURE PRICE
 @id int
 AS
 BEGIN
@@ -354,7 +356,7 @@ select * from selected
 go
 
 GO
-ALTER FUNCTION priceCalc
+create FUNCTION priceCalc
 (@id int)
 returns int
 as
@@ -404,7 +406,7 @@ go
 
 -----------------------trigger that fires if there is booking on occupied wedding date------------------------
 go
-alter trigger trig_full
+create trigger trig_full
 on weddingInfos
 after insert 
 as begin
@@ -444,7 +446,7 @@ vat money
 --drop table revenue
 select * from revenue
 go
-alter trigger updateRev
+create trigger updateRev
 on weddingInfos
 after insert,update
 as begin
@@ -458,7 +460,7 @@ end
 ----------------------------Functions---------------------------------
 go
 
-alter FUNCTION tot()
+create FUNCTION tot()
 returns int
 as begin
 declare @tot int
@@ -529,6 +531,7 @@ serviceName varchar(100),
 price int
 
 );
+select * from packageDetail
 
 insert into packageDetail values ('Beauty Service',6000)
 insert into packageDetail values ('Photography Service',7000)
@@ -575,7 +578,7 @@ return @p
 end
 go
 go
-alter trigger ins_custom
+create trigger ins_custom
 on custom
 after insert
 as begin
@@ -598,8 +601,7 @@ begin
 	select * from weddingInfo;
 end
 
-
-alter procedure sp_loadsinglebooked
+CREATE Ploadsinglebooked
 @id int
 as
 begin

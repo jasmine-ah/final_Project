@@ -22,7 +22,7 @@ namespace FinalProject
         {
             if (txtnewpwd.Text == txtnewcp.Text)
             {
-                SqlConnection connection = new SqlConnection(@"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;");
+                SqlConnection connection = new SqlConnection(@"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;");
                 SqlCommand cmd = new SqlCommand("UPDATE[dbo].[login] SET [password] = '"+txtnewcp.Text+"' WHERE email='"+email+"'",connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -40,6 +40,16 @@ namespace FinalProject
             homePage hp = new homePage();
             this.Hide();
             hp.Show();
+        }
+
+        private void txtnewcp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetpwd_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

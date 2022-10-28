@@ -23,7 +23,7 @@ namespace FinalProject.model
 
         static private List<Class2> class2 = new List<Class2>();
 
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;";
 
 
         public void save()
@@ -106,32 +106,33 @@ namespace FinalProject.model
 
         public void selected(int id, CheckedListBox checkedListBox1)
         {
+            
             SqlConnection connection = new SqlConnection(connectionString);
           
             try
             {
                 connection.Open();
-                string query1 = "Exec ins_selected @id,@bs,@ps,@cat,@dj,@dec,@vb";
-                string query2 = "Select dbo.PRICE (@id)";
+                string query1 = "Exec sp_cust @id,@BeautyService,@PhotographyService,@Catering ,@DJ ,@Decor,@VenueBooking ";
+                string query2 = "Select dbo.priceCalc (@id)";
 
                 SqlCommand cmd=new SqlCommand(query1, connection);
-                SqlCommand cmd2 = new SqlCommand(query2, connection);
+               SqlCommand cmd2 = new SqlCommand(query2, connection);
 
 
                 cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@bs", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(0);
-                cmd.Parameters.AddWithValue("@ps", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(1);
-                cmd.Parameters.AddWithValue("@cat", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(2);
-                cmd.Parameters.AddWithValue("@dj", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(3);
-                cmd.Parameters.AddWithValue("@dec", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(4);
-                cmd.Parameters.AddWithValue("@vb", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(5);
+                cmd.Parameters.AddWithValue("@BeautyService", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(0);
+                cmd.Parameters.AddWithValue("@PhotographyService", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(1);
+                cmd.Parameters.AddWithValue("@Catering", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(2);
+                cmd.Parameters.AddWithValue("@DJ", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(3);
+                cmd.Parameters.AddWithValue("@Decor", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(4);
+                cmd.Parameters.AddWithValue("@VenueBooking", SqlDbType.Bit).Value = checkedListBox1.GetItemCheckState(5);
 
                 cmd2.Parameters.AddWithValue("@id", id);
              
                 cmd.ExecuteNonQuery();
-                int p = Convert.ToInt32(cmd2.ExecuteScalar());
+               // int p = Convert.ToInt32(cmd2.ExecuteScalar());
                 Class2 c = new Class2();
-                c.price =p;
+               // c.price =p;
             }
             catch(Exception ee)
             {
@@ -141,6 +142,22 @@ namespace FinalProject.model
             {
                 connection.Close();
             };
+
+        }
+        public string Price(int id)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            string Query = "select dbo.priceCalc(@id)";
+            SqlCommand cmd3 = new SqlCommand(Query, con);
+            cmd3.Parameters.AddWithValue("@id", id);
+
+            SqlCommand cmd4 = new SqlCommand(Query, con);
+
+            string t = cmd4.ExecuteScalar().ToString();
+
+            con.Close();
+            return t;
 
         }
         public static void total()

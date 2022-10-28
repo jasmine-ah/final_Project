@@ -33,7 +33,7 @@ namespace FinalProject
             InitializeComponent();
             this.id = id;
         }
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;";
         private void SeeOrders_Load(object sender, EventArgs e)
         {
            // int ID = id;
@@ -68,11 +68,6 @@ namespace FinalProject
                 connection.Close();
             };
 
-            /*label1.Text = bridename+" "+bridelname;
-            label2.Text = groomname + " " + groomlname;
-            label3.Text = guests;
-            label4.Text = package;
-            label5.Text = weddingDate; */
 
         }
 
@@ -81,6 +76,11 @@ namespace FinalProject
             this.Close();
             contact_us c = new contact_us();
             c.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

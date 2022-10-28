@@ -87,7 +87,7 @@ namespace FinalProject
             }
             if (string.IsNullOrEmpty(guna2ComboBox1.Text))
             {
-                errorProvider1.SetError(guna2ComboBox1, "Your required to select one email adreess extension");
+                errorProvider1.SetError(guna2ComboBox1, "Your required to select one email adress extension");
             }
             if (string.IsNullOrEmpty(txt_fn.Text))
             {
@@ -110,10 +110,10 @@ namespace FinalProject
 
             }
             
-            if (txt_password.Text != txt_cp.Text)
-            {
-                MessageBox.Show("Please re-enter your password correctly!!!");
-            }
+            //if (txt_password.Text != txt_cp.Text)
+            //{
+            //    MessageBox.Show("Please re-enter your password correctly!!!");
+            //}
             if (txt_fn.Text == "" || txt_ln.Text == "" || txt_email.Text == "" || txt_phone.Text == "" || txt_password.Text == "")
             {
                 MessageBox.Show("Please enter all information");

@@ -193,26 +193,7 @@ namespace FinalProject
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            // Class2.displayBooked(id);
-
-            //this.Close();
-            /*
-            SeeOrders s = new SeeOrders(id);
-            s.bridename = bFN.Text;
-            s.bridelname = bLN.Text;
-            s.groomname = gFN.Text;
-            s.groomlname = gLN.Text;
-            s.guests = tbGuestNum.Text;
-            s.royal = rbRoyal.Checked.ToString();
-            s.premium = rbPremium.Checked.ToString();
-            s.simple = rbSimple.Checked.ToString();
-            s.luxury = rbLuxury.Checked.ToString();
-            s.basic = rbBasic.Checked.ToString();
-            s.custom = rbcustom.Checked.ToString();
-            s.weddingDate = guna2DateTimePicker1.Text;
-            s.package = selected;
-            s.ShowDialog();
-       */
+           
         }
         private void gFN_TextChanged(object sender, EventArgs e)
         {

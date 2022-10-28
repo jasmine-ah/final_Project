@@ -22,7 +22,7 @@ namespace FinalProject.model
         public string contactInfo { get; set; }
 
 
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=final_project;Integrated Security=true;";
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;";
 
 
 
@@ -39,9 +39,12 @@ namespace FinalProject.model
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sp_ins";
-
+               
                 cmd.Parameters.AddWithValue("@fn", this.firstName);
+               
                 cmd.Parameters.AddWithValue("@ln", this.lastName);
+            
+
                 cmd.Parameters.AddWithValue("@email", this.Email);
                 cmd.Parameters.AddWithValue("@ci", this.contactInfo);
                 cmd.Parameters.AddWithValue("@password", this.Password);

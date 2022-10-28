@@ -72,6 +72,7 @@
             this.txtnewcp.Name = "txtnewcp";
             this.txtnewcp.Size = new System.Drawing.Size(174, 22);
             this.txtnewcp.TabIndex = 3;
+            this.txtnewcp.TextChanged += new System.EventHandler(this.txtnewcp_TextChanged);
             // 
             // button1
             // 
@@ -129,6 +130,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "resetpwd";
             this.Text = "resetpwd";
+            this.Load += new System.EventHandler(this.resetpwd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

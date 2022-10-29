@@ -184,6 +184,7 @@
             this.txt_email.SelectedText = "";
             this.txt_email.Size = new System.Drawing.Size(235, 36);
             this.txt_email.TabIndex = 24;
+            this.txt_email.TextChanged += new System.EventHandler(this.txt_email_TextChanged);
             // 
             // txt_password
             // 
@@ -333,9 +334,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1386, 573);
+            this.ClientSize = new System.Drawing.Size(1386, 599);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.pn_Reg);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

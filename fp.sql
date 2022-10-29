@@ -241,6 +241,7 @@ Weddingdate DATETIME,
 userId int foreign key references sign_up_infos (userId)
 
 );
+DELETE FROM weddingInfos
 select * from weddingInfos
 --drop table weddingInfos
 go
@@ -332,7 +333,7 @@ BEGIN
 END
 GO
 
-create trigger updwedd
+alter trigger updwedd
 on booked
 after update
 as begin
@@ -572,7 +573,7 @@ insert into custompack values(@id,@BeautyService,@PhotographyService,@Catering,@
 end
 
 GO
-create FUNCTION priceCalc
+ALTER FUNCTION priceCalc
 (@id int)
 returns int
 as

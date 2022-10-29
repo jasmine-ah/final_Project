@@ -53,72 +53,58 @@ namespace FinalProject
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
+            bool errorcheck = true;
             errorProvider1.Clear();
+            //MessageBox.Show(txt_cp.Text.ToString() + " " + txt_password.Text);
 
             Regex r = new Regex(@"^([^0-9]*)$");
+            if (txt_fn.Text == "" || txt_ln.Text == "" || txt_email.Text == "" || txt_phone.Text == "" || txt_password.Text == "") {
+                MessageBox.Show("Please enter all information");
+                errorcheck = false;
+            }
+            if (guna2ComboBox1.SelectedItem == null)
+            {
+                errorProvider1.SetError(guna2ComboBox1, "Please select one");
+                errorcheck = false;
+            }
 
             if (txt_phone.Text.Length != 10)
             {
                 errorProvider1.SetError(txt_phone, "Please enter 10 digits ");
+                errorcheck = false;
             }
-
             if (string.IsNullOrEmpty(txt_password.Text))
             {
                 errorProvider1.SetError(txt_password, "Password is required ");
-
-
+                errorcheck = false;
             }
-            if (string.IsNullOrEmpty(txt_cp.Text))
-            {
-                errorProvider1.SetError(txt_cp, " enter your Password again ");
-                if (txt_cp.Text != txt_password.Text)
+                if (string.IsNullOrEmpty(txt_cp.Text))
                 {
-                    errorProvider1.SetError(txt_cp, "Password Mismatch!!");
-                    MessageBox.Show("Please re-enter your password correctly!!!");
+                    errorcheck = false;
+                    errorProvider1.SetError(txt_cp, " enter your Password again ");
+                   
                 }
 
-
+            if (txt_cp.Text != txt_password.Text)
+            {
+                errorcheck = false;
+                errorProvider1.SetError(txt_cp, "Password Mismatch!!");
+                MessageBox.Show("Please re-enter your password correctly!!!");
             }
-
 
             if (string.IsNullOrEmpty(txt_email.Text))
-            {
-                errorProvider1.SetError(txt_email, "Your Email is required");
-            }
-            if (string.IsNullOrEmpty(guna2ComboBox1.Text))
-            {
-                errorProvider1.SetError(guna2ComboBox1, "Your required to select one email adress extension");
-            }
-            if (string.IsNullOrEmpty(txt_fn.Text))
-            {
-                errorProvider1.SetError(txt_fn, "First name is required");
-            }
-
-            else if (!r.IsMatch(txt_fn.Text))
-            {
-                errorProvider1.SetError(txt_fn, "First Name should'nt contain numbers");
-
-            }
-            if (string.IsNullOrEmpty(txt_ln.Text))
-            {
-                errorProvider1.SetError(txt_ln, "Last name is required");
-            }
-
-            else if (!r.IsMatch(txt_fn.Text))
-            {
-                errorProvider1.SetError(txt_fn, "Last name should'nt contain numbers");
-
-            }
-            
-            //if (txt_password.Text != txt_cp.Text)
-            //{
-            //    MessageBox.Show("Please re-enter your password correctly!!!");
-            //}
-            if (txt_fn.Text == "" || txt_ln.Text == "" || txt_email.Text == "" || txt_phone.Text == "" || txt_password.Text == "")
-            {
-                MessageBox.Show("Please enter all information");
-            }
-            else
+                    errorProvider1.SetError(txt_email, "Your Email is required");
+                if (string.IsNullOrEmpty(guna2ComboBox1.Text))
+                    errorProvider1.SetError(guna2ComboBox1, "Your required to select one email adress extension");
+                if (string.IsNullOrEmpty(txt_fn.Text))
+                    errorProvider1.SetError(txt_fn, "First name is required");
+                if (!r.IsMatch(txt_fn.Text))
+                    errorProvider1.SetError(txt_fn, "First Name should'nt contain numbers");
+                if (string.IsNullOrEmpty(txt_ln.Text))
+                    errorProvider1.SetError(txt_ln, "Last name is required");
+                if (!r.IsMatch(txt_fn.Text))
+                    errorProvider1.SetError(txt_fn, "Last name should'nt contain numbers");          
+            else if(errorcheck == true)
             {
                 try
                 {
@@ -127,13 +113,10 @@ namespace FinalProject
                         firstName = (txt_fn.Text),
                         lastName = (txt_ln.Text),
                         Email = (txt_email.Text)+ (guna2ComboBox1.Text),
-                        
                         contactInfo = (txt_phone.Text),
                         Password = (txt_password.Text)
                     };
                     c.save();
-                   
-                  
                 }
                 catch (Exception)
                 {
@@ -160,6 +143,11 @@ namespace FinalProject
         }
 
         private void txt_cp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_email_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -39,7 +39,7 @@
             // 
             // guna2GradientCircleButton1
             // 
-            this.guna2GradientCircleButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2GradientCircleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.guna2GradientCircleButton1.Animated = true;
             this.guna2GradientCircleButton1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientCircleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -52,18 +52,18 @@
             this.guna2GradientCircleButton1.FillColor2 = System.Drawing.Color.Orchid;
             this.guna2GradientCircleButton1.Font = new System.Drawing.Font("Times New Roman", 16.2F);
             this.guna2GradientCircleButton1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GradientCircleButton1.Location = new System.Drawing.Point(78, 294);
-            this.guna2GradientCircleButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GradientCircleButton1.Location = new System.Drawing.Point(104, 362);
+            this.guna2GradientCircleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2GradientCircleButton1.Name = "guna2GradientCircleButton1";
             this.guna2GradientCircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2GradientCircleButton1.Size = new System.Drawing.Size(154, 157);
+            this.guna2GradientCircleButton1.Size = new System.Drawing.Size(205, 193);
             this.guna2GradientCircleButton1.TabIndex = 3;
             this.guna2GradientCircleButton1.Text = "Our Services";
             this.guna2GradientCircleButton1.Click += new System.EventHandler(this.guna2GradientCircleButton1_Click);
             // 
             // guna2GradientCircleButton2
             // 
-            this.guna2GradientCircleButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2GradientCircleButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.guna2GradientCircleButton2.Animated = true;
             this.guna2GradientCircleButton2.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientCircleButton2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -76,11 +76,11 @@
             this.guna2GradientCircleButton2.FillColor2 = System.Drawing.Color.LightGoldenrodYellow;
             this.guna2GradientCircleButton2.Font = new System.Drawing.Font("Times New Roman", 16.2F);
             this.guna2GradientCircleButton2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GradientCircleButton2.Location = new System.Drawing.Point(331, 294);
-            this.guna2GradientCircleButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GradientCircleButton2.Location = new System.Drawing.Point(441, 362);
+            this.guna2GradientCircleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2GradientCircleButton2.Name = "guna2GradientCircleButton2";
             this.guna2GradientCircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2GradientCircleButton2.Size = new System.Drawing.Size(152, 157);
+            this.guna2GradientCircleButton2.Size = new System.Drawing.Size(203, 193);
             this.guna2GradientCircleButton2.TabIndex = 4;
             this.guna2GradientCircleButton2.Text = "Book Now";
             this.guna2GradientCircleButton2.Click += new System.EventHandler(this.guna2GradientCircleButton2_Click);
@@ -97,15 +97,15 @@
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(758, 10);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1011, 12);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(34, 24);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 30);
             this.guna2ControlBox1.TabIndex = 6;
             // 
             // guna2GradientCircleButton3
             // 
-            this.guna2GradientCircleButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2GradientCircleButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.guna2GradientCircleButton3.Animated = true;
             this.guna2GradientCircleButton3.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientCircleButton3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -118,27 +118,29 @@
             this.guna2GradientCircleButton3.FillColor2 = System.Drawing.Color.LightGoldenrodYellow;
             this.guna2GradientCircleButton3.Font = new System.Drawing.Font("Times New Roman", 16.2F);
             this.guna2GradientCircleButton3.ForeColor = System.Drawing.Color.Black;
-            this.guna2GradientCircleButton3.Location = new System.Drawing.Point(607, 294);
-            this.guna2GradientCircleButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2GradientCircleButton3.Location = new System.Drawing.Point(809, 362);
+            this.guna2GradientCircleButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2GradientCircleButton3.Name = "guna2GradientCircleButton3";
             this.guna2GradientCircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2GradientCircleButton3.Size = new System.Drawing.Size(152, 157);
+            this.guna2GradientCircleButton3.Size = new System.Drawing.Size(203, 193);
             this.guna2GradientCircleButton3.TabIndex = 7;
             this.guna2GradientCircleButton3.Text = "See Your Order";
             this.guna2GradientCircleButton3.Click += new System.EventHandler(this.guna2GradientCircleButton3_Click_1);
             // 
             // loggedIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 462);
+            this.ClientSize = new System.Drawing.Size(1067, 569);
             this.Controls.Add(this.guna2GradientCircleButton3);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.guna2GradientCircleButton2);
             this.Controls.Add(this.guna2GradientCircleButton1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "loggedIn";
             this.Text = "loggedIn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

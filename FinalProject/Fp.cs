@@ -75,5 +75,10 @@ namespace FinalProject
         {
 
         }
+
+        private void Fp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

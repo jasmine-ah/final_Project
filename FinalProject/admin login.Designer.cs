@@ -228,11 +228,12 @@
             this.guna2TextBox2.IconLeft = global::FinalProject.Properties.Resources.login_password_11924;
             this.guna2TextBox2.Location = new System.Drawing.Point(8, 168);
             this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PasswordChar = '●';
             this.guna2TextBox2.PlaceholderText = "";
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.Size = new System.Drawing.Size(200, 36);
             this.guna2TextBox2.TabIndex = 8;
+            this.guna2TextBox2.UseSystemPasswordChar = true;
             this.guna2TextBox2.UseWaitCursor = true;
             // 
             // pictureBox1

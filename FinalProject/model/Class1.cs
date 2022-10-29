@@ -22,7 +22,7 @@ namespace FinalProject.model
         public string contactInfo { get; set; }
 
 
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=fp;Integrated Security=true;";
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;";
 
 
 

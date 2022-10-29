@@ -23,7 +23,7 @@ namespace FinalProject
             label12.Text=GetProf();
         }
 
-        public static string connectionString = @"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=fp;Integrated Security=true;";
+        public static string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;";
 
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -151,6 +151,16 @@ namespace FinalProject
         }
 
         private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel12_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -46,7 +46,7 @@ namespace FinalProject
         {
             Class2 c = new Class2();
             c.selected(id, checkedListBox1);
-            SqlConnection con = new SqlConnection(@"Data Source=PCDOC-PC\MSSQLSERVER01; Initial catalog=fp;Integrated Security=true;");
+            SqlConnection con = new SqlConnection(@"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;");
             con.Open();
             string Query = "select dbo.priceCalc(@id)";
             SqlCommand cmd3 = new SqlCommand(Query, con);

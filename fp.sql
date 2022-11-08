@@ -27,6 +27,7 @@ email varchar(100),
 contactInfo varchar(15),
 password varchar(10)
 );
+select * from sign_up_infos
 
 --drop table sign_up_infos;
 insert into sign_up_infos values('abebe', 'kebede','abie@gmail.com','0977654321','1234')
@@ -194,6 +195,7 @@ raiserror('under aged employee!!!',16,1)
 rollback
 end
 end
+
 
 
 
@@ -602,3 +604,13 @@ begin
 end
 go
 select dbo.priceCalc(3)
+
+go
+alter function selectwedd
+(@id int)
+returns int
+as begin
+declare @c int=0
+SET @c=(select count(*) from weddingInfos where userId = @id)
+return @c
+end

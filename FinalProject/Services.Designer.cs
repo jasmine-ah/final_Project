@@ -60,7 +60,7 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.Image = global::FinalProject.Properties.Resources.share_arrow_855;
             this.guna2Button1.Location = new System.Drawing.Point(1219, 544);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(125, 55);
             this.guna2Button1.TabIndex = 19;
@@ -74,10 +74,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelForms.BackColor = System.Drawing.Color.Transparent;
-            this.panelForms.Location = new System.Drawing.Point(297, 46);
-            this.panelForms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelForms.Location = new System.Drawing.Point(347, 46);
+            this.panelForms.Margin = new System.Windows.Forms.Padding(4);
             this.panelForms.Name = "panelForms";
-            this.panelForms.Size = new System.Drawing.Size(1047, 466);
+            this.panelForms.Size = new System.Drawing.Size(1037, 466);
             this.panelForms.TabIndex = 20;
             this.panelForms.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -126,7 +126,7 @@
             this.guna2Button6.ImageOffset = new System.Drawing.Point(30, 0);
             this.guna2Button6.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2Button6.Location = new System.Drawing.Point(419, 544);
-            this.guna2Button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(125, 55);
             this.guna2Button6.TabIndex = 17;
@@ -149,7 +149,7 @@
             this.guna2Button7.ForeColor = System.Drawing.Color.Black;
             this.guna2Button7.ImageOffset = new System.Drawing.Point(30, 0);
             this.guna2Button7.Location = new System.Drawing.Point(247, 544);
-            this.guna2Button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(125, 55);
             this.guna2Button7.TabIndex = 18;
@@ -175,7 +175,7 @@
             this.guna2Button8.ImageOffset = new System.Drawing.Point(35, 0);
             this.guna2Button8.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button8.Location = new System.Drawing.Point(1061, 544);
-            this.guna2Button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button8.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Size = new System.Drawing.Size(125, 55);
             this.guna2Button8.TabIndex = 21;
@@ -201,7 +201,7 @@
             this.guna2Button5.ImageOffset = new System.Drawing.Point(32, 0);
             this.guna2Button5.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2Button5.Location = new System.Drawing.Point(740, 544);
-            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(121, 55);
             this.guna2Button5.TabIndex = 16;
@@ -226,7 +226,7 @@
             this.guna2Button4.ImageOffset = new System.Drawing.Point(40, 0);
             this.guna2Button4.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2Button4.Location = new System.Drawing.Point(581, 544);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(125, 55);
             this.guna2Button4.TabIndex = 15;
@@ -250,7 +250,7 @@
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2Button2.Location = new System.Drawing.Point(900, 544);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(125, 55);
             this.guna2Button2.TabIndex = 14;
@@ -274,7 +274,7 @@
             this.guna2Button9.Font = new System.Drawing.Font("Times New Roman", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.guna2Button9.ForeColor = System.Drawing.Color.Black;
             this.guna2Button9.Location = new System.Drawing.Point(79, 544);
-            this.guna2Button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button9.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.Size = new System.Drawing.Size(125, 55);
             this.guna2Button9.TabIndex = 22;

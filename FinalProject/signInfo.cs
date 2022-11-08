@@ -1,5 +1,6 @@
 ﻿using FinalProject.model;
 using System;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -138,112 +139,128 @@ namespace FinalProject
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            errorProvider1.Clear();
-            Regex r = new Regex(@"^([^0-9]*)$");
-            
-            if (string.IsNullOrEmpty(gFN.Text))
-            {
-                errorProvider1.SetError(gFN, "Groom first name is required");
-            }
-            if (string.IsNullOrEmpty(gLN.Text))
-            {
-                errorProvider1.SetError(gLN, "Groom last name is required");
-            }
-            if (string.IsNullOrEmpty(bLN.Text))
-            {
-                errorProvider1.SetError(bLN, "Bride Last name is required");
-            }
+        {  string connectionString = @"Data Source=TINELLA\SQLEXPRESS; Initial catalog=fp;Integrated Security=true;";
+           SqlConnection con=new SqlConnection(connectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select dbo.selectwedd(@id)", con);
+            cmd.Parameters.AddWithValue("@id", id);
+            int count = 0;
+                count=int.Parse(cmd.ExecuteScalar().ToString());
 
-            if (string.IsNullOrEmpty(bFN.Text))
+            con.Close();
+            if (count > 1)
             {
-                errorProvider1.SetError(bFN, "Bride first name is required ");
+                MessageBox.Show("Account already booked!!");
+            }
+           
+            else
+            {
+                errorProvider1.Clear();
+                Regex r = new Regex(@"^([^0-9]*)$");
 
-            }
-            if (string.IsNullOrEmpty(tbGuestNum.Text))
-            {
-                errorProvider1.SetError(tbGuestNum, "Number of guests is required ");
-
-            }
-            else if (!r.IsMatch(bFN.Text))
-            {
-                errorProvider1.SetError(bFN, "Bride first Name should'nt contain numbers");
-
-            }
-            else if (!r.IsMatch(bLN.Text))
-            {
-                errorProvider1.SetError(bLN, "Bride last Name should'nt contain numbers");
-
-            }
-            else if (!r.IsMatch(gFN.Text))
-            {
-                errorProvider1.SetError(gFN, "Groom first Name should'nt contain numbers");
-
-            }
-            else if (!r.IsMatch(gLN.Text))
-            {
-                errorProvider1.SetError(gLN, "Groom last Name should'nt contain numbers");
-
-            }
-            if (bFN.Text == "" || bLN.Text == "" || gFN.Text == "" || gLN.Text == "" || tbGuestNum.Text == "")
-            {
-                MessageBox.Show("Please enter all information");
-            }
-            string pn = null;
-            int pr = 0;
-            if (rbBasic.Checked)
-            {
-                pn = "Basic";
-                pr = 150000;
-            }
-
-            else if (rbRoyal.Checked)
-            {
-                pn = "Royal";
-                pr = 600000;
-            }
-
-            else if (rbLuxury.Checked)
-            {
-                pn = "Luxury";
-                pr = 450000;
-            }
-            else if (rbSimple.Checked)
-            {
-                pn = "Simple";
-                pr = 100000;
-            }
-
-            else if (rbPremium.Checked)
-            {
-                pn = "Premium";
-                pr = 300000;
-            }
-            else if (rbcustom.Checked)
-            {
-                pn = "Custom";
-                Class2 c = new Class2();
-                pr = int.Parse(c.Price(id));
-            }
-            //save customer info on your database
-            try
-            {
-                Class2 c2 = new Class2
+                if (string.IsNullOrEmpty(gFN.Text))
                 {
-                    Id = id,
-                    BrideName = bFN.Text + " " + bLN.Text,
-                    GroomName = gFN.Text + " " + gLN.Text,
-                    PackageName = pn,
-                    price = pr,
-                    GuestNumber = int.Parse(tbGuestNum.Text),
-                    weddingDate = guna2DateTimePicker1.Value,
+                    errorProvider1.SetError(gFN, "Groom first name is required");
+                }
+                if (string.IsNullOrEmpty(gLN.Text))
+                {
+                    errorProvider1.SetError(gLN, "Groom last name is required");
+                }
+                if (string.IsNullOrEmpty(bLN.Text))
+                {
+                    errorProvider1.SetError(bLN, "Bride Last name is required");
+                }
+
+                if (string.IsNullOrEmpty(bFN.Text))
+                {
+                    errorProvider1.SetError(bFN, "Bride first name is required ");
+
+                }
+                if (string.IsNullOrEmpty(tbGuestNum.Text))
+                {
+                    errorProvider1.SetError(tbGuestNum, "Number of guests is required ");
+
+                }
+                else if (!r.IsMatch(bFN.Text))
+                {
+                    errorProvider1.SetError(bFN, "Bride first Name should'nt contain numbers");
+
+                }
+                else if (!r.IsMatch(bLN.Text))
+                {
+                    errorProvider1.SetError(bLN, "Bride last Name should'nt contain numbers");
+
+                }
+                else if (!r.IsMatch(gFN.Text))
+                {
+                    errorProvider1.SetError(gFN, "Groom first Name should'nt contain numbers");
+
+                }
+                else if (!r.IsMatch(gLN.Text))
+                {
+                    errorProvider1.SetError(gLN, "Groom last Name should'nt contain numbers");
+
+                }
+                if (bFN.Text == "" || bLN.Text == "" || gFN.Text == "" || gLN.Text == "" || tbGuestNum.Text == "")
+                {
+                    MessageBox.Show("Please enter all information");
+                }
+                string pn = null;
+                int pr = 0;
+                if (rbBasic.Checked)
+                {
+                    pn = "Basic";
+                    pr = 150000;
+                }
+
+                else if (rbRoyal.Checked)
+                {
+                    pn = "Royal";
+                    pr = 600000;
+                }
+
+                else if (rbLuxury.Checked)
+                {
+                    pn = "Luxury";
+                    pr = 450000;
+                }
+                else if (rbSimple.Checked)
+                {
+                    pn = "Simple";
+                    pr = 100000;
+                }
+
+                else if (rbPremium.Checked)
+                {
+                    pn = "Premium";
+                    pr = 300000;
+                }
+                else if (rbcustom.Checked)
+                {
+                    pn = "Custom";
+                    Class2 c = new Class2();
+                    pr = int.Parse(c.Price(id));
+                }
+                //save customer info on your database
+                try
+                {
+                    Class2 c2 = new Class2
+                    {
+                        Id = id,
+                        BrideName = bFN.Text + " " + bLN.Text,
+                        GroomName = gFN.Text + " " + gLN.Text,
+                        PackageName = pn,
+                        price = pr,
+                        GuestNumber = int.Parse(tbGuestNum.Text),
+                        weddingDate = guna2DateTimePicker1.Value,
+                    };
+                    c2.save();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Type mismatch");
                 };
-                c2.save();
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Type mismatch");
-            };
 
         }
 
@@ -307,6 +324,11 @@ namespace FinalProject
             {
                 selected = rbBasic.Text;
             }
+        }
+
+        private void gLN_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

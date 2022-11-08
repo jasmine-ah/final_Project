@@ -128,7 +128,7 @@
             this.gFN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gFN.ForeColor = System.Drawing.Color.Silver;
             this.gFN.Location = new System.Drawing.Point(97, 212);
-            this.gFN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gFN.Margin = new System.Windows.Forms.Padding(4);
             this.gFN.Name = "gFN";
             this.gFN.Size = new System.Drawing.Size(200, 26);
             this.gFN.TabIndex = 49;
@@ -143,11 +143,12 @@
             this.gLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gLN.ForeColor = System.Drawing.Color.Silver;
             this.gLN.Location = new System.Drawing.Point(319, 212);
-            this.gLN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gLN.Margin = new System.Windows.Forms.Padding(4);
             this.gLN.Name = "gLN";
             this.gLN.Size = new System.Drawing.Size(200, 26);
             this.gLN.TabIndex = 50;
             this.gLN.Text = "Last";
+            this.gLN.TextChanged += new System.EventHandler(this.gLN_TextChanged);
             this.gLN.Enter += new System.EventHandler(this.textBox7_Enter);
             this.gLN.Leave += new System.EventHandler(this.textBox7_Leave);
             // 
@@ -170,7 +171,7 @@
             this.rbRoyal.AutoSize = true;
             this.rbRoyal.ForeColor = System.Drawing.Color.Brown;
             this.rbRoyal.Location = new System.Drawing.Point(100, 320);
-            this.rbRoyal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbRoyal.Margin = new System.Windows.Forms.Padding(4);
             this.rbRoyal.Name = "rbRoyal";
             this.rbRoyal.Size = new System.Drawing.Size(122, 20);
             this.rbRoyal.TabIndex = 52;
@@ -185,7 +186,7 @@
             this.rbLuxury.AutoSize = true;
             this.rbLuxury.ForeColor = System.Drawing.Color.Brown;
             this.rbLuxury.Location = new System.Drawing.Point(100, 373);
-            this.rbLuxury.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbLuxury.Margin = new System.Windows.Forms.Padding(4);
             this.rbLuxury.Name = "rbLuxury";
             this.rbLuxury.Size = new System.Drawing.Size(124, 20);
             this.rbLuxury.TabIndex = 53;
@@ -200,7 +201,7 @@
             this.rbPremium.AutoSize = true;
             this.rbPremium.ForeColor = System.Drawing.Color.Brown;
             this.rbPremium.Location = new System.Drawing.Point(293, 320);
-            this.rbPremium.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbPremium.Margin = new System.Windows.Forms.Padding(4);
             this.rbPremium.Name = "rbPremium";
             this.rbPremium.Size = new System.Drawing.Size(139, 20);
             this.rbPremium.TabIndex = 54;
@@ -215,7 +216,7 @@
             this.rbBasic.AutoSize = true;
             this.rbBasic.ForeColor = System.Drawing.Color.Brown;
             this.rbBasic.Location = new System.Drawing.Point(293, 373);
-            this.rbBasic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbBasic.Margin = new System.Windows.Forms.Padding(4);
             this.rbBasic.Name = "rbBasic";
             this.rbBasic.Size = new System.Drawing.Size(120, 20);
             this.rbBasic.TabIndex = 55;
@@ -230,7 +231,7 @@
             this.rbSimple.AutoSize = true;
             this.rbSimple.ForeColor = System.Drawing.Color.Brown;
             this.rbSimple.Location = new System.Drawing.Point(481, 320);
-            this.rbSimple.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbSimple.Margin = new System.Windows.Forms.Padding(4);
             this.rbSimple.Name = "rbSimple";
             this.rbSimple.Size = new System.Drawing.Size(128, 20);
             this.rbSimple.TabIndex = 56;
@@ -245,7 +246,7 @@
             this.rbcustom.AutoSize = true;
             this.rbcustom.ForeColor = System.Drawing.Color.Brown;
             this.rbcustom.Location = new System.Drawing.Point(481, 373);
-            this.rbcustom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbcustom.Margin = new System.Windows.Forms.Padding(4);
             this.rbcustom.Name = "rbcustom";
             this.rbcustom.Size = new System.Drawing.Size(203, 20);
             this.rbcustom.TabIndex = 57;
@@ -368,7 +369,7 @@
             this.Controls.Add(this.label2);
             this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "signInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking";

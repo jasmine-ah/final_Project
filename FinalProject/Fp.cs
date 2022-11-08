@@ -30,7 +30,7 @@ namespace FinalProject
             to = (txtemail.Text).ToString();
             from = "tinellafikrunimane@gmail.com";
             pass = "rebrkvcncjwoufos";
-            messageBody = "your OTP is" + randomCode;
+            messageBody = "your OTP is " + randomCode;
             message.To.Add(to);
             message.From = new MailAddress(from);
             message.Body = messageBody;

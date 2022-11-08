@@ -90,5 +90,10 @@ namespace FinalProject
             loggedIn l = new loggedIn(id);
                 l.Show();
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

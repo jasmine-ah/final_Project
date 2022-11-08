@@ -51,5 +51,10 @@ namespace FinalProject
         {
 
         }
+
+        private void txtnewpwd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

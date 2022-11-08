@@ -223,6 +223,7 @@
             this.guna2CheckBox1.UncheckedState.BorderRadius = 2;
             this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.Bisque;
+            this.guna2CheckBox1.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
             // 
             // guna2TextBox3
             // 

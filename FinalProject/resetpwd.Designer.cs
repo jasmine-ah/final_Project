@@ -65,6 +65,7 @@
             this.txtnewpwd.Name = "txtnewpwd";
             this.txtnewpwd.Size = new System.Drawing.Size(174, 22);
             this.txtnewpwd.TabIndex = 2;
+            this.txtnewpwd.TextChanged += new System.EventHandler(this.txtnewpwd_TextChanged);
             // 
             // txtnewcp
             // 

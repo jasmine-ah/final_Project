@@ -204,6 +204,11 @@ namespace FinalProject
             Fp fp = new Fp();
             fp.Show();
         }
+
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
